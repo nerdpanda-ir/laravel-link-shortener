@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html {!! $htmlAttributes?->toHtml() !!}>
 <head>
     <!-- meta tags start -->
     <meta charset="UTF-8">
