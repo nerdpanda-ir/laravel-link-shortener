@@ -1,8 +1,7 @@
 <?php
+namespace NerdPanda\Services;
 
-namespace App\Services;
-
-use App\Contracts\ComponentAttributeBagFactoryProxyContract;
+use NerdPanda\Contracts\ComponentAttributeBagFactoryProxyContract;
 use Illuminate\View\ComponentAttributeBag;
 
 class ComponentAttributeBagFactoryProxy implements ComponentAttributeBagFactoryProxyContract
