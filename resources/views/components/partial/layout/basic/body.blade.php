@@ -1,1 +1,1 @@
-<body>
+<body {!! $bodyAttributes?->toHtml() !!}>
