@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Providers;
-
+namespace NerdPanda\Providers;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\ComponentAttributeBag;
+
 class ComponentAttributeBagProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
