@@ -169,6 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\ComponentAttributeBagProvider::class ,
+        App\Providers\ComponentAttributeBagFactoryProxyProvider::class ,
     ])->toArray(),
 
     /*
