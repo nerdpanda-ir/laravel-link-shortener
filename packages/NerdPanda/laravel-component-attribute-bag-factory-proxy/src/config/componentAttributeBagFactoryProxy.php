@@ -1,6 +1,6 @@
 <?php
-
-use App\Contracts\ComponentAttributeBagFactoryProxyContract;
+use NerdPanda\Contracts\ComponentAttributeBagFactoryProxyContract;
+use NerdPanda\Services\ComponentAttributeBagFactoryProxy;
 
 ?>
 <?php
