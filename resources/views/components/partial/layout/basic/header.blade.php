@@ -1,18 +1,9 @@
 <!doctype html>
 <html {!! $htmlAttributes?->toHtml() !!}>
 <head>
-    <!-- meta tags start -->
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- meta tags end -->
-
-    <!-- style start -->
-    <!-- style end -->
-
-    <!-- script start -->
-    <!-- script end -->
-
+    <x-partial.layout.basic.header.meta-tags />
+    <x-partial.layout.basic.header.css />
+    <x-partial.layout.basic.header.javascript />
+    
     <title>Document</title>
 </head>
