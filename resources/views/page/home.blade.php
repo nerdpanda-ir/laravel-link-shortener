@@ -1,1 +1,1 @@
-@extends('layout.basic')
+@extends('MasterBlade::layout.basic')

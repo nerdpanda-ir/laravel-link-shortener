@@ -1,0 +1,44 @@
+{
+    "name": "nerdpanda/laravel-master-blade",
+    "description": "this package contain basic blade layout",
+    "keywords": ["laravel master blade","master blade","basic blade"] ,
+    "version": "0.1",
+    "homepage": "https://github.com/nerdpanda-ir/laravel-master-blade",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "NerdPanda\\" : "src/app/"
+        }
+    },
+    "autoload-dev": {
+
+    },
+    "authors": [
+        {
+            "name": "NerdPanda",
+            "email": "nerdpandabusiness@gmail.com"
+        }
+    ],
+    "require": {
+        "nerdpanda/laravel-component-attribute-bag" : "@stable" ,
+        "nerdpanda/laravel-component-attribute-bag-factory-proxy" : "@stable"
+    },
+    "require-dev": {
+
+    },
+    "scripts": {
+        "package-version" : "php scripts/version.php" ,
+        "package-describe" : "php scripts/describe.php"
+    },
+    "scripts-descriptions": {
+        "package-version" : "display package version",
+        "package-describe" : "display package describe"
+    },
+    "extra": {
+        "laravel" : {
+            "providers" : [
+                "NerdPanda\\Providers\\MasterBladeServiceProvider"
+            ]
+        }
+    }
+}
