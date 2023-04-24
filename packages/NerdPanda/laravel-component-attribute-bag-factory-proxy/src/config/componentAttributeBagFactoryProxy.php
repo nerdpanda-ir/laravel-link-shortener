@@ -1,6 +1,7 @@
 <?php
-    use App\Contracts\ComponentAttributeBagFactoryProxyContract;
-    use App\Services\ComponentAttributeBagFactoryProxy;
+
+use App\Contracts\ComponentAttributeBagFactoryProxyContract;
+
 ?>
 <?php
 return [
