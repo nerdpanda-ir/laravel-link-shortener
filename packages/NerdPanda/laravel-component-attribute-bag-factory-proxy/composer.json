@@ -1,0 +1,46 @@
+{
+    "name": "nerdpanda/laravel-component-attribute-bag-factory-proxy",
+    "description": "this package contain ComponentAttributeBagFactoryProxy Service !!!!",
+    "keywords": ["nerdpanda","laravel","laravel-component-attribute-bag-factory-proxy"] ,
+    "version": "0.1",
+    "homepage": "https://github.com/nerdpanda-ir/laravel-component-attribute-bag-factory-proxy",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "NerdPanda",
+            "email": "nerdpandabusiness@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NerdPanda\\": "src/app/"
+        }
+    },
+    "autoload-dev": {
+
+    },
+    "require": {
+        "nerdpanda/laravel-component-attribute-bag" : "@stable"
+    },
+    "require-dev": {
+
+    },
+    "scripts": {
+        "package-version" : "php scripts/version.php" ,
+        "package-describe" : "php scripts/describe.php"
+    },
+    "scripts-descriptions": {
+        "package-version" : "display package version " ,
+        "package-describe" : "display pacakge description "
+    },
+    "extra": {
+        "laravel" : {
+            "providers" : [
+                "NerdPanda\\Providers\\ComponentAttributeBagFactoryProxyProvider"
+            ],
+            "aliases" : {
+                "ComponentAttributeBagFactoryProxyFacade":"NerdPanda\\Facades\\ComponentAttributeBagFactoryProxyFacade"
+            }
+        }
+    }
+}
