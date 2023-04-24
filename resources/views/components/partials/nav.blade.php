@@ -8,14 +8,17 @@
         <div class="collapse navbar-collapse" id="navbarsExample03">
             <ul class="navbar-nav me-auto mb-2 mb-sm-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('home')}}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                </li>
+                @guest()
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('login')}}">login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('register')}}">register</a>
+                    </li>
+                @endguest
+
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
                     <ul class="dropdown-menu">
