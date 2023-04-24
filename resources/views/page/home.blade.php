@@ -1,1 +1,2 @@
-@extends('MasterBlade::layout.basic')
+@extends('page.layouts.bootstrap')
+
