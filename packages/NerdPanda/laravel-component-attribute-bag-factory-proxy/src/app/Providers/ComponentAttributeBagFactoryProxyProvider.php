@@ -11,7 +11,6 @@ class ComponentAttributeBagFactoryProxyProvider extends ServiceProvider implemen
     protected string $base_path;
     public function __construct($app)
     {
-        dump(__METHOD__);
         parent::__construct($app);
         $this->base_path = dirname(__DIR__,2);
         $this->mergeConfigFrom(
@@ -25,7 +24,6 @@ class ComponentAttributeBagFactoryProxyProvider extends ServiceProvider implemen
      */
     public function register(): void
     {
-        dump(__METHOD__);
         if ($this->serviceConfig['implementer']['singleton'])
             $this->app->singleton($this->serviceConfig['implementer']['class']);
         $this->app->bind(
@@ -40,7 +38,6 @@ class ComponentAttributeBagFactoryProxyProvider extends ServiceProvider implemen
         $this->app->alias($this->serviceConfig['implementer']['class'],$this->serviceConfig['alias']);
     }
     public function boot():void{
-        dump(__METHOD__);
         $this->publishes([
             $this->base_path.'/config' => config_path()
         ],'ComponentAttributeBagFactoryProxy.configs');
