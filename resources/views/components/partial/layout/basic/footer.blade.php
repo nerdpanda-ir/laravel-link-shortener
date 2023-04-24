@@ -1,4 +1,3 @@
-<!-- javascript footer start -->
-<!-- javascript footer end -->
+<x-partial.layout.basic.footer.javascript />
 </body>
 </html>
