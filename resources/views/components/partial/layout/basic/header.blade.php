@@ -1,4 +1,6 @@
+@section('doctype')
 <!doctype html>
+@show
 <html {!! $htmlAttributes?->toHtml() !!}>
 <head>
     <x-partial.layout.basic.header.meta-tags />
