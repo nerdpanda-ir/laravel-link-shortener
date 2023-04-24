@@ -4,6 +4,6 @@
     <x-partial.layout.basic.header.meta-tags />
     <x-partial.layout.basic.header.css />
     <x-partial.layout.basic.header.javascript />
-    
-    <title>Document</title>
+
+    <title>@section('title') @show</title>
 </head>
