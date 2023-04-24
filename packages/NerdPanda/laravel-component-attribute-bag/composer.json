@@ -1,0 +1,44 @@
+{
+    "name": "nerdpanda/laravel-component-attribute-bag",
+    "version": "0.1",
+    "description": "with this package you can have ez access to ComponentAttributeBag class via Laravel Service Container !!!",
+    "homepage": "https://github.com/nerdpanda-ir/laravel-component-attribute-bag",
+    "keywords": ["laravel" , "laravel-component-attribute-bag"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "NerdPanda",
+            "email": "nerdpandabusiness@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NerdPanda\\": "src/app/"
+        }
+    },
+    "autoload-dev": {
+
+    },
+    "require": {
+
+    },
+    "require-dev": {
+
+    },
+    "scripts": {
+        "package-version" : "php scripts/version.php" ,
+        "package-describe" : "php scripts/describe.php"
+    },
+    "scripts-descriptions": {
+        "package-version" : "display package version",
+        "package-describe" : "display package describe"
+    },
+    "extra": {
+        "laravel" : {
+            "providers" : [
+
+            ]
+        }
+    }
+
+}
