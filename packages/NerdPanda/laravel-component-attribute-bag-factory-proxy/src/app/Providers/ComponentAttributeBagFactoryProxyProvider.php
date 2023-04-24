@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace NerdPanda\Providers;
 
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
@@ -8,9 +8,14 @@ use Illuminate\Support\ServiceProvider;
 class ComponentAttributeBagFactoryProxyProvider extends ServiceProvider implements DeferrableProvider
 {
     protected array $serviceConfig;
+    protected string $base_path;
     public function __construct($app)
     {
         parent::__construct($app);
+        $this->base_path = dirname(__DIR__,2);
+        $this->mergeConfigFrom(
+            $this->base_path.'/config/componentAttributeBagFactoryProxy.php','componentAttributeBagFactoryProxy'
+        );
         $this->serviceConfig = config('componentAttributeBagFactoryProxy');
     }
 
@@ -31,6 +36,11 @@ class ComponentAttributeBagFactoryProxyProvider extends ServiceProvider implemen
             $this->serviceConfig['singleton']
         );
         $this->app->alias($this->serviceConfig['implementer']['class'],$this->serviceConfig['alias']);
+    }
+    public function boot():void{
+        $this->publishes([
+            $this->base_path.'/config' => config_path()
+        ],'ComponentAttributeBagFactoryProxy.configs');
     }
     public function provides():array
     {
