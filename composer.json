@@ -16,6 +16,10 @@
         {
             "type": "path" ,
             "url": "packages/NerdPanda/laravel-master-blade"
+        },
+        {
+            "type": "path" ,
+            "url": "packages/NerdPanda/laravel-disable-model-timestamp"
         }
     ],
     "require": {
