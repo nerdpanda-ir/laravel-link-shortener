@@ -1,0 +1,40 @@
+{
+    "name": "nerdpanda/laravel-disable-model-timestamp",
+    "description": "with this package you can disable timestamp for laravel models via using trait",
+    "keywords": ["disable laravel model timestamp","nerd panda disable laravel model timestamp"],
+    "version": "0.1",
+    "homepage": "https://github.com/nerdpanda-ir/laravel-disable-model-timestamp",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "NerdPanda",
+            "email": "nerdpandabusiness@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NerdPanda\\" : "src/app/"
+        }
+    },
+    "autoload-dev": {
+
+    },
+    "require": {},
+    "require-dev": {
+
+    },
+    "scripts": {
+        "package-version" : "php scripts/version.php" ,
+        "package-describe" : "php scripts/describe.php"
+    },
+    "scripts-descriptions": {
+        "package-version" : "display package version",
+        "package-describe" : "display package describe"
+    },
+    "extra": {
+        "laravel" : {
+
+        }
+    }
+
+}
