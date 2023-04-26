@@ -169,7 +169,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         \App\Providers\UserFactoryServiceProvider::class ,
-        \App\Providers\UserableServiceProvider::class
+        \App\Providers\UserableServiceProvider::class ,
+        \App\Providers\PermissionFactoryServiceProvider::class ,
     ])->toArray(),
 
     /*
