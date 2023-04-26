@@ -20,10 +20,6 @@
         {
             "type": "path" ,
             "url": "packages/NerdPanda/laravel-disable-model-timestamp"
-        },
-        {
-            "type": "path" ,
-            "url": "packages/NerdPanda/laravel-permission"
         }
     ],
     "require": {
