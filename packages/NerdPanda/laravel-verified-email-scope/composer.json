@@ -1,0 +1,44 @@
+{
+    "name": "nerdpanda/laravel-verified-email-scope",
+    "description": "this package have scope for apply verified email query",
+    "keywords" : ["laravel verified email query scope"],
+    "version": "0.1",
+    "homepage": "https://github.com/nerdpanda-ir/laravel-verified-email-scope",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "NerdPanda",
+            "email": "nerdpandabusiness@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "NerdPanda\\": "src/app/"
+        }
+    },
+    "autoload-dev": {
+
+    },
+    "require": {
+    } ,
+    "require-dev": {
+    },
+    "scripts": {
+        "package-version" : "php scripts/version.php" ,
+        "package-describe" : "php scripts/describe.php"
+    },
+    "scripts-descriptions": {
+        "package-version" : "display package version",
+        "package-describe" : "display package describe"
+    },
+    "extra": {
+        "laravel" : {
+            "providers" : [
+
+            ],
+            "aliases" : {
+
+            }
+        }
+    }
+}
