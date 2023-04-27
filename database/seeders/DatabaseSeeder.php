@@ -13,11 +13,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(PermissionFactoryContract $factory): void
     {
-        // @todo seeders can be resolve with interface
+        \DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         $this->call([
-            UserSeeder::class ,
+            'contract.seeder.user' ,
             PermissionSeeder::class
         ]);
+        \DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
