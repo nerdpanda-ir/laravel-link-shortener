@@ -168,9 +168,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        \App\Providers\UserFactoryServiceProvider::class ,
         \App\Providers\UserableServiceProvider::class ,
+        \App\Providers\UserFactoryServiceProvider::class ,
+        \App\Providers\UserSeederServiceProvider::class ,
         \App\Providers\PermissionFactoryServiceProvider::class ,
+
     ])->toArray(),
 
     /*
