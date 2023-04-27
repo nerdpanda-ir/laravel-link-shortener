@@ -18,7 +18,7 @@ class PermissionSeeder extends Seeder
     {
         $factory->newModel()->truncate();
         /** @var Collection $users */
-        $users = $user->isVerifiedEmail()->get(['id']);
+        $users = $user->whereVerifiedEmail()->get(['id']);
         if (empty($users))
             throw new \Exception("no found any user for permission seeding ");
         $permissions = [
