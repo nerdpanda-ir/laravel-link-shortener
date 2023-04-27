@@ -3,13 +3,14 @@
 namespace Database\Seeders;
 
 use App\Contracts\PermissionFactoryContract;
+use App\Contracts\PermissionSeederContract;
 use App\Contracts\UserableContract;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
 
-class PermissionSeeder extends Seeder
+class PermissionSeeder extends Seeder implements PermissionSeederContract
 {
     /**
      * Run the database seeds.
