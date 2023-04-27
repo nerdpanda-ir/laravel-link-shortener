@@ -3,10 +3,11 @@
 namespace Database\Seeders;
 
 use App\Contracts\UserFactoryContract;
+use App\Contracts\UserSeederContract;
 use Database\Factories\UserFactory;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder
+class UserSeeder extends Seeder implements UserSeederContract
 {
     protected static int $count = 15;
     /**
