@@ -19,7 +19,7 @@ class PermissionSeeder extends Seeder implements PermissionSeederContract
     {
         $factory->newModel()->truncate();
         /** @var Collection $users */
-        $users = $user->whereVerifiedEmail()->get(['id']);
+        $users = $user->whereVerifiedEmail()->offset(0)->limit(3)->get(['id']);
         if (empty($users))
             throw new \Exception("no found any user for permission seeding ");
         $permissions = [
