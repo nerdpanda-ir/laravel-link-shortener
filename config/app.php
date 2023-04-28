@@ -172,8 +172,8 @@ return [
         \App\Providers\UserFactoryServiceProvider::class ,
         \App\Providers\UserSeederServiceProvider::class ,
         \App\Providers\PermissionFactoryServiceProvider::class ,
-        \App\Providers\PermissionSeederServiceProvider::class , 
-
+        \App\Providers\PermissionSeederServiceProvider::class ,
+        \App\Providers\RoleFactoryServiceProvider::class ,
     ])->toArray(),
 
     /*
