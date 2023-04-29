@@ -1,1 +1,1 @@
-delete from `users`;
+#SET GLOBAL FOREIGN_KEY_CHECKS = 0;
