@@ -39,7 +39,7 @@ class RoleUserSeeder extends Seeder implements Contract
             $updated_at = null;
             if (rand(0,1))
                 $updated_at = $faker->dateTimeBetween(
-                    $created_at->getTimestamp() + rand(60,6000)
+                    now()->setTimestamp($created_at->getTimestamp())->addSeconds(rand(30,6000))
                 );
             $admin->roles()->sync([
                 [
@@ -53,22 +53,14 @@ class RoleUserSeeder extends Seeder implements Contract
         $otherRoles = $role->whereNotIn('id',[$adminRole->id,$rootRole->id])->get(['id']);
         $otherUsers =  $user->whereNotIn(
             'id', array_merge($admins->map->id->toArray(),[$root->id])
-        )->get(['id','name']);
+        )->get(['id']);
         /** @var User $otherUser*/
         foreach ($otherRoles as $otherRole){
             foreach ($otherUsers as $otherUser){
                 if (rand(0,1)){
-                    $created_at = $faker->dateTimeBetween(
-                        now()->subMonths(6) , now()->subDays(32)
-                    );
-                    $updated_at = null ;
-                    if (rand(0,1))
-                        $updated_at = $faker->dateTimeBetween(
-                            now()->setTimestamp($created_at->getTimestamp())->addSeconds(rand(30,3600))
-                        );
-                    $otherUser->roles()->attach($otherRole->id,[
-                        'created_by'=> null , 'created_at' => $created_at , 'updated_at'=> $updated_at
-                    ]);
+                    $created_at = $faker->dateTimeBetween(now()->subDays(500),now()->subHours(5));
+                    $data = ['created_at' => $created_at , 'updated_at' => null];
+                    $otherUser->roles()->attach($otherRole->id,$data);
                 }
             }
         }
