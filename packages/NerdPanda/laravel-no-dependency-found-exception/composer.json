@@ -1,0 +1,43 @@
+{
+    "name": "nerdpanda/laravel-no-dependency-found-exception",
+    "description": "this package contain no dependency found exception for seeder exception  ",
+    "keywords": ["exception" , "no dependency found exception"],
+    "version": "0.1",
+    "homepage": "https://github.com/nerdpanda-ir/laravel-no-dependency-found-exception",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "NerdPanda",
+            "email": "nerdpandabusiness@gmail.com"
+        }
+    ],
+    "require": {} ,
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "NerdPanda\\" : "src/app/"
+        }
+    },
+    "autoload-dev": {
+
+    },
+    "scripts": {
+        "package-version" : "php scripts/version.php" ,
+        "package-describe" : "php scripts/describe.php"
+    },
+    "scripts-descriptions": {
+        "package-version" : "display package version",
+        "package-describe" : "display package describe"
+    },
+    "extra": {
+        "laravel" : {
+            "providers" : [
+                "NerdPanda\\Providers\\NoDependencyFoundExceptionServiceProvider"
+            ],
+            "aliases" : {
+
+            }
+        }
+    }
+}

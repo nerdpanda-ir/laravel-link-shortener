@@ -1,11 +1,10 @@
 <?php
-
-namespace App\Providers;
+namespace NerdPanda\Providers;
 
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use App\Contracts\NoDependencyFoundForSeedingContract as Contract;
-use App\Exceptions\NoDependencyFoundForSeedingException as Entity;
+use NerdPanda\Contracts\NoDependencyFoundForSeedingContract as Contract;
+use NerdPanda\Exceptions\NoDependencyFoundForSeedingException as Entity;
 
 class NoDependencyFoundExceptionServiceProvider extends ServiceProvider implements DeferrableProvider
 {
@@ -18,7 +17,11 @@ class NoDependencyFoundExceptionServiceProvider extends ServiceProvider implemen
             Contract::class,'contract.exception.noDependencyFound'
         );
     }
-
+    public function boot():void {
+        $this->publishes([
+            dirname(__DIR__,3).'/exports/Exceptions' => app_path('Exceptions')
+        ],'noDependencyFoundException.exceptions');
+    }
     public function provides():array
     {
         return [
