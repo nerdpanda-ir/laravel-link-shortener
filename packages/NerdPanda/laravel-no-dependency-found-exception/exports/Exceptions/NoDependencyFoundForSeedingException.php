@@ -1,5 +1,5 @@
 <?php
-namespace exports\Exceptions;
+namespace App\Exceptions;
 
 use Exception;
 use NerdPanda\Contracts\NoDependencyFoundForSeedingContract as Contract;
