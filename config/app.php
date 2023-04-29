@@ -171,11 +171,12 @@ return [
         \App\Providers\UserableServiceProvider::class ,
         \App\Providers\UserFactoryServiceProvider::class ,
         \App\Providers\UserSeederServiceProvider::class ,
-        \App\Providers\PermissionModelServiceProvider::class , 
+        \App\Providers\PermissionModelServiceProvider::class ,
         \App\Providers\PermissionFactoryServiceProvider::class ,
         \App\Providers\PermissionSeederServiceProvider::class ,
         \App\Providers\RoleFactoryServiceProvider::class ,
-        \App\Providers\RoleSeederServiceProvider::class
+        \App\Providers\RoleSeederServiceProvider::class ,
+        \App\Providers\PermissionRoleSeederServiceProvider::class , 
 
     ])->toArray(),
 
