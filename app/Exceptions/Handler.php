@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Contracts\NoDependencyFoundForSeedingContract;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 
@@ -18,7 +19,7 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
     protected $dontReport = [
-        NoDependencyFoundForSeeding::class
+        NoDependencyFoundForSeedingContract::class
     ];
     /**
      * Register the exception handling callbacks for the application.
