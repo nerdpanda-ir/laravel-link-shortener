@@ -24,6 +24,10 @@
         {
             "type": "path" ,
             "url": "packages/NerdPanda/laravel-verified-email-scope"
+        },
+        {
+            "type": "path" ,
+            "url": "packages/NerdPanda/laravel-no-dependency-found-exception"
         }
     ],
     "require": {
