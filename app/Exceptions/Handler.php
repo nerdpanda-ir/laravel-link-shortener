@@ -2,8 +2,8 @@
 
 namespace App\Exceptions;
 
-use App\Contracts\NoDependencyFoundForSeedingContract;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use NerdPanda\Contracts\NoDependencyFoundForSeedingContract;
 use Throwable;
 
 class Handler extends ExceptionHandler
