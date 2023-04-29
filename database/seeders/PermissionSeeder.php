@@ -5,12 +5,9 @@ namespace Database\Seeders;
 use App\Contracts\PermissionFactoryContract;
 use App\Contracts\PermissionSeederContract;
 use App\Contracts\UserableContract;
-use App\Exceptions\NoDependencyFoundForSeeding;
-use App\Exceptions\NoUserFoundForSeedingException;
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
+use NerdPanda\Exceptions\NoDependencyFoundForSeedingException;
 
 class PermissionSeeder extends Seeder implements PermissionSeederContract
 {
@@ -23,7 +20,7 @@ class PermissionSeeder extends Seeder implements PermissionSeederContract
         /** @var Collection $users */
         $users = $user->whereVerifiedEmail()->offset(0)->limit(3)->get(['id']);
         if ($users->isEmpty() xor $users->count()==1)
-            throw new NoDependencyFoundForSeeding(trans(
+            throw new NoDependencyFoundForSeedingException(trans(
                 'exceptions.no-dependency-found', ['dependency' => 'users', 'seeder' => self::class]
             ));
         $permissions = [
