@@ -178,6 +178,7 @@ return [
         \App\Providers\RoleSeederServiceProvider::class ,
         \App\Providers\PermissionRoleSeederServiceProvider::class ,
         \App\Providers\RoleModelServiceProvider::class ,
+        \App\Providers\RoleUserSeederServiceProvider::class
     ])->toArray(),
 
     /*
