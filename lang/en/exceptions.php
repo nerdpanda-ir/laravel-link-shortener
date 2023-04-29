@@ -1,4 +1,4 @@
 <?php
 return [
-    'noUserFoundForSeeding' => 'no found any user for seeding -> :seeder'
+    'no-dependency-found' => 'no found any :dependency for seeding :seeder '
 ];
