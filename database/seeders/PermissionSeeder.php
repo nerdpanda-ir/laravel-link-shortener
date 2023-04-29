@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Contracts\PermissionFactoryContract;
 use App\Contracts\PermissionSeederContract;
 use App\Contracts\UserableContract;
+use App\Exceptions\NoUserFoundForSeedingException;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Eloquent\Collection;
@@ -20,8 +21,8 @@ class PermissionSeeder extends Seeder implements PermissionSeederContract
         $factory->newModel()->truncate();
         /** @var Collection $users */
         $users = $user->whereVerifiedEmail()->offset(0)->limit(3)->get(['id']);
-        if (empty($users))
-            throw new \Exception("no found any user for permission seeding ");
+        if ($users->isEmpty())
+            throw new NoUserFoundForSeedingException(self::class);
         $permissions = [
             'create-user','update-user', 'delete-user' ,'force-delete-user'
             ,'see-system-monitor' , 'see-application-setting',
