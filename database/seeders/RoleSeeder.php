@@ -17,7 +17,6 @@ class RoleSeeder extends Seeder implements RoleSeederContract
      */
     public function run(RoleFactoryContract $factory , UserableContract $user): void
     {
-        //limit user to all , create exception for here
         $factory->newModel()->truncate();
         /** @var Collection $users*/
         $users = $user->whereVerifiedEmail()->offset(0)->limit(3)->get(['id']);
