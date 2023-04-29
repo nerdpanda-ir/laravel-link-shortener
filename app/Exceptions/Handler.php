@@ -17,7 +17,9 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
-
+    protected $dontReport = [
+        NoUserFoundForSeedingException::class
+    ];
     /**
      * Register the exception handling callbacks for the application.
      */
