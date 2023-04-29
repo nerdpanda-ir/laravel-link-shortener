@@ -4,8 +4,8 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Http\Response;
-
-class NoDependencyFoundForSeeding extends Exception
+use App\Contracts\NoDependencyFoundForSeedingContract as Contract;
+class NoDependencyFoundForSeeding extends Exception implements Contract
 {
 
 }
