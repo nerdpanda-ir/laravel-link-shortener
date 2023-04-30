@@ -6,6 +6,7 @@ namespace App\Models;
 use App\Contracts\UserableContract;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use NerdPanda\Traits\Model\VerifiedEmailScopeTrait;
@@ -46,5 +47,8 @@ class User extends Authenticatable implements UserableContract
     ];
     public function roles():BelongsToMany{
         return $this->belongsToMany(Role::class);
+    }
+    public function permissions():Relation {
+        return $this->belongsToMany(Permission::class);
     }
 }
