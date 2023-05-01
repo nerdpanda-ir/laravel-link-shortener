@@ -14,7 +14,7 @@ class ResponseLoggerMiddleware
     }
     public function terminate(Request $request , Response $response):void {
         try {
-            \Log::info(trans('log.response'),[
+            \Log::info(trans('messages.log.reResponseLoggerMiddleware.phpsponse'),[
                 'status_code' => $response->getStatusCode() ,
             ]);
         } catch (\Throwable $exception){
