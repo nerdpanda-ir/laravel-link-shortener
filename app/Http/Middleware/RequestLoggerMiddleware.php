@@ -11,8 +11,9 @@ class RequestLoggerMiddleware
     {
         try {
             \Log::info(trans('log.request'),[
-                'ip'=> $request->ip() ,
-                'method'=> $request->method() , 'destination' => $request->fullUrl() , 'inputs' => $request->all()
+                'ip'=> $request->ip() , 'method'=> $request->method() , 'route'=> $request->route()->getName() ,
+                'destination' => $request->fullUrl() , 'action'=> $request->route()->getAction() ,
+                'inputs' => $request->all() ,
             ]);
         }catch (\Throwable $exception) {
             report($exception);
