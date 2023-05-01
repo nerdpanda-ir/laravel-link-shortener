@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="{{asset('css/page/login.css')}}">
 @endsection
 @section('content')
+    @if($errors->any())
+        <div class="toast-container position-static">
+            @foreach($errors->all() as $errorItem)
+                <x-partials.toast title="Error Happened"  class="bg-danger text-light" :content="$errorItem" />
+            @endforeach
+        </div>
+    @endif
+
     <main class="form-signin w-100 m-auto">
         <form action="{{route('login')}}" method="post">
             @csrf
