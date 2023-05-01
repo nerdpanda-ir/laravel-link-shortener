@@ -6,6 +6,10 @@
     @parent
     <link rel="stylesheet" href="{{asset('css/page/login.css')}}">
 @endsection
+@section('header-javascript')
+    @parent
+    <script src="{{asset('js/page/login.js')}}" type="module"></script>
+@endsection
 @section('content')
     @if($errors->any())
         <div class="toast-container position-static">
