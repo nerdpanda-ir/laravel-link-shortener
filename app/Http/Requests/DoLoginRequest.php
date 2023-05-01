@@ -3,8 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
-class DoLoginRequest extends FormRequest
+use App\Contracts\DoLoginRequestContract as Contract;
+class DoLoginRequest extends FormRequest implements Contract
 {
     public function rules(): array
     {
