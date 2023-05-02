@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-
+// @todo can be replace to notification ? yea !!!
 class LoginMail extends Mailable implements LoginMailContract
 {
     use Queueable, SerializesModels;
@@ -28,7 +28,7 @@ class LoginMail extends Mailable implements LoginMailContract
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Login Mail',
+            subject: 'Someone logged into your account',
         );
     }
 
@@ -38,7 +38,7 @@ class LoginMail extends Mailable implements LoginMailContract
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            markdown: 'mail.login',
         );
     }
 
