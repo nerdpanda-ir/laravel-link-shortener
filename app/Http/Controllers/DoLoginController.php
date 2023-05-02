@@ -27,7 +27,6 @@ class DoLoginController extends Controller
                         ->withErrors($translator->get('messages.auth.login.fail'))
                         ->withInput($request->only('email','password','remember'));
             }
-            $logger->info($translator->get('messages.log.auth.login.ok'));
             $user = $auth->guard('web')->user();
             return $redirector->route('dashboard')
                     ->with('system.messages.ok',[
