@@ -14,6 +14,13 @@ return [
                 'start' => 'user start logout action' ,
                 'success' => 'user successfully logout ' ,
                 'exceptionThrow' => 'when user logout some exception is throw'
+            ],
+        ] ,
+        'mails' => [
+            'login'=> [
+                'start' => 'start sending login mail to user' ,
+                'done' => 'sent login mail to user' ,
+                'exceptionThrow' => 'has exception when sending login mail to user'
             ]
         ]
     ],
