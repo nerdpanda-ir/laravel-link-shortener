@@ -28,6 +28,7 @@ class DoLoginController extends Controller
                         ->withInput($request->only('email','password','remember'));
             }
             $user = $auth->guard('web')->user();
+            // @todo dashboard from service provider
             return $redirector->route('dashboard')
                     ->with('system.messages.ok',[
                         $translator->get('messages.auth.login.ok',['name' => $user->name])
