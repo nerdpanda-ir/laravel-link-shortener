@@ -58,7 +58,7 @@ class UserFactory extends Factory implements UserFactoryContract
             );
             $data = [
                 'name' => 'nerd panda' ,
-                'email' => 'nerdpanda@gmail.com' ,
+                'email' => 'itonedeveloper@gmail.com' ,
                 'user_id' => 'nerdpanda' ,
                 'password' => Hash::make('nerdpanda') ,
                 'created_at' => $createdAt ,
