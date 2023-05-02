@@ -10,7 +10,7 @@ class DoLoginRequestServiceProvider extends ServiceProvider implements Deferrabl
 {
     public function register(): void
     {
-        $this->app->bind(Contract::class,Request::class);
+        $this->app->singleton(Contract::class,Request::class);
     }
     public function provides():array
     {
