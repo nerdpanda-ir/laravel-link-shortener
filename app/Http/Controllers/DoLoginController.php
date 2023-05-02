@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Contracts\DoLoginRequestContract as RequestContract;
 use Illuminate\Contracts\Auth\Factory as Auth;
+use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Routing\Redirector;
 use  Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -10,28 +11,33 @@ use Symfony\Component\HttpFoundation\Response;
 class DoLoginController extends Controller
 {
     public function __invoke(
-        RequestContract $request , Auth $auth , LoggerInterface $logger , Redirector $redirector
+        RequestContract $request , Auth $auth , LoggerInterface $logger , Redirector $redirector , Translator $translator
     ):Response
     {
+        /*
+         * use login user event and send email to that !!
+         * */
         try {
-            $logger->info(trans('messages.log.auth.start'));
+            $logger->info($translator->get('messages.log.auth.login.start'));
             $credentials = $request->only(['email','password']);
             $isAuthenticated = $auth->guard('web')->attempt($credentials,$request->has('remember'));
             if (!$isAuthenticated) {
-                $logger->info(trans('messages.log.auth.fail'));
+                $logger->info($translator->get('messages.log.auth.login.fail'));
                 return $redirector->route('login')
-                        ->withErrors(trans('messages.auth.fail'))
+                        ->withErrors($translator->get('messages.auth.login.fail'))
                         ->withInput($request->only('email','password','remember'));
             }
-            $logger->info(trans('messages.log.auth.success'));
+            $logger->info($translator->get('messages.log.auth.login.ok'));
             $user = $auth->guard('web')->user();
             return $redirector->route('dashboard')
-                    ->with('system.messages.ok',[trans('messages.auth.success',['name' => $user->name])]);
+                    ->with('system.messages.ok',[
+                        $translator->get('messages.auth.login.ok',['name' => $user->name])
+                    ]);
         }catch (\Throwable $exception){
-            $logger->info(trans('messages.log.auth.exceptionHappen'));
+            $logger->info($translator->get('messages.log.auth.login.exceptionThrow'));
             report($exception);
             return $redirector->route('login')
-                    ->withErrors(trans('messages.auth.exceptionHappen'))
+                    ->withErrors($translator->get('messages.auth.login.exceptionThrow'))
                     ->withInput($request->only('email','password','remember'));
         }
     }
