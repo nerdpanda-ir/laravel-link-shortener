@@ -4,10 +4,12 @@ namespace App\Providers;
 
 use App\Listeners\LoginEvent\LoggerListener;
 use App\Listeners\LoginEvent\NotifyUserListener;
+use App\Listeners\Queue\LogProcessingListener;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
@@ -25,6 +27,9 @@ class EventServiceProvider extends ServiceProvider
             LoggerListener::class ,
             NotifyUserListener::class ,
         ],
+        JobProcessing::class => [
+            LogProcessingListener::class
+        ]
     ];
 
     /**
@@ -32,7 +37,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
     }
 
     /**
