@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Listeners\Queue;
+namespace App\Listeners\Job;
 
 use Illuminate\Queue\Events\JobProcessing;
 use Psr\Log\LoggerInterface as Logger;
