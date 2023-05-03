@@ -22,6 +22,9 @@ return [
                 'done' => 'sent login mail to user' ,
                 'exceptionThrow' => 'has exception when sending login mail to user'
             ]
+        ] ,
+        'jobs' => [
+            'processing' => 'start processing job :name '
         ]
     ],
     'auth'=> [
