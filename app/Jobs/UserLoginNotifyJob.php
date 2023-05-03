@@ -17,13 +17,15 @@ class UserLoginNotifyJob implements ShouldQueue
     public $deleteWhenMissingModels = true;
     protected User $user;
     protected string $ip;
+    protected string $dateTime;
     /**
      * Create a new job instance.
      */
-    public function __construct(User $user , string $ip)
+    public function __construct(User $user , string $ip ,string $dateTime)
     {
         $this->user = $user;
         $this->ip = $ip;
+        $this->dateTime = $dateTime;
     }
 
     /**
