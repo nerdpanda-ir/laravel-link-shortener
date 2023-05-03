@@ -182,6 +182,7 @@ return [
         \App\Providers\PermissionUserSeederServiceProvider::class ,
         \App\Providers\DoLoginRequestServiceProvider::class ,
         \App\Providers\LoginMailServiceProvider::class ,
+        \App\Providers\UserLoginNotificationServiceProvider::class ,
     ])->toArray(),
 
     /*
