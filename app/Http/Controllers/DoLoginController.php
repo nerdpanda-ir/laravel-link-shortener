@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Contracts\DoLoginRequestContract as RequestContract;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Contracts\Auth\Factory as Auth;
 use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Routing\Redirector;
@@ -25,8 +26,7 @@ class DoLoginController extends Controller
                         ->withInput($request->only('email','password','remember'));
             }
             $user = $auth->guard('web')->user();
-            // @todo dashboard from service provider
-            return $redirector->route('dashboard')
+            return $redirector->to(RouteServiceProvider::HOME)
                     ->with('system.messages.ok',[
                         $translator->get('messages.auth.login.ok',['name' => $user->name])
                     ]);
