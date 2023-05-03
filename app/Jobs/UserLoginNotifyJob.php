@@ -34,6 +34,7 @@ class UserLoginNotifyJob implements ShouldQueue
     public function handle(UserLoginNotification $notification): void
     {
         $notification->setIp($this->ip);
+        $notification->setDateTime($this->dateTime);
         $this->user->notify($notification);
     }
 
