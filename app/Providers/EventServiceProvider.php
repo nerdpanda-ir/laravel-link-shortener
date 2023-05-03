@@ -7,14 +7,19 @@ use App\Listeners\Job\LogProcessedListener;
 use App\Listeners\Job\LogProcessingListener;
 use App\Listeners\LoginEvent\LoggerListener;
 use App\Listeners\LoginEvent\NotifyUserListener;
+use App\Listeners\LogoutEvent\UserLogoutLoggerListener;
+use Illuminate\Auth\Events\Attempting;
 use Illuminate\Auth\Events\Failed;
 use Illuminate\Auth\Events\Login;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Queue\Events\JobFailed;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobProcessing;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Log;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -27,12 +32,15 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        Failed::class => [
+            \App\Listeners\LoginFailEvent\LoggerListener::class
+        ],
         Login::class => [
             LoggerListener::class ,
             NotifyUserListener::class ,
         ],
-        Failed::class => [
-            \App\Listeners\LoginFailEvent\LoggerListener::class
+        Logout::class=> [
+            UserLogoutLoggerListener::class
         ],
         JobProcessing::class => [
             LogProcessingListener::class
