@@ -12,10 +12,9 @@ class UserLoginNotification extends Notification implements Contract
 {
     protected Mailable $mail;
     protected string $ip;
-    public function __construct(LoginMailContract $mail , string $ip)
+    public function __construct(LoginMailContract $mail)
     {
         $this->mail = $mail;
-        $this->ip = $ip;
     }
 
     public function via($notifiable): array
@@ -36,5 +35,12 @@ class UserLoginNotification extends Notification implements Contract
     public function toArray($notifiable): array
     {
         return [];
+    }
+    /**
+     * @param string $ip
+     */
+    public function setIp(string $ip): void
+    {
+        $this->ip = $ip;
     }
 }
