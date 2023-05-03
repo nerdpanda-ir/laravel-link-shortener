@@ -25,7 +25,8 @@ return [
         ] ,
         'jobs' => [
             'processing' => 'start processing job :name ' ,
-            'processed' => 'done processing job :name'
+            'processed' => 'done processing job :name' ,
+            'failed' => 'failed processing job :name',
         ]
     ],
     'auth'=> [
