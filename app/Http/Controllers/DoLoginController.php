@@ -14,9 +14,6 @@ class DoLoginController extends Controller
         RequestContract $request , Auth $auth , LoggerInterface $logger , Redirector $redirector , Translator $translator
     ):Response
     {
-        /*
-         * use login user event and send email to that !!
-         * */
         try {
             $logger->info($translator->get('messages.log.auth.login.start'));
             $credentials = $request->only(['email','password']);
