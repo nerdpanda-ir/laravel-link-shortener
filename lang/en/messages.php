@@ -12,7 +12,7 @@ return [
             ],
             'logout'=> [
                 'start' => 'user start logout action' ,
-                'success' => 'user successfully logout ' ,
+                'success' => 'user :id successfully logout ' ,
                 'exceptionThrow' => 'when user logout some exception is throw'
             ],
         ] ,
