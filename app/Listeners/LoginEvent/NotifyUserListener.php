@@ -16,6 +16,6 @@ class NotifyUserListener
 
     public function handle(Login $event): void
     {
-        UserLoginNotifyJob::dispatch($event->user,$this->request->ip());
+        UserLoginNotifyJob::dispatch($event->user,$this->request->ip(),date("Y-m-d H:i:s"));
     }
 }
