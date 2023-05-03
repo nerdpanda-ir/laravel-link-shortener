@@ -19,7 +19,7 @@ class UserLogoutLoggerListener
     public function handle(Logout $event): void
     {
        $this->logger->info(
-           $this->translator->get('logout')
+           $this->translator->get('messages.log.auth.logout.success', ['id' => $event->user->id])
        );
     }
 }
