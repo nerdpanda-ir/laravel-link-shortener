@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Listeners;
+namespace App\Listeners\Job;
 
 use App\Services\JobLoggerListener;
 use Illuminate\Queue\Events\JobFailed;
