@@ -12,6 +12,7 @@ class UserLoginNotification extends Notification implements Contract
 {
     protected Mailable $mail;
     protected string $ip;
+    protected string $dateTime;
     public function __construct(LoginMailContract $mail)
     {
         $this->mail = $mail;
@@ -28,7 +29,8 @@ class UserLoginNotification extends Notification implements Contract
                     ->to($notifiable->email)
                     ->with([
                         'name'=> $notifiable->name,
-                        'ip' => $this->ip
+                        'ip' => $this->ip ,
+                        'dateTime' => $this->dateTime
                     ]);
     }
 
@@ -43,4 +45,13 @@ class UserLoginNotification extends Notification implements Contract
     {
         $this->ip = $ip;
     }
+
+    /**
+     * @param string $dateTime
+     */
+    public function setDateTime(string $dateTime): void
+    {
+        $this->dateTime = $dateTime;
+    }
+
 }
