@@ -19,12 +19,11 @@ class DoLoginController extends Controller
             $logger->info($translator->get('messages.log.auth.login.start'));
             $credentials = $request->only(['email','password']);
             $isAuthenticated = $auth->guard('web')->attempt($credentials,$request->has('remember'));
-            if (!$isAuthenticated) {
-                $logger->info($translator->get('messages.log.auth.login.fail'));
+            if (!$isAuthenticated)
                 return $redirector->route('login')
                         ->withErrors($translator->get('messages.auth.login.fail'))
                         ->withInput($request->only('email','password','remember'));
-            }
+
             $user = $auth->guard('web')->user();
             return $redirector->to(RouteServiceProvider::HOME)
                     ->with('system.messages.ok',[
