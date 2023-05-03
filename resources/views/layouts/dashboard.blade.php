@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('css/page/dashboard.css')}}">
 @endsection
 @section('content')
-
+    <x-partials.dashboard.header />
     <div class="container-fluid">
         <div class="row">
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
