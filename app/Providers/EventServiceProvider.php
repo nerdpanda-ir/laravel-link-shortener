@@ -2,11 +2,12 @@
 
 namespace App\Providers;
 
+use App\Listeners\Job\LogFailedListener;
 use App\Listeners\Job\LogProcessedListener;
-use App\Listeners\LogFailedListener;
+use App\Listeners\Job\LogProcessingListener;
 use App\Listeners\LoginEvent\LoggerListener;
 use App\Listeners\LoginEvent\NotifyUserListener;
-use App\Listeners\Job\LogProcessingListener;
+use Illuminate\Auth\Events\Failed;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -14,7 +15,6 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvi
 use Illuminate\Queue\Events\JobFailed;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobProcessing;
-use Illuminate\Support\Facades\Queue;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -30,6 +30,9 @@ class EventServiceProvider extends ServiceProvider
         Login::class => [
             LoggerListener::class ,
             NotifyUserListener::class ,
+        ],
+        Failed::class => [
+            \App\Listeners\LoginFailEvent\LoggerListener::class
         ],
         JobProcessing::class => [
             LogProcessingListener::class
