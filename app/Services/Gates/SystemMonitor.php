@@ -2,7 +2,14 @@
 
 namespace App\Services\Gates;
 
-class SystemMonitor
+use App\Contracts\SystemMonitorGateContract as Contract;
+use App\Contracts\UserableContract;
+
+class SystemMonitor implements  Contract
 {
+    public function ramUsage(UserableContract $user): bool
+    {
+        // TODO: Implement ramUsage() method.
+    }
 
 }
