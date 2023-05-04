@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-interface SystemMonitorGateContract
+interface SystemMonitorGateContract extends RamUsageableGateContract
 {
 
 }
