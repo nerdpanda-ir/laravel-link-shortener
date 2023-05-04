@@ -12,4 +12,9 @@ class SystemMonitor implements  Contract
         // TODO: Implement ramUsage() method.
     }
 
+    public function diskUsage(UserableContract $user): bool
+    {
+        // TODO: Implement diskUsage() method.
+    }
+
 }
