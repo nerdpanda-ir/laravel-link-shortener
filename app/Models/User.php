@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Contracts\UserableContract;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\Relation;
@@ -50,5 +51,24 @@ class User extends Authenticatable implements UserableContract
     }
     public function permissions():Relation {
         return $this->belongsToMany(Permission::class);
+    }
+    public function getPermissionsArrayAttribute($permissionsArray):array{
+        $isLoadedPermissions = $this->relationLoaded('permissions');
+        if (!$isLoadedPermissions) {
+            if (is_null($permissionsArray))
+                return $this->attributes['permissionsArray'] = [];
+            else return $this->attributes['permissionsArray'];
+        }
+        /** @var Collection $permissions*/
+        $permissions = $this->getRelation('permissions');
+        if ($permissions->isEmpty()){
+            if (is_null($permissionsArray))
+                return $this->attributes['permissionsArray'] = [];
+            else if (is_array($permissionsArray) and empty($permissionsArray))
+                return $this->attributes['permissionsArray'];
+        }
+        if (is_array($permissionsArray) and !empty($permissionsArray))
+            return $this->attributes['permissionsArray'];
+        return $this->attributes['permissionsArray'] = $permissions->map->name->toArray();
     }
 }
