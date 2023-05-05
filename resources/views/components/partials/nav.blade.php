@@ -17,6 +17,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('register')}}">register</a>
                     </li>
+                @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('dashboard')}}">Dashboard</a>
+                    </li>
                 @endguest
 
                 <li class="nav-item dropdown">
