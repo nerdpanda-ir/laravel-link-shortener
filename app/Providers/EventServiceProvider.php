@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Listeners\AuthenticatedEvent\LoadUserPermissionsListener;
 use App\Listeners\Job\LogFailedListener;
 use App\Listeners\Job\LogProcessedListener;
 use App\Listeners\Job\LogProcessingListener;
@@ -9,6 +10,7 @@ use App\Listeners\LoginEvent\LoggerListener;
 use App\Listeners\LoginEvent\NotifyUserListener;
 use App\Listeners\LogoutEvent\UserLogoutLoggerListener;
 use Illuminate\Auth\Events\Attempting;
+use Illuminate\Auth\Events\Authenticated;
 use Illuminate\Auth\Events\Failed;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Logout;
@@ -50,6 +52,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         JobFailed::class => [
             LogFailedListener::class
+        ],
+        Authenticated::class => [
+            LoadUserPermissionsListener::class
         ]
     ];
 
