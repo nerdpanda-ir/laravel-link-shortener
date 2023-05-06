@@ -32,7 +32,9 @@ class PermissionsFlyWeightService implements Contract
         }
         if (isset($this->permissions) and !empty($this->permissions))
             return $this->permissions;
-        return $this->permissions = $permissions->map->name->toArray();
+        /** @var CollectionToArrayService $toArrayStrategy */
+        $toArrayStrategy = app('permissionsToArray');
+        return $this->permissions = $toArrayStrategy->toArray($permissions);
     }
 
     /**
