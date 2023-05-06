@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-interface GateViewAllable
+interface GateViewAllableContract
 {
     public function viewAll():bool;
 }
