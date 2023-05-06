@@ -2,8 +2,8 @@
 
 Route::get('/','HomeController')->name('home');
 
-Route::name('permission.')->prefix('permission')
+Route::name('permission.')->prefix('permission')->namespace('Permission')
         ->group(function (){
-            Route::get('create','Permission\CreateController')
+            Route::get('create','CreateController')
                     ->name('create')->middleware('can:create-permission');
         });
