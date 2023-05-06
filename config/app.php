@@ -187,6 +187,7 @@ return [
         \App\Providers\PermissionsFlyWeightServiceProvider::class,
         \App\Providers\PermissionManagerServiceProvider::class ,
         \App\Providers\SystemMonitorGateServiceProvider::class ,
+        \App\Providers\PermissionsGateServiceProvider::class ,
     ])->toArray(),
 
     /*
