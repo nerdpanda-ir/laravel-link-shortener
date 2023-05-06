@@ -11,9 +11,10 @@ class PermissionsToArrayServiceProvider extends ServiceProvider implements Defer
     public function register(): void
     {
         $this->app->singleton(Contract::class , Service::class);
+        $this->app->alias(Contract::class,'permissionsToArray');
     }
     public function provides():array
     {
-        return [Contract::class];
+        return [Contract::class , 'permissionsToArray'];
     }
 }
