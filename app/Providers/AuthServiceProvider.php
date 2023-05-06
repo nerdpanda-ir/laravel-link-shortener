@@ -21,7 +21,8 @@ class AuthServiceProvider extends ServiceProvider
     protected $gates = [
         'see-ram-usage' => [SystemMonitor::class,'ramUsage'] ,
         'see-disk-usage' => [SystemMonitor::class,'diskUsage'] ,
-        'view-all-permissions' => [Permission::class,'viewAll']
+        'view-all-permissions' => [Permission::class,'viewAll'] ,
+        'create-permission' => [Permission::class , 'create'] ,
     ];
 
     /**
