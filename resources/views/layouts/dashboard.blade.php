@@ -4,7 +4,7 @@
 @endsection
 @section('css')
     @parent
-    <link rel="stylesheet" href="{{asset('css/page/dashboard.css')}}">
+    <link rel="stylesheet" href="{{asset('css/layouts/dashboard.css')}}">
 @endsection
 @section('content')
     <x-partials.dashboard.header />
