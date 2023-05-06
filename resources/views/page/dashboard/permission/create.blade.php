@@ -9,7 +9,8 @@
         </x-slot:message>
     </x-alert>
     <hr class="my-4">
-    <form class="needs-validation" novalidate="">
+    <form class="needs-validation" novalidate="" action="{{route('dashboard.permission.store')}}" method="post">
+        @csrf
         <div class="row g-3">
             <div class="col-12">
                 <label for="name" class="form-label">Name</label>
