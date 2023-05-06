@@ -188,6 +188,7 @@ return [
         \App\Providers\PermissionManagerServiceProvider::class ,
         \App\Providers\SystemMonitorGateServiceProvider::class ,
         \App\Providers\PermissionsGateServiceProvider::class ,
+        \App\Providers\Request\Dashboard\Permission\StoreRequestServiceProvider::class ,
     ])->toArray(),
 
     /*
