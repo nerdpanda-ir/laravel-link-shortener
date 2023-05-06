@@ -16,7 +16,7 @@
                 <label for="name" class="form-label">Name</label>
                 <div class="input-group has-validation">
                     <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" id="name" placeholder="modify-something" name="name">
+                    <input value="{{old('name')}}" type="text" class="form-control" id="name" placeholder="modify-something" name="name">
                     @error('name')
                     <div class="invalid-feedback d-block">
                         {{$message}}
