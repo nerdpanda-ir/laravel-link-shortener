@@ -9,6 +9,7 @@
         </x-slot:message>
     </x-alert>
     <hr class="my-4">
+    <x-partials.form-error-printer />
     <form class="needs-validation" novalidate="" action="{{route('dashboard.permission.store')}}" method="post">
         @csrf
         <div class="row g-3">
@@ -28,5 +29,4 @@
         <hr class="my-4">
         <button class="w-100 btn btn-primary btn-lg" type="submit">Save</button>
     </form>
-
 @endsection
