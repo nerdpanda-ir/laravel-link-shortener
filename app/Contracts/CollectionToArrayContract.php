@@ -6,5 +6,5 @@ use Illuminate\Support\Collection;
 
 interface CollectionToArrayContract
 {
-    public function toArray(Collection $collection);
+    public function toArray(Collection $collection):array;
 }
