@@ -6,5 +6,10 @@ use App\Contracts\PermissionGateContract as Contract;
 
 class Permission extends GateBase implements Contract
 {
+    public function viewAll(): bool
+    {
+        return $this->getPermissionManager()
+                    ->has('permission-view-all');
+    }
 
 }
