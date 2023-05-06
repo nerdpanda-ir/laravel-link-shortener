@@ -6,7 +6,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DoLoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,4 +22,3 @@ Route::get('login',LoginController::class)->name('login')->middleware('guest');
 Route::post('login',DoLoginController::class)->name('do-login')->middleware('guest');
 Route::get('logout',LogoutController::class)->name('logout')->middleware('auth');
 Route::get('register',RegisterController::class)->name('register');
-Route::get('dashboard',DashboardController::class)->name('dashboard');
