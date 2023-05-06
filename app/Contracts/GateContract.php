@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-interface GateContract
+interface GateContract extends PermissionManagerGetterableContract
 {
 
 }
