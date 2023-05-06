@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+use App\Services\Gates\Permission;
 use App\Services\Gates\SystemMonitor;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -20,6 +21,7 @@ class AuthServiceProvider extends ServiceProvider
     protected $gates = [
         'see-ram-usage' => [SystemMonitor::class,'ramUsage'] ,
         'see-disk-usage' => [SystemMonitor::class,'diskUsage'] ,
+        'view-all-permissions' => [Permission::class,'viewAll']
     ];
 
     /**
