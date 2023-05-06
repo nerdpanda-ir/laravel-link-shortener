@@ -12,4 +12,9 @@ class Permission extends GateBase implements Contract
                     ->has('permission-view-all');
     }
 
+    public function create(): bool
+    {
+        return $this->getPermissionManager()
+                        ->has('permission-create');
+    }
 }
