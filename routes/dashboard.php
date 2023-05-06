@@ -7,5 +7,5 @@ Route::name('permission.')->prefix('permission')->namespace('Permission')
             Route::get('create','CreateController')
                     ->name('create')->middleware('can:create-permission');
             Route::post('store','StoreController')
-                    ->name('store');
+                    ->name('store')->middleware('can:create-permission');
         });
