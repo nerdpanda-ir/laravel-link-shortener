@@ -17,7 +17,8 @@ class PermissionsFlyWeightServiceProvider extends ServiceProvider implements Def
             /** @var Factory $auth*/
             $auth = $container->get('auth');
             $user = $auth->guard('web')->user();
-            $service->setUser($user);
+            if (!is_null($user))
+                $service->setUser($user);
         });
     }
 
