@@ -1,14 +1,10 @@
 <?php
 
 namespace App\Services\Gates;
+use App\Services\GateBase;
 use App\Contracts\PermissionGateContract as Contract;
-use App\Contracts\PermissionManagerContract;
 
-class Permission implements Contract
+class Permission extends GateBase implements Contract
 {
-    protected PermissionManagerContract $permissionManager;
-    public function __construct(PermissionManagerContract $permissionManager)
-    {
-        $this->permissionManager = $permissionManager ;
-    }
+
 }
