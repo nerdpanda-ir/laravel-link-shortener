@@ -37,6 +37,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
 
             Route::middleware(['web','auth'])
+                ->prefix('dashboard')
+                ->name('dashboard.')
                 ->group(base_path('routes/dashboard.php'));
         });
     }
