@@ -12,6 +12,6 @@ class LoadUserPermissionsListener
 
     public function handle(Authenticated $event): void
     {
-        $event->user->load('permissions');
+        $event->user->load('permissions:permissions.name');
     }
 }
