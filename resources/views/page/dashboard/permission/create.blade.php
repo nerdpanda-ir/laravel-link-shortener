@@ -17,9 +17,11 @@
                 <div class="input-group has-validation">
                     <span class="input-group-text">@</span>
                     <input type="text" class="form-control" id="name" placeholder="modify-something" name="name">
-                    <div class="invalid-feedback">
-                        Your username is required.
+                    @error('name')
+                    <div class="invalid-feedback d-block">
+                        {{$message}}
                     </div>
+                    @enderror
                 </div>
             </div>
         </div>
