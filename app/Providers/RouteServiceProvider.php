@@ -7,7 +7,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Dashboard;
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -39,6 +39,7 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware(['web','auth'])
                 ->prefix('dashboard')
                 ->name('dashboard.')
+                ->namespace(Dashboard::class)
                 ->group(base_path('routes/dashboard.php'));
         });
     }
