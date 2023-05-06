@@ -184,6 +184,7 @@ return [
         \App\Providers\LoginMailServiceProvider::class ,
         \App\Providers\UserLoginNotificationServiceProvider::class ,
         \App\Providers\PermissionsToArrayServiceProvider::class ,
+        \App\Providers\PermissionsFlyWeightServiceProvider::class,
         \App\Providers\SystemMonitorGateServiceProvider::class ,
     ])->toArray(),
 
