@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-interface PermissionGateContract
+interface PermissionGateContract extends GateViewAllable
 {
 
 }
