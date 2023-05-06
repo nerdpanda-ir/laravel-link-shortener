@@ -183,6 +183,7 @@ return [
         \App\Providers\DoLoginRequestServiceProvider::class ,
         \App\Providers\LoginMailServiceProvider::class ,
         \App\Providers\UserLoginNotificationServiceProvider::class ,
+        \App\Providers\PermissionsToArrayServiceProvider::class ,
         \App\Providers\SystemMonitorGateServiceProvider::class ,
     ])->toArray(),
 
