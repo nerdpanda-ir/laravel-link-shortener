@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-interface PermissionsFlyWeightContract
+interface PermissionsFlyWeightContract extends UserSetterableContract , PermissionsGetterableContract
 {
 
 }
