@@ -19,7 +19,7 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('dashboard')}}">Dashboard</a>
+                        <a class="nav-link" href="{{route('dashboard.home')}}">Dashboard</a>
                     </li>
                 @endguest
 
