@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Requests\Dashboard\Permission;
 
-interface StoreRequestContract
+interface StoreRequest
 {
 
 }
