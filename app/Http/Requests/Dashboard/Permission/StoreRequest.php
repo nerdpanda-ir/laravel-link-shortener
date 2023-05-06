@@ -4,14 +4,18 @@ namespace App\Http\Requests\Dashboard\Permission;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Contracts\Requests\Dashboard\Permission\StoreRequest as Contract;
+use Illuminate\Contracts\Auth\Factory as Auth;
+
 class StoreRequest extends FormRequest implements Contract
 {
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
+    public function authorize(Auth $auth): bool
     {
-        return false;
+        return $auth->guard('web')
+                ->user()
+                ->can('create-permission');
     }
 
     /**
@@ -22,7 +26,7 @@ class StoreRequest extends FormRequest implements Contract
     public function rules(): array
     {
         return [
-            //
+            'name'=>['required','max:64',"unique:permissions" ],
         ];
     }
 }
