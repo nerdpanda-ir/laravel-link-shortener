@@ -7,5 +7,5 @@ use Illuminate\Support\Collection;
 
 interface Buildable
 {
-    public function build(Collection $collection):Response;
+    public function build(Collection $arguments):Response;
 }
