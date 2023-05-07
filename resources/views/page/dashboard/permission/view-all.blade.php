@@ -16,7 +16,7 @@
                         <th scope="col">creator</th>
                         <th scope="col">created</th>
                         <th scope="col">updated</th>
-                        @canany('edit-permission','delete-permission')
+                        @canany(['edit-permission','delete-permission'])
                             <th scope="col">Actions</th>
                         @endcanany
                     </tr>
@@ -41,7 +41,7 @@
                                 {{\DateServiceFacade::dateStrToCarbon($permission->created_at)?->ago()}}
                             @endif
                         </td>
-                        @canany('edit-permission','delete-permission')
+                        @canany(['edit-permission','delete-permission'])
                             <td class="d-flex justify-content-evenly">
                                 @can('edit-permission')
                                     <a href="" class="btn btn-warning text-dark">Edit</a>
