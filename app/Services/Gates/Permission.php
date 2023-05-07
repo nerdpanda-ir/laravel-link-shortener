@@ -11,9 +11,5 @@ class Permission extends GateBase implements Contract
     use Deleteable , Editable ;
 
 
-    public function create(): bool
-    {
-        return $this->getPermissionManager()
-                        ->has('permission-create');
-    }
+
 }
