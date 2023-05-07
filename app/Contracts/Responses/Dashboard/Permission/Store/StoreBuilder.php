@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts\Responses\Permission\Store;
+namespace App\Contracts\Responses\Dashboard\Permission\Store;
 interface StoreBuilder
 {
 
