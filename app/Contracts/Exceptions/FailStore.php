@@ -2,7 +2,9 @@
 
 namespace App\Contracts\Exceptions;
 
-interface FailStore
+use App\Contracts\SetMessageable;
+
+interface FailStore extends SetMessageable
 {
 
 }
