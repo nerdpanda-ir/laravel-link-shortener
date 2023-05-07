@@ -27,6 +27,11 @@ return [
             'processing' => 'start processing job :name ' ,
             'processed' => 'done processing job :name' ,
             'failed' => 'failed processing job :name',
+        ] ,
+        'store' => [
+            'permission'=> [
+                'exceptionThrow' => 'we have error when store the permission !!! '
+            ]
         ]
     ],
     'auth'=> [
@@ -38,6 +43,13 @@ return [
         'logout'=> [
             'ok'=> 'dear :name your successfully logout !!!' ,
             'exceptionThrow' => 'your logout process is fail please try after or contact to help and support !!!'
+        ]
+    ] ,
+    'store'=> [
+        'permission' => [
+            'exceptionThrow'=> 'when create permission something happen please try after !!! ' ,
+            'success' => 'successfully created :permission permission in system !!! ' ,
+            'fail' => 'create :permission permission is fail please try after !!!'
         ]
     ]
 ];
