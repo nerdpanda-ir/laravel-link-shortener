@@ -17,7 +17,11 @@ class ViewAllController extends Controller
      */
     public function __invoke(Permission $permission , ViewFactory $viewMaker):View
     {
-        $permissions = $permission->latest()->toSql();
-        dd($permissions);
+        $permissions = $permission
+                        ->with('creator:id,name')
+                        ->latest()->latest('updated_at')
+                        ->oldest('name')
+                        ->paginate(1,['created_by','name','created_at','updated_at']);
+        return $viewMaker->make('page.dashboard.permission.view-all',compact('permissions'));
     }
 }
