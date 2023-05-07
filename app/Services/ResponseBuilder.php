@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Contracts\Services\ResponseBuilder\Contract;
+use App\Contracts\Services\ResponseBuilder as Contract;
 use Illuminate\Contracts\Routing\ResponseFactory as Response;
 
 abstract class ResponseBuilder implements Contract
