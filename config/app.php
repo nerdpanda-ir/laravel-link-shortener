@@ -192,6 +192,8 @@ return [
         \App\Providers\Exceptions\FailStoreServiceProvider::class,
         \App\Providers\Responses\Dashboard\Permission\Store\StoreBuilderServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\Store\FailStoreBuilderServiceProvider::class ,
+        \App\Providers\Responses\Dashboard\Permission\Store\ExceptionHappenBuilderServiceProvider::class ,
+
     ])->toArray(),
 
     /*
