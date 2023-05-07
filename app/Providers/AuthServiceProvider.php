@@ -23,6 +23,8 @@ class AuthServiceProvider extends ServiceProvider
         'see-disk-usage' => [SystemMonitor::class,'diskUsage'] ,
         'view-all-permissions' => [Permission::class,'viewAll'] ,
         'create-permission' => [Permission::class , 'create'] ,
+        'delete-permission' => [Permission::class , 'delete'] ,
+        'edit-permission' => [Permission::class , 'edit'] ,
     ];
 
     /**
