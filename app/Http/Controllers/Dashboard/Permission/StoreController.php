@@ -7,6 +7,7 @@ use App\Contracts\PermissionModelContract as Permission;
 use App\Contracts\Requests\Dashboard\Permission\StoreRequest as Request;
 use App\Contracts\Responses\Dashboard\Permission\Store\StoreBuilder;
 use App\Http\Controllers\Controller;
+use App\Http\Responses\Dashboard\Permission\Store\FailStoreBuilder;
 use Illuminate\Contracts\Auth\Factory as Auth;
 use Illuminate\Contracts\Routing\ResponseFactory as Response;
 use Illuminate\Contracts\Translation\Translator;
@@ -23,7 +24,7 @@ class StoreController extends Controller
     public function __invoke(
         Request $request , Permission $permission  , Response $response ,
         Logger $logger , Translator $translator , Auth $auth , FailStore $failStore ,
-        StoreBuilder $storeResponseBuilder ,
+        StoreBuilder $storeResponseBuilder , FailStoreBuilder $failStoreResponseBuilder
     ):BaseResponse
     {
         try {
@@ -39,12 +40,15 @@ class StoreController extends Controller
             return $storeResponseBuilder->build($request->name);
         } catch (FailStore $exception){
             $exception->setMessage(
-                $translator->get('messages.store.permission.fail', ['permission' => $request->name])
+                $translator->get(
+                    'messages.store.permission.fail',
+                    ['permission' => $request->name]
+                )
             );
             report($exception);
-            return $response->redirectToRoute('dashboard.permission.create')
-                        ->withInput($request->only('name'))
-                        ->with('system.messages.error',[$exception->getMessage()]);
+            return $failStoreResponseBuilder->build(
+                $request->only('name'),$exception->getMessage()
+            );
         } catch (\Throwable $throwable){
             $logger->emergency(
                 $translator->get('messages.log.store.permission.exceptionThrow')
