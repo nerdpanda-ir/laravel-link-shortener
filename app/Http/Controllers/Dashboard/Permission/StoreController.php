@@ -3,16 +3,15 @@
 namespace App\Http\Controllers\Dashboard\Permission;
 
 use App\Contracts\Exceptions\FailStore;
-use App\Exceptions\FailStoreException;
-use App\Http\Controllers\Controller;
-use App\Contracts\Requests\Dashboard\Permission\StoreRequest as Request;
 use App\Contracts\PermissionModelContract as Permission;
-use Illuminate\Contracts\Translation\Translator;
-use mysql_xdevapi\Exception;
-use Psr\Log\LoggerInterface as Logger;
-use Illuminate\Contracts\Routing\ResponseFactory as Response;
-use Symfony\Component\HttpFoundation\RedirectResponse as BaseResponse;
+use App\Contracts\Requests\Dashboard\Permission\StoreRequest as Request;
+use App\Contracts\Responses\Dashboard\Permission\Store\StoreBuilder;
+use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Factory as Auth;
+use Illuminate\Contracts\Routing\ResponseFactory as Response;
+use Illuminate\Contracts\Translation\Translator;
+use Psr\Log\LoggerInterface as Logger;
+use Symfony\Component\HttpFoundation\RedirectResponse as BaseResponse;
 
 class StoreController extends Controller
 {
@@ -23,7 +22,8 @@ class StoreController extends Controller
      */
     public function __invoke(
         Request $request , Permission $permission  , Response $response ,
-        Logger $logger , Translator $translator , Auth $auth , FailStore $failStore
+        Logger $logger , Translator $translator , Auth $auth , FailStore $failStore ,
+        StoreBuilder $storeResponseBuilder ,
     ):BaseResponse
     {
         try {
@@ -36,12 +36,7 @@ class StoreController extends Controller
             $created = $permission->save();
             if (!$created)
                 throw $failStore;
-            return $response->redirectToRoute('dashboard.home')
-                    ->with(
-                        'system.messages.ok',
-                        [$translator->get('messages.store.permission.success', ['permission' => $request->name])]
-                    );
-
+            return $storeResponseBuilder->build($request->name);
         } catch (FailStore $exception){
             $exception->setMessage(
                 $translator->get('messages.store.permission.fail', ['permission' => $request->name])
