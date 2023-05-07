@@ -189,6 +189,7 @@ return [
         \App\Providers\SystemMonitorGateServiceProvider::class ,
         \App\Providers\PermissionsGateServiceProvider::class ,
         \App\Providers\Request\Dashboard\Permission\StoreRequestServiceProvider::class ,
+        \App\Providers\Exceptions\FailStoreServiceProvider::class,
     ])->toArray(),
 
     /*
