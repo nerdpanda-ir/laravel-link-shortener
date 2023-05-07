@@ -22,7 +22,7 @@
                 </a>
             </li>
         </ul>
-        @canany('create-permission','view-all-permissions')
+        @canany(['create-permission','view-all-permissions'])
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-body-secondary text-uppercase">
                 <span>Permissions</span>
                 <a class="link-secondary" href="#" aria-label="Add a new report">
