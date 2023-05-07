@@ -21,6 +21,10 @@ class StoreBuilder extends ResponseBuilder implements Contract
     public function build(string $permission): RedirectResponse
     {
         return $this->response->redirectToRoute('dashboard.home')
-                    ->with('system.messages.ok', [$okMessage]);
+                    ->with('system.messages.ok', [
+                        $this->getTranslator()->get(
+                            'messages.store.permission.success', ['permission' => $permission]
+                        )
+                    ]);
     }
 }
