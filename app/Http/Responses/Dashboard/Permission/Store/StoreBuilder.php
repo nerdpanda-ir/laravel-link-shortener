@@ -12,7 +12,11 @@ class StoreBuilder extends ResponseBuilder implements Contract
 {
     use TranslatorGetterable;
     protected Translator $translator;
-
+    public function __construct(Response $response,Translator $translator)
+    {
+        parent::__construct($response);
+        $this->translator = $translator;
+    }
 
     public function build(string $permission): RedirectResponse
     {
