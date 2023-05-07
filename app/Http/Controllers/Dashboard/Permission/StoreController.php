@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard\Permission;
 use App\Contracts\Exceptions\FailStore;
 use App\Contracts\PermissionModelContract as Permission;
 use App\Contracts\Requests\Dashboard\Permission\StoreRequest as Request;
+use App\Contracts\Responses\Dashboard\Permission\Store\ExceptionHappenBuilder;
 use App\Contracts\Responses\Dashboard\Permission\Store\StoreBuilder;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\Dashboard\Permission\Store\FailStoreBuilder;
@@ -24,7 +25,8 @@ class StoreController extends Controller
     public function __invoke(
         Request $request , Permission $permission  , Response $response ,
         Logger $logger , Translator $translator , Auth $auth , FailStore $failStore ,
-        StoreBuilder $storeResponseBuilder , FailStoreBuilder $failStoreResponseBuilder
+        StoreBuilder $storeResponseBuilder , FailStoreBuilder $failStoreResponseBuilder ,
+        ExceptionHappenBuilder $exceptionHappenResponseBuilder
     ):BaseResponse
     {
         try {
@@ -54,11 +56,7 @@ class StoreController extends Controller
                 $translator->get('messages.log.store.permission.exceptionThrow')
             );
             report($throwable);
-            return $response->redirectToRoute('dashboard.permission.create')
-                                ->withInput($request->only('name'))
-                                ->with('system.messages.error',[
-                                    $translator->get('messages.store.permission.exceptionThrow')
-                                ]);
+            return $exceptionHappenResponseBuilder->build($request->only('name'));
         }
     }
 }
