@@ -1,5 +1,6 @@
 @extends('layouts.dashboard')
 @php
+    // @todo
     $total = $permissions->total();
 @endphp
 @section('dashboard-title')
