@@ -197,6 +197,7 @@ return [
         \App\Providers\Responses\Dashboard\Permission\NotFoundBuilderServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\Edit\ExceptionThrowServiceProvider::class ,
         \App\Providers\Rule\UniqueExceptServiceProvider::class ,
+        \App\Providers\Request\Dashboard\Permission\UpdateServiceProvider::class ,
     ])->toArray(),
 
     /*
