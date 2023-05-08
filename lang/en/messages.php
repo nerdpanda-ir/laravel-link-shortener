@@ -37,6 +37,13 @@ return [
             'permission' => [
                 'exceptionThrow'=> 'have exception when edit :permission permission !!!'
             ]
+        ] ,
+        'update' => [
+            'permission' => [
+                'exceptionThrow' => 'exception throw when update :permission permission !!!' ,
+                'fail' => 'update :permission Permission Is Fail !!! ' ,
+                'ok' => 'successfully :Permission Permission updated !!! '
+            ]
         ]
     ],
     'auth'=> [
@@ -62,6 +69,13 @@ return [
             'exceptionThrow'=> 'when edit :permission permission something happened please try after or contact to developer or help and support !!!'
         ]
     ],
+    'update'=>[
+        'permission' => [
+            'exceptionThrow' => 'something happened when updating :permission Permission !!!' ,
+            'success' => 'successfully updated :permission Permission !!!' ,
+            'fail' => 'fail to update :permission Permission !!! '
+        ]
+    ] ,
     'not-found'=> [
         'permission' => 'not found :permission permission in system !!!'
     ],
