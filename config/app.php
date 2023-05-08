@@ -199,6 +199,7 @@ return [
         \App\Providers\Rule\UniqueExceptServiceProvider::class ,
         \App\Providers\Request\Dashboard\Permission\UpdateServiceProvider::class ,
         \App\Providers\Exceptions\FailUpdateServiceProvider::class ,
+        \App\Providers\Responses\Dashboard\Permission\Update\ExceptionThrowServiceProvider::class ,
     ])->toArray(),
 
     /*
