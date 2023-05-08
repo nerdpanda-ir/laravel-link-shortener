@@ -3,5 +3,24 @@
     <h1> Edit Permission `` {{$name}} ``</h1>
 @endsection
 @section('dashboard-content')
-    <h6> here we should display edit form </h6>
+    <x-partials.form-error-printer />
+    <form class="needs-validation" novalidate="">
+        <div class="row g-3">
+            <div class="col-12">
+                <label for="name" class="form-label">Name</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text">@</span>
+                    <input value="" type="text" class="form-control" id="name"
+                           placeholder="modify-something" name="name">
+                    @error('name')
+                        <div class="invalid-feedback d-block">
+                            {{$message}}
+                        </div>
+                    @enderror
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <button class="w-100 btn btn-dark btn-lg" type="submit">Update</button>
+    </form>
 @endsection
