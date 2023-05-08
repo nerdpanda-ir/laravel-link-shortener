@@ -32,6 +32,11 @@ return [
             'permission'=> [
                 'exceptionThrow' => 'we have error when store the permission !!! '
             ]
+        ] ,
+        'edit'=> [
+            'permission' => [
+                'exceptionThrow'=> 'have exception when edit :permission permission !!!'
+            ]
         ]
     ],
     'auth'=> [
@@ -52,6 +57,11 @@ return [
             'fail' => 'create :permission permission is fail please try after !!!'
         ]
     ] ,
+    'edit'=> [
+        'permission'=> [
+            'exceptionThrow'=> 'when edit :permission permission something happened please try after or contact to developer or help and support !!!'
+        ]
+    ],
     'not-found'=> [
         'permission' => 'not found :permission permission in system !!!'
     ],
