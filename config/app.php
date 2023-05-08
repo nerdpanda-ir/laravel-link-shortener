@@ -194,7 +194,8 @@ return [
         \App\Providers\Responses\Dashboard\Permission\Store\FailStoreBuilderServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\Store\ExceptionHappenBuilderServiceProvider::class ,
         \App\Providers\Services\DateServiceProvider::class ,
-        \App\Providers\Responses\Dashboard\Permission\NotFoundBuilderServiceProvider::class
+        \App\Providers\Responses\Dashboard\Permission\NotFoundBuilderServiceProvider::class ,
+        \App\Providers\Responses\Dashboard\Permission\Edit\ExceptionThrowServiceProvider::class ,
     ])->toArray(),
 
     /*
