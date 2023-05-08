@@ -23,7 +23,7 @@ class ExceptionThrow extends ResponseBuilder implements Contract
     public function build(string $permission , array $inputs): RedirectResponse
     {
         return $this->getResponse()
-                ->redirectToRoute('dashboard.permission.edit')
+                ->redirectToRoute('dashboard.permission.edit',$permission)
                 ->withInput($inputs)
                 ->with('system.messages.error',[
                     $this->translator->get(
