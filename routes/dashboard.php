@@ -15,4 +15,7 @@ Route::name('permission.')->prefix('permission')->namespace('Permission')
 
             Route::get('edit/{name}','EditController')
                 ->name('edit')->middleware('can:edit-permission');
+
+            Route::put('update/{name}','UpdateController')
+                ->name('update')->middleware('can:edit-permission');
         });
