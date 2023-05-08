@@ -21,7 +21,7 @@ class ViewAllController extends Controller
                         ->with('creator:id,name')
                         ->latest()->latest('updated_at')
                         ->oldest('name')
-                        ->paginate(25,['created_by','name','created_at','updated_at']);
+                        ->paginate(25);
         return $viewMaker->make('page.dashboard.permission.view-all',compact('permissions'));
     }
 }
