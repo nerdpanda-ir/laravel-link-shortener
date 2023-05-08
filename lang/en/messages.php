@@ -51,5 +51,8 @@ return [
             'success' => 'successfully created :permission permission in system !!! ' ,
             'fail' => 'create :permission permission is fail please try after !!!'
         ]
-    ]
+    ] ,
+    'not-found'=> [
+        'permission' => 'not found :permission permission in system !!!'
+    ],
 ];
