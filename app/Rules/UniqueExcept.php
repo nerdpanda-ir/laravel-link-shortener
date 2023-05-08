@@ -3,14 +3,16 @@
 namespace App\Rules;
 
 use App\Traits\DatabaseManagerGetterable;
+use App\Traits\TranslatorGetterable;
 use Closure;
+use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Contracts\Validation\ValidationRule;
 use App\Contracts\Rule\UniqueExcept as Contract;
 use Illuminate\Database\ConnectionResolverInterface;
 use Illuminate\Database\ConnectionResolverInterface as DatabaseManager;
 class UniqueExcept implements ValidationRule , Contract
 {
-    use DatabaseManagerGetterable;
+    use DatabaseManagerGetterable , TranslatorGetterable;
     protected array $excepts = [];
     protected string $columnName;
     protected string $tableName;
@@ -18,25 +20,31 @@ class UniqueExcept implements ValidationRule , Contract
      * @var \Illuminate\Database\DatabaseManager $databaseManager
      */
     protected DatabaseManager $databaseManager;
-    public function __construct(DatabaseManager $databaseManager)
+    protected Translator $translator;
+    public function __construct(DatabaseManager $databaseManager , Translator $translator)
     {
         $this->databaseManager = $databaseManager;
+        $this->translator = $translator ;
     }
 
     /**
      * Run the validation rule.
      *
-     * @param  \Closure(string): \Illuminate\Translation\PotentiallyTranslatedString  $fail
+     * @param \Closure(string): \Illuminate\Translation\PotentiallyTranslatedString $fail
+     * @throws \Exception
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         $column = $this->getColumnName()??$attribute;
         $isExists  = $this->databaseManager
                             ->table($this->getTableName())
-                            ->whereNotIn($column,$value)
+                            ->whereNotIn($column,$this->getExcepts())
                             ->where($column,'=',$value)
                             ->exists();
-        dd($isExists);
+        if ($isExists)
+            $fail(
+                $this->getTranslator()->get('validation.unique', ['attribute' => $attribute])
+            );
     }
 
     public function getExcepts(): array
