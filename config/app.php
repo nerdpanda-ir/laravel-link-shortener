@@ -196,6 +196,7 @@ return [
         \App\Providers\Services\DateServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\NotFoundBuilderServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\Edit\ExceptionThrowServiceProvider::class ,
+        \App\Providers\Rule\UniqueExceptServiceProvider::class ,
     ])->toArray(),
 
     /*
