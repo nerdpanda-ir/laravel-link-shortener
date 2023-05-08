@@ -36,10 +36,10 @@
                             @endif
                         </td>
                         <td>
-                            @if(!is_null($permission->updated_At))
+                            @if(!is_null($permission->updated_at))
                                 {{$permission->updated_at}}
                                 -:-
-                                {{\DateServiceFacade::dateStrToCarbon($permission->created_at)?->ago()}}
+                                {{\DateServiceFacade::dateStrToCarbon($permission->updated_at)?->ago()}}
                             @endif
                         </td>
                         @canany(['edit-permission','delete-permission'])
