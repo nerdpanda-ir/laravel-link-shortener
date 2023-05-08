@@ -1,14 +1,14 @@
 <?php
 
 namespace App\Http\Responses\Dashboard\Permission;
-use App\Contracts\Responses\Dashboard\Permission\NotFoundPermission as Contract;
 use App\Services\ResponseBuilder;
 use App\Traits\TranslatorGetterable;
 use Illuminate\Contracts\Routing\ResponseFactory as Response;
 use Illuminate\Contracts\Translation\Translator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use App\Contracts\Responses\Dashboard\Permission\NotFound as Contract;
 
-class NotFoundPermission extends ResponseBuilder implements Contract
+class NotFound extends ResponseBuilder implements Contract
 {
     use TranslatorGetterable;
     protected Translator $translator;
