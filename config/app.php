@@ -201,6 +201,7 @@ return [
         \App\Providers\Exceptions\FailUpdateServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\Update\ExceptionThrowServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\Update\FailServiceProvider::class ,
+        \App\Providers\Responses\Dashboard\Permission\Update\OkServiceProvider::class ,
     ])->toArray(),
 
     /*
