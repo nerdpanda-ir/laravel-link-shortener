@@ -23,10 +23,10 @@ class ExceptionThrow extends ResponseBuilder implements Contract
         return $this->getResponse()
                     ->redirectToRoute('dashboard.permission.view-all')
                     ->with(
-                        'system.messages.error',
-                        $this->getTranslator()->get(
-                            'messages.edit.permission.exceptionThrow', ['permission' => $permission]
-                        )
-                    );
+                        'system.messages.error',[
+                            $this->getTranslator()->get(
+                                'messages.edit.permission.exceptionThrow', ['permission' => $permission]
+                            )
+                        ]);
     }
 }
