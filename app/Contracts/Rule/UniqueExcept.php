@@ -3,8 +3,9 @@
 namespace App\Contracts\Rule;
 
 use App\Contracts\DatabaseManagerGetterable;
+use App\Contracts\TranslatorGetterable;
 
-interface UniqueExcept extends DatabaseManagerGetterable
+interface UniqueExcept extends DatabaseManagerGetterable , TranslatorGetterable
 {
     public function getExcepts():array;
     public function setExcepts(array $excepts):void;
