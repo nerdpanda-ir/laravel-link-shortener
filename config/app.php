@@ -200,6 +200,7 @@ return [
         \App\Providers\Request\Dashboard\Permission\UpdateServiceProvider::class ,
         \App\Providers\Exceptions\FailUpdateServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\Update\ExceptionThrowServiceProvider::class ,
+        \App\Providers\Responses\Dashboard\Permission\Update\FailServiceProvider::class ,
     ])->toArray(),
 
     /*
