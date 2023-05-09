@@ -2,7 +2,7 @@
 
 namespace App\Notifications;
 
-use App\Contracts\LoginMailContract;
+use App\Contracts\Mails\Login;
 use App\Contracts\Model\Userable;
 use App\Contracts\UserLoginNotificationContract as Contract;
 use Illuminate\Contracts\Mail\Mailable;
@@ -13,7 +13,7 @@ class UserLoginNotification extends Notification implements Contract
     protected Mailable $mail;
     protected string $ip;
     protected string $dateTime;
-    public function __construct(LoginMailContract $mail)
+    public function __construct(Login $mail)
     {
         $this->mail = $mail;
     }
