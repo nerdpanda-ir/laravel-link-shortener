@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Seeder;
 
-interface UserSeederContract
+interface User
 {
 
 }
