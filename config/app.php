@@ -169,7 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         \App\Providers\Model\UserableServiceProvider::class ,
-        \App\Providers\UserFactoryServiceProvider::class ,
+        \App\Providers\Factories\UserServiceProvider::class ,
         \App\Providers\Seeder\UserServiceProvider::class ,
         \App\Providers\Model\PermissionServiceProvider::class ,
         \App\Providers\Factories\PermissionServiceProvider::class ,
