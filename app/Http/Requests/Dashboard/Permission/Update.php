@@ -24,7 +24,7 @@ class Update extends FormRequest implements Contract
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
-    public function rules(UniqueExcept $uniqueExcept, UniqueExceptExistableBridge $bridge): array
+    public function rules(UniqueExcept $uniqueExcept, UniqueExceptRuleBridge $bridge): array
     {
         $bridge->setExcepts([$this->route()->parameter('id')]);
         $bridge->setOnly($this->name);
