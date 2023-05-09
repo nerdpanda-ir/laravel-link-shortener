@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Factories;
 
 use App\Contracts\Factories\Role;
 use Database\Factories\RoleFactory;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class RoleFactoryServiceProvider extends ServiceProvider implements DeferrableProvider
+class RoleServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
