@@ -18,4 +18,7 @@ Route::name('permission.')->prefix('permission')->namespace('Permission')
 
             Route::put('update/{id}/{name}','UpdateController')
                 ->name('update')->middleware('can:edit-permission');
+
+            Route::delete('delete/{id}/{name}','DeleteController')
+                ->name('delete')->middleware('can:delete-permission');
         });
