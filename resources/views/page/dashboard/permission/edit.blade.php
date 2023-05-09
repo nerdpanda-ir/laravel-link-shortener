@@ -5,7 +5,7 @@
 @section('dashboard-content')
     <x-partials.form-error-printer />
     <form class="needs-validation" novalidate=""
-          action="{{route('dashboard.permission.update',$name)}}" method="post">
+          action="{{route('dashboard.permission.update',[$id,$name])}}" method="post">
         @csrf
         @method('PUT')
         <div class="row g-3">
