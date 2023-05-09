@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Contracts\UserFactoryContract;
+use App\Contracts\Factories\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Hash;
@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
-class UserFactory extends Factory implements UserFactoryContract
+class UserFactory extends Factory implements User
 {
     public function definition(): array
     {
