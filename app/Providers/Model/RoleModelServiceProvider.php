@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Model;
 
 use App\Contracts\Model\Role as Contract;
 use App\Models\Role as Entity;
