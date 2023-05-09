@@ -4,12 +4,12 @@ namespace Database\Seeders;
 
 use App\Contracts\Model\Userable;
 use App\Contracts\PermissionFactoryContract;
-use App\Contracts\PermissionSeederContract;
+use App\Contracts\Seeder\Permission;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
 use NerdPanda\Exceptions\NoDependencyFoundForSeedingException;
 
-class PermissionSeeder extends Seeder implements PermissionSeederContract
+class PermissionSeeder extends Seeder implements Permission
 {
     /**
      * Run the database seeds.
