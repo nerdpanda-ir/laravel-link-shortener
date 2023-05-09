@@ -7,5 +7,5 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 interface Fail
 {
     // @todo same method detected !!!
-    public function build(string $permission,array $inputs):RedirectResponse;
+    public function build(string $id , string $permission,array $inputs):RedirectResponse;
 }
