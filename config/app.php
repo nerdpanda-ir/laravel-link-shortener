@@ -174,7 +174,7 @@ return [
         \App\Providers\Model\PermissionServiceProvider::class ,
         \App\Providers\Factories\PermissionServiceProvider::class ,
         \App\Providers\Seeder\PermissionServiceProvider::class ,
-        \App\Providers\RoleFactoryServiceProvider::class ,
+        \App\Providers\Factories\RoleServiceProvider::class ,
         \App\Providers\Seeder\RoleServiceProvider::class ,
         \App\Providers\Seeder\PermissionRoleServiceProvider::class ,
         \App\Providers\Model\RoleServiceProvider::class ,
