@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Seeder;
 
 use App\Contracts\Seeder\RoleUser as Contract;
 use Database\Seeders\RoleUserSeeder as Entity;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class RoleUserSeederServiceProvider extends ServiceProvider implements DeferrableProvider
+class RoleUserServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
