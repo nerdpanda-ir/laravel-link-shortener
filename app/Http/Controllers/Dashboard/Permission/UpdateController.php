@@ -32,7 +32,7 @@ class UpdateController extends Controller
     ):RedirectResponse
     {
         try {
-            $permission = $model->where('name','=',$name)->first(['name','id']);
+            $permission = $model->where('id','=',$id)->first(['name','id']);
             if (is_null($permission))
                 throw $notFoundException;
             $data = array_merge($request->only(['name']),['updated_at'=>date('Y-m-d H:i:s')]);
