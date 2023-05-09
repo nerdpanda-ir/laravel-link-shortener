@@ -12,7 +12,7 @@ class Fail extends ResponseBuilder implements Contract
         return $this
                     ->getResponse()
                     ->redirectToRoute('dashboard.permission.view-all')
-                    ->with('system.messages.errors',[
+                    ->with('system.messages.error',[
                         $this->getTranslator()->get(
                             'messages.delete.permission.fail', ['name' => $permission]
                         )
