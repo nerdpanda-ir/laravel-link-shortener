@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
+use App\Contracts\Mails\Login as Contract;
+use App\Mail\LoginMail as Entity;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use App\Contracts\LoginMailContract as Contract;
-use App\Mail\LoginMail as Entity;
+
 class LoginMailServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
