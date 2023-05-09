@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use App\Contracts\CollectionToArrayContract;
+use App\Contracts\Services\CollectionToArrayContract;
 
 abstract class CollectionToArrayService implements CollectionToArrayContract
 {
