@@ -2,10 +2,10 @@
 
 namespace App\Listeners\LoginEvent;
 
-use Illuminate\Auth\Events\Login;
-use App\Contracts\LoginMailContract as LoginMail;
-use Illuminate\Contracts\Mail\Factory as MailManager;
 use App\Contracts\DoLoginRequestContract as Request;
+use App\Contracts\Mails\Login as LoginMail;
+use Illuminate\Auth\Events\Login;
+use Illuminate\Contracts\Mail\Factory as MailManager;
 use Illuminate\Contracts\Translation\Translator;
 use Psr\Log\LoggerInterface as Logger;
 
