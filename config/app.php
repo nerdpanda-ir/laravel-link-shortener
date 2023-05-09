@@ -177,7 +177,7 @@ return [
         \App\Providers\RoleFactoryServiceProvider::class ,
         \App\Providers\RoleSeederServiceProvider::class ,
         \App\Providers\PermissionRoleSeederServiceProvider::class ,
-        \App\Providers\RoleModelServiceProvider::class ,
+        \App\Providers\Model\RoleServiceProvider::class ,
         \App\Providers\RoleUserSeederServiceProvider::class ,
         \App\Providers\PermissionUserSeederServiceProvider::class ,
         \App\Providers\DoLoginRequestServiceProvider::class ,
