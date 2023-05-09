@@ -2,7 +2,9 @@
 
 namespace App\Contracts;
 
+use App\Contracts\Model\Userable;
+
 interface RamUsageableGateContract
 {
-    public function ramUsage(UserableContract $user):bool;
+    public function ramUsage(Userable $user):bool;
 }

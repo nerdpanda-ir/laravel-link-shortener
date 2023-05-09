@@ -2,15 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Contracts\UserableContract;
+use App\Contracts\Model\Userable;
+use App\Contracts\RoleModelContract as Role;
+use App\Contracts\RoleUserSeederContract as Contract;
 use App\Models\User;
-use Faker\Factory;
 use Faker\Generator;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
-use App\Contracts\RoleUserSeederContract as Contract;
-use App\Contracts\RoleModelContract as Role;
 use Illuminate\Support\Facades\DB;
 
 class RoleUserSeeder extends Seeder implements Contract
@@ -20,7 +18,7 @@ class RoleUserSeeder extends Seeder implements Contract
      * @param User $user
      * @param \App\Models\Role $user
      */
-    public function run(UserableContract $user,Role $role , Generator $faker): void
+    public function run(Userable $user, Role $role , Generator $faker): void
     {
         DB::table('role_user')->truncate();
         $root = $user->whereVerifiedEmail()->first(['id','created_at']);
@@ -32,7 +30,7 @@ class RoleUserSeeder extends Seeder implements Contract
         /** @var Collection $admins*/
         $admins = $user->whereVerifiedEmail()->offset(1)->limit(2)->get(['id']);
         $adminRole = $role->orderBy('id')->offset(1)->first(['id']);
-        $admins->each(function (UserableContract $admin)use ($adminRole,$faker,$root){
+        $admins->each(function (Userable $admin)use ($adminRole,$faker,$root){
             $created_at = $faker->dateTimeBetween(
                 now()->subDays(25) , now()->subDays(7)
             );

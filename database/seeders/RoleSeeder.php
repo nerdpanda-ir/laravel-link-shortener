@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Contracts\Model\Userable;
 use App\Contracts\RoleFactoryContract;
 use App\Contracts\RoleSeederContract;
-use App\Contracts\UserableContract;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
 use NerdPanda\Exceptions\NoDependencyFoundForSeedingException;
@@ -14,7 +14,7 @@ class RoleSeeder extends Seeder implements RoleSeederContract
     /**
      * Run the database seeds.
      */
-    public function run(RoleFactoryContract $factory , UserableContract $user): void
+    public function run(RoleFactoryContract $factory , Userable $user): void
     {
         $factory->newModel()->truncate();
         /** @var Collection $users*/

@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Services;
+use App\Contracts\Model\Userable as User;
 use App\Contracts\PermissionsFlyWeightContract as Contract;
-use App\Contracts\UserableContract as User;
 use Illuminate\Database\Eloquent\Collection;
 
 class PermissionsFlyWeightService implements Contract

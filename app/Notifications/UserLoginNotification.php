@@ -2,11 +2,11 @@
 
 namespace App\Notifications;
 
-use App\Contracts\UserableContract;
+use App\Contracts\LoginMailContract;
+use App\Contracts\Model\Userable;
+use App\Contracts\UserLoginNotificationContract as Contract;
 use Illuminate\Contracts\Mail\Mailable;
 use Illuminate\Notifications\Notification;
-use App\Contracts\UserLoginNotificationContract as Contract;
-use App\Contracts\LoginMailContract;
 
 class UserLoginNotification extends Notification implements Contract
 {
@@ -23,7 +23,7 @@ class UserLoginNotification extends Notification implements Contract
         return ['mail'];
     }
 
-    public function toMail(UserableContract $notifiable): Mailable
+    public function toMail(Userable $notifiable): Mailable
     {
         return $this->mail
                     ->to($notifiable->email)

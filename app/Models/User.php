@@ -3,17 +3,17 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use App\Contracts\UserableContract;
+use App\Contracts\Model\Userable;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use NerdPanda\Traits\Model\VerifiedEmailScopeTrait;
 use Laravel\Sanctum\HasApiTokens;
+use NerdPanda\Traits\Model\VerifiedEmailScopeTrait;
 
-class User extends Authenticatable implements UserableContract
+class User extends Authenticatable implements Userable
 {
     use HasApiTokens, HasFactory, Notifiable , VerifiedEmailScopeTrait;
 

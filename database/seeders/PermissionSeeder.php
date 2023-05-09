@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Contracts\Model\Userable;
 use App\Contracts\PermissionFactoryContract;
 use App\Contracts\PermissionSeederContract;
-use App\Contracts\UserableContract;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
 use NerdPanda\Exceptions\NoDependencyFoundForSeedingException;
@@ -14,7 +14,7 @@ class PermissionSeeder extends Seeder implements PermissionSeederContract
     /**
      * Run the database seeds.
      */
-    public function run(UserableContract $user , PermissionFactoryContract $factory): void
+    public function run(Userable $user , PermissionFactoryContract $factory): void
     {
         $factory->newModel()->truncate();
         /** @var Collection $users */

@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+use App\Contracts\Model\Userable as User;
 use App\Contracts\PermissionUserSeederContract as Contract;
-use App\Contracts\UserableContract as User;
+use Illuminate\Database\Seeder;
+
 class PermissionUserSeeder extends Seeder implements Contract
 {
     /**

@@ -2,14 +2,13 @@
 
 namespace App\Jobs;
 
+use App\Contracts\Model\Userable as User;
+use App\Contracts\UserLoginNotificationContract as UserLoginNotification;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Contracts\UserableContract as User;
-use App\Contracts\UserLoginNotificationContract as UserLoginNotification;
 
 class UserLoginNotifyJob implements ShouldQueue
 {
@@ -21,7 +20,7 @@ class UserLoginNotifyJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct(User $user , string $ip ,string $dateTime)
+    public function __construct(User $user , string $ip , string $dateTime)
     {
         $this->user = $user;
         $this->ip = $ip;

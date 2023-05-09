@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Contracts\UserableContract;
+use App\Contracts\Model\Userable;
 use App\Models\User;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
@@ -11,13 +11,13 @@ class UserableServiceProvider extends ServiceProvider implements DeferrableProvi
 {
     public function register(): void
     {
-        $this->app->bind(UserableContract::class,User::class);
-        $this->app->alias(UserableContract::class,'model.contract.user');
+        $this->app->bind(Userable::class,User::class);
+        $this->app->alias(Userable::class,'model.contract.user');
     }
     public function provides():array
     {
         return [
-            UserableContract::class,'model.contract.user'
+            Userable::class,'model.contract.user'
         ];
     }
 }
