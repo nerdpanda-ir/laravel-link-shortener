@@ -2,14 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Contracts\PermissionFactoryContract;
+use App\Contracts\Factories\Permission;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Carbon;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Permission>
  */
-class PermissionFactory extends Factory implements PermissionFactoryContract
+class PermissionFactory extends Factory implements Permission
 {
     /**
      * Define the model's default state.
