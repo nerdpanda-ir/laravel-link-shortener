@@ -3,16 +3,16 @@
 namespace App\Http\Controllers\Dashboard\Permission;
 
 use App\Contracts\Exceptions\FailDelete;
+use App\Contracts\Model\Permission as Permission;
 use App\Contracts\Responses\Dashboard\Permission\Delete\Fail;
 use App\Contracts\Responses\Dashboard\Permission\Delete\Ok;
+use App\Contracts\Responses\Dashboard\Permission\Delete\ThrowException;
 use App\Contracts\Responses\Dashboard\Permission\NotFound;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Translation\Translator;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Psr\Log\LoggerInterface as Logger;
-use App\Contracts\PermissionModelContract as Permission;
-use App\Contracts\Responses\Dashboard\Permission\Delete\ThrowException ;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class DeleteController extends Controller

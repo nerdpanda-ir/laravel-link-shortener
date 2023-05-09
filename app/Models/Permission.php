@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use App\Contracts\PermissionModelContract as Contract;
+use App\Contracts\Model\Permission as Contract;
+use App\Traits\Model\DisableTimestamp;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\Model\DisableTimestamp;
-use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Permission extends Model implements Contract

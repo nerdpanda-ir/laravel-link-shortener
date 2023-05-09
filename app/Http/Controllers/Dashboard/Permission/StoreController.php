@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Dashboard\Permission;
 
 use App\Contracts\Exceptions\FailStore;
-use App\Contracts\PermissionModelContract as Permission;
+use App\Contracts\Model\Permission as Permission;
 use App\Contracts\Requests\Dashboard\Permission\StoreRequest as Request;
 use App\Contracts\Responses\Dashboard\Permission\Store\ExceptionHappenBuilder;
 use App\Contracts\Responses\Dashboard\Permission\Store\StoreBuilder;

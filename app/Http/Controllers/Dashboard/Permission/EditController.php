@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers\Dashboard\Permission;
 
+use App\Contracts\Model\Permission as Permission;
 use App\Contracts\Responses\Dashboard\Permission\Edit\ExceptionThrow;
+use App\Contracts\Responses\Dashboard\Permission\NotFound;
 use App\Http\Controllers\Controller;
-use App\Contracts\PermissionModelContract as Permission;
 use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Contracts\View\View;
+use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Contracts\View\Factory as ViewFactory;
-use PHPUnit\Logging\Exception;
+use Illuminate\Contracts\View\View;
+use Psr\Log\LoggerInterface as Logger;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use App\Contracts\Responses\Dashboard\Permission\NotFound;
-use Psr\Log\LoggerInterface as Logger;
-use Illuminate\Contracts\Translation\Translator ;
 
 class EditController extends Controller
 {

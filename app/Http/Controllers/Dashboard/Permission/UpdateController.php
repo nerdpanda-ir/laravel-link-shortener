@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers\Dashboard\Permission;
 
+use App\Contracts\Exceptions\FailUpdate as FailUpdateException;
+use App\Contracts\Model\Permission as Permission;
+use App\Contracts\Requests\Dashboard\Permission\Update as Request;
+use App\Contracts\Responses\Dashboard\Permission\NotFound as NotFoundResponseBuilder;
 use App\Contracts\Responses\Dashboard\Permission\Update\ExceptionThrow;
 use App\Contracts\Responses\Dashboard\Permission\Update\Fail as FailResponseBuilder;
 use App\Contracts\Responses\Dashboard\Permission\Update\Ok as OkResponseBuilder;
 use App\Http\Controllers\Controller;
-use App\Contracts\Requests\Dashboard\Permission\Update as Request;
-use App\Contracts\PermissionModelContract as Permission;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Translation\Translator;
+use Psr\Log\LoggerInterface as Logger;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use App\Contracts\Responses\Dashboard\Permission\NotFound as NotFoundResponseBuilder;
-use Psr\Log\LoggerInterface as Logger;
-use App\Contracts\Exceptions\FailUpdate as FailUpdateException;
+
 class UpdateController extends Controller
 {
     /**

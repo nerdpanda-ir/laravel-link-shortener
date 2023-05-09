@@ -1,13 +1,13 @@
 <?php
 
 namespace Database\Seeders;
+use App\Contracts\Model\Permission as Permission;
+use App\Contracts\PermissionRoleSeederContract as Contract;
+use App\Contracts\RoleModelContract as Role;
+use App\Contracts\UserableContract as User;
+use Faker\Factory;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
-use App\Contracts\PermissionRoleSeederContract as Contract;
-use App\Contracts\UserableContract as User;
-use App\Contracts\PermissionModelContract as Permission;
-use App\Contracts\RoleModelContract as Role;
-use Faker\Factory ;
 use Illuminate\Support\Facades\DB;
 use NerdPanda\Exceptions\NoDependencyFoundForSeedingException;
 

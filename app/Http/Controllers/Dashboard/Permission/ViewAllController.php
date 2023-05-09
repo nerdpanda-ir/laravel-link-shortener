@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Dashboard\Permission;
 
+use App\Contracts\Model\Permission as Permission;
 use App\Http\Controllers\Controller;
-use App\Contracts\PermissionModelContract as Permission;
-use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory as ViewFactory;
+use Illuminate\Contracts\View\View;
 
 class ViewAllController extends Controller
 {
