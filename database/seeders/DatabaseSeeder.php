@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Contracts\PermissionFactoryContract;
-use Database\Factories\RoleFactory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
