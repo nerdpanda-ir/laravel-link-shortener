@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Dashboard\Permission;
 use App\Contracts\Requests\Dashboard\Permission\Update as Contract;
 use App\Contracts\Rule\UniqueExcept;
+use App\Contracts\Services\UniqueExceptExistablePermissionUpdateBridge as UniqueExceptExistableBridge;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Auth\Factory as Auth;
 class Update extends FormRequest implements Contract
@@ -23,10 +24,11 @@ class Update extends FormRequest implements Contract
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
-    public function rules(UniqueExcept $uniqueExcept): array
+    public function rules(UniqueExcept $uniqueExcept, UniqueExceptExistableBridge $bridge): array
     {
-        $uniqueExcept->setExcepts([$this->route()->parameter('name')]);
-        $uniqueExcept->setTableName('permissions');
+        $bridge->setExcepts([$this->route()->parameter('id')]);
+        $bridge->setOnly($this->name);
+        $uniqueExcept->setExistableBridge($bridge);
         return [
             'name'=> ['required','max:64',$uniqueExcept]
         ];
