@@ -29,7 +29,7 @@ class EditController extends Controller
     ): View | RedirectResponse
     {
         try {
-            $permission = $model->where('id','=',$id)->first(['id','name']);
+            $permission = $model->where2('id','=',$id)->first(['id','name']);
             if (is_null($permission))
                 throw $notFoundHttpException;
             return $viewFactory->make('page.dashboard.permission.edit',compact('name'));
@@ -42,7 +42,7 @@ class EditController extends Controller
             //throw $exception;
         } catch (\Throwable $exception){
             $logger->emergency(
-                $translator->get('messages.log.edit.permission.exceptionThrow', ['permission' => $name ])
+                $translator->get('messages.log.edit.permission.exceptionThrow', ['permissionId' => $id ])
             );
             $exceptionHandler->report($exception);
             return $exceptionThrowResponseBuilder->build($name);
