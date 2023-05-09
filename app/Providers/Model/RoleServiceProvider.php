@@ -7,7 +7,7 @@ use App\Models\Role as Entity;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class RoleModelServiceProvider extends ServiceProvider implements DeferrableProvider
+class RoleServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
      * Register services.
