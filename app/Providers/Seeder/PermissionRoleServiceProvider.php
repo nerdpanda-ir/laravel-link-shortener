@@ -7,7 +7,7 @@ use Database\Seeders\PermissionRoleSeeder as Entity;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class PermissionRoleSeederServiceProvider extends ServiceProvider implements DeferrableProvider
+class PermissionRoleServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
