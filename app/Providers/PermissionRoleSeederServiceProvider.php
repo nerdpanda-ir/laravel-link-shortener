@@ -2,9 +2,8 @@
 
 namespace App\Providers;
 
-use App\Contracts\PermissionRoleSeederContract as Contract;
+use App\Contracts\Seeder\PermissionRole as Contract;
 use Database\Seeders\PermissionRoleSeeder as Entity;
-
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
