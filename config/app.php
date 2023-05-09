@@ -204,7 +204,7 @@ return [
         \App\Providers\Responses\Dashboard\Permission\Update\OkServiceProvider::class ,
         \App\Providers\Services\UniqueExceptPermissionUpdateBridge::class ,
         \App\Providers\Responses\Dashboard\Permission\Delete\ThrowExceptionServiceProvider::class ,
-
+        App\Providers\Responses\Dashboard\Permission\Delete\OkServiceProvider::class ,
     ])->toArray(),
 
     /*
