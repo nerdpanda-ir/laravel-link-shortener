@@ -85,9 +85,9 @@ return [
     ] ,
     'delete' => [
         'permission' => [
-            'throwException' => 'something happened when delete <b>:name</b>  permission in <b>:date</b> !!! <br> please try after or contact to Developer or Help and Support !!!' ,
-            'ok' => 'successfully deleted <b>:name</b> permission !!!' ,
-            'fail'=> 'permission <b>:name</b> no deleted !!!'
+            'throwException' => 'something happened when delete :name  permission in :date !!!  please try after or contact to Developer or Help and Support !!!' ,
+            'ok' => 'successfully deleted :name permission !!!' ,
+            'fail'=> 'permission :name no deleted !!!'
         ]
     ],
     'not-found'=> [
