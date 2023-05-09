@@ -22,7 +22,8 @@ class EditController extends Controller
      * @return void
      */
     public function __invoke(
-        string $name , Permission $model , ViewFactory $viewFactory ,  Logger $logger , Translator $translator ,
+        string $id , string $name , Permission $model , ViewFactory $viewFactory ,  Logger $logger ,
+        Translator $translator ,
         NotFoundHttpException $notFoundHttpException , ExceptionHandler $exceptionHandler ,
         NotFound $notFoundResponseBuilder , ExceptionThrow $exceptionThrowResponseBuilder ,
     ): View | RedirectResponse
