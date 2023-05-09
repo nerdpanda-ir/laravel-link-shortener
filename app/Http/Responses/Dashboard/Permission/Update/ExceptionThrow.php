@@ -20,10 +20,10 @@ class ExceptionThrow extends ResponseBuilder implements Contract
         parent::__construct($response);
         $this->translator = $translator;
     }
-    public function build(string $permission , array $inputs): RedirectResponse
+    public function build(string $id , string $permission , array $inputs): RedirectResponse
     {
         return $this->getResponse()
-                ->redirectToRoute('dashboard.permission.edit',$permission)
+                ->redirectToRoute('dashboard.permission.edit',[$id , $permission])
                 ->withInput($inputs)
                 ->with('system.messages.error',[
                     $this->translator->get(
