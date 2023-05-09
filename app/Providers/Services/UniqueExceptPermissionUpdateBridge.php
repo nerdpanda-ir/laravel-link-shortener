@@ -4,9 +4,9 @@ namespace App\Providers\Services;
 
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use App\Services\UniqueExceptExistablePermissionUpdateBridge as Service ;
-use App\Contracts\Services\UniqueExceptExistablePermissionUpdateBridge as Contract;
-class UniqueExceptExistablePermissionUpdateBridgeServiceProvider
+use App\Services\UniqueExceptPermissionUpdateBridge as Service ;
+use App\Contracts\Services\UniqueExceptPermissionUpdateBridge as Contract;
+class UniqueExceptPermissionUpdateBridge
     extends ServiceProvider
     implements DeferrableProvider
 {
