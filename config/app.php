@@ -202,7 +202,7 @@ return [
         \App\Providers\Responses\Dashboard\Permission\Update\ExceptionThrowServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\Update\FailServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\Update\OkServiceProvider::class ,
-        \App\Providers\Services\UniqueExceptExistablePermissionUpdateBridgeServiceProvider::class ,
+        \App\Providers\Services\UniqueExceptPermissionUpdateBridge::class ,
     ])->toArray(),
 
     /*
