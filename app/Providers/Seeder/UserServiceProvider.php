@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Seeder;
 
 use App\Contracts\Seeder\User;
 use Database\Seeders\UserSeeder;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class UserSeederServiceProvider extends ServiceProvider implements DeferrableProvider
+class UserServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
      * Register services.
