@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Model;
 
-interface PermissionModelContract
+interface Permission
 {
 
 }
