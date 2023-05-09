@@ -29,7 +29,7 @@ class EditController extends Controller
     ): View | RedirectResponse
     {
         try {
-            $permission = $model->where('name','=',$name)->first(['name']);
+            $permission = $model->where('id','=',$id)->first(['name']);
             if (is_null($permission))
                 throw $notFoundHttpException;
             return $viewFactory->make('page.dashboard.permission.edit',compact('name'));
