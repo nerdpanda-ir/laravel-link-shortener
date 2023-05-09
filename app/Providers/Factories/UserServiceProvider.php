@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Factories;
 
 use App\Contracts\Factories\User;
 use Database\Factories\UserFactory;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class UserFactoryServiceProvider extends ServiceProvider implements DeferrableProvider
+class UserServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
