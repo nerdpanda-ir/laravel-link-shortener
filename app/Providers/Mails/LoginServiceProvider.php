@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Mails;
 
 use App\Contracts\Mails\Login as Contract;
 use App\Mail\LoginMail as Entity;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class LoginMailServiceProvider extends ServiceProvider implements DeferrableProvider
+class LoginServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
      * Register services.
