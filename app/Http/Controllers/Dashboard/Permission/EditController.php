@@ -8,6 +8,7 @@ use App\Contracts\PermissionModelContract as Permission;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\View\View;
 use Illuminate\Contracts\View\Factory as ViewFactory;
+use PHPUnit\Logging\Exception;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use App\Contracts\Responses\Dashboard\Permission\NotFound;
@@ -29,10 +30,11 @@ class EditController extends Controller
     ): View | RedirectResponse
     {
         try {
-            $permission = $model->where2('id','=',$id)->first(['id','name']);
+            $permission = $model->where('id','=',$id)->first(['name']);
             if (is_null($permission))
                 throw $notFoundHttpException;
-            return $viewFactory->make('page.dashboard.permission.edit',compact('name'));
+            return $viewFactory
+                        ->make('page.dashboard.permission.edit',['id'=> $id , 'name' => $permission->name]);
         }catch (NotFoundHttpException $exception){
             return $notFoundResponseBuilder->build($name);
             // if should you render 404 page you must render exception with laravel exception handler !!!
@@ -41,11 +43,12 @@ class EditController extends Controller
             // throw again exception
             //throw $exception;
         } catch (\Throwable $exception){
+            $finalName = $permission->name ?? $name ;
             $logger->emergency(
-                $translator->get('messages.log.edit.permission.exceptionThrow', ['permissionId' => $id ])
+                $translator->get('messages.log.edit.permission.exceptionThrow', ['id' => $id ,'name' => $finalName])
             );
             $exceptionHandler->report($exception);
-            return $exceptionThrowResponseBuilder->build($name);
+            return $exceptionThrowResponseBuilder->build($finalName);
         }
     }
 }
