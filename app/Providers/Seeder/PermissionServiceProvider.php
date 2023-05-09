@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Seeder;
 
 use App\Contracts\Seeder\Permission;
 use Database\Seeders\PermissionSeeder;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class PermissionSeederServiceProvider extends ServiceProvider implements DeferrableProvider
+class PermissionServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
