@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Contracts\Model\Role as Role;
 use App\Contracts\Model\Userable;
-use App\Contracts\RoleModelContract as Role;
 use App\Contracts\RoleUserSeederContract as Contract;
 use App\Models\User;
 use Faker\Generator;

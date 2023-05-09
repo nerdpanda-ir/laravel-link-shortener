@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 use App\Contracts\Model\Permission as Permission;
+use App\Contracts\Model\Role as Role;
 use App\Contracts\Model\Userable as User;
 use App\Contracts\PermissionRoleSeederContract as Contract;
-use App\Contracts\RoleModelContract as Role;
 use Faker\Factory;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;

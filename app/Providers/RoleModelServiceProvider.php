@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
+use App\Contracts\Model\Role as Contract;
+use App\Models\Role as Entity;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use App\Contracts\RoleModelContract as Contract;
-use App\Models\Role as Entity;
+
 class RoleModelServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     /**
