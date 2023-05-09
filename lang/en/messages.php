@@ -35,7 +35,7 @@ return [
         ] ,
         'edit'=> [
             'permission' => [
-                'exceptionThrow'=> 'have exception when edit :permission permission !!!'
+                'exceptionThrow'=> 'have exception when edit permission with id -> :permissionId !!!'
             ]
         ] ,
         'update' => [
