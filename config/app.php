@@ -173,7 +173,7 @@ return [
         \App\Providers\Seeder\UserServiceProvider::class ,
         \App\Providers\Model\PermissionServiceProvider::class ,
         \App\Providers\PermissionFactoryServiceProvider::class ,
-        \App\Providers\PermissionSeederServiceProvider::class ,
+        \App\Providers\Seeder\PermissionServiceProvider::class ,
         \App\Providers\RoleFactoryServiceProvider::class ,
         \App\Providers\RoleSeederServiceProvider::class ,
         \App\Providers\Seeder\PermissionRoleServiceProvider::class ,
