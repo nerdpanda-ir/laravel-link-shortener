@@ -41,7 +41,7 @@ return [
         'update' => [
             'permission' => [
                 'exceptionThrow' => 'exception throw when update permission with id -> :id and name-> :name!!!' ,
-                'fail' => 'update :permission Permission Is Fail !!! ' ,
+                'fail' => 'fail to update Permission with id -> :id and name -> :name !!! ' ,
                 'ok' => 'successfully :Permission Permission updated !!! '
             ]
         ]
