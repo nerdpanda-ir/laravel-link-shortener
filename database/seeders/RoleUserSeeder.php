@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use App\Contracts\Model\Role as Role;
 use App\Contracts\Model\Userable;
-use App\Contracts\RoleUserSeederContract as Contract;
+use App\Contracts\Seeder\RoleUser as Contract;
 use App\Models\User;
 use Faker\Generator;
 use Illuminate\Database\Eloquent\Collection;

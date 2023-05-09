@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
+use App\Contracts\Seeder\RoleUser as Contract;
+use Database\Seeders\RoleUserSeeder as Entity;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use App\Contracts\RoleUserSeederContract as Contract;
-use Database\Seeders\RoleUserSeeder as Entity;
 
 class RoleUserSeederServiceProvider extends ServiceProvider implements DeferrableProvider
 {
