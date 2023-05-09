@@ -14,7 +14,7 @@ class Ok extends ResponseBuilder implements Contract
                     ->redirectToRoute('dashboard.permission.view-all')
                     ->with('system.messages.ok',[
                         $this->translator->get(
-                            'messages.log.update.permission.ok', ['Permission' => $permission]
+                            'messages.update.permission.success', ['permission' => $permission]
                         )
                     ]);
     }
