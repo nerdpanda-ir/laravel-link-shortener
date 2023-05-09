@@ -45,7 +45,7 @@
                         @canany(['edit-permission','delete-permission'])
                             <td class="d-flex justify-content-evenly">
                                 @can('edit-permission')
-                                    <a href="{{route('dashboard.permission.edit',$permission->name)}}"
+                                    <a href="{{route('dashboard.permission.edit',[$permission->id,$permission->name])}}"
                                        class="btn btn-warning text-dark">Edit</a>
                                 @endcan
                                 @can('delete-permission')
