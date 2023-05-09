@@ -4,12 +4,12 @@ namespace Database\Seeders;
 
 use App\Contracts\Model\Userable;
 use App\Contracts\RoleFactoryContract;
-use App\Contracts\RoleSeederContract;
+use App\Contracts\Seeder\Role;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Seeder;
 use NerdPanda\Exceptions\NoDependencyFoundForSeedingException;
 
-class RoleSeeder extends Seeder implements RoleSeederContract
+class RoleSeeder extends Seeder implements Role
 {
     /**
      * Run the database seeds.
