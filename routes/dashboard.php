@@ -13,7 +13,7 @@ Route::name('permission.')->prefix('permission')->namespace('Permission')
             Route::post('store','StoreController')
                     ->name('store')->middleware('can:create-permission');
 
-            Route::get('edit/{name}','EditController')
+            Route::get('edit/{id}/{name}','EditController')
                 ->name('edit')->middleware('can:edit-permission');
 
             Route::put('update/{name}','UpdateController')
