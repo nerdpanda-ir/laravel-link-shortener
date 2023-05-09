@@ -49,7 +49,7 @@
                                        class="btn btn-warning text-dark">Edit</a>
                                 @endcan
                                 @can('delete-permission')
-                                    <form action="{{route('dashboard.permission.delete')}}" method="post">
+                                    <form action="{{route('dashboard.permission.delete' ,[$permission->id,$permission->name])}}" method="post">
                                         @csrf
                                         @method('DELETE')
                                             <button class="bg-danger btn text-light">Delete</button>
