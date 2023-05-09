@@ -2,13 +2,13 @@
 
 namespace Database\Factories;
 
-use App\Contracts\RoleFactoryContract;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Contracts\Factories\Role;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Role>
  */
-class RoleFactory extends Factory implements RoleFactoryContract
+class RoleFactory extends Factory implements Role
 {
     /**
      * Define the model's default state.
