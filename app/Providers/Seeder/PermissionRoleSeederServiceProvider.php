@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Seeder;
 
 use App\Contracts\Seeder\PermissionRole as Contract;
 use Database\Seeders\PermissionRoleSeeder as Entity;
