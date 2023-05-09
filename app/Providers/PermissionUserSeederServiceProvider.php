@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
+use App\Contracts\Seeder\PermissionUser as Contract;
+use Database\Seeders\PermissionUserSeeder as Entity;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use Database\Seeders\PermissionUserSeeder as Entity;
-use App\Contracts\PermissionUserSeederContract as Contract;
 
 class PermissionUserSeederServiceProvider extends ServiceProvider implements DeferrableProvider
 {

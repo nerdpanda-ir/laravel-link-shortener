@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use App\Contracts\Model\Userable as User;
-use App\Contracts\PermissionUserSeederContract as Contract;
+use App\Contracts\Seeder\PermissionUser as Contract;
 use Illuminate\Database\Seeder;
 
 class PermissionUserSeeder extends Seeder implements Contract
