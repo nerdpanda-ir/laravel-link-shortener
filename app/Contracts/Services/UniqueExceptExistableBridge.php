@@ -6,5 +6,5 @@ use Illuminate\Contracts\Database\Query\Builder;
 
 interface UniqueExceptExistableBridge extends DatabaseManagerGetterable
 {
-    public function build():Builder;
+    public function build():bool;
 }
