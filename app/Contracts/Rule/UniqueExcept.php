@@ -4,13 +4,10 @@ namespace App\Contracts\Rule;
 
 use App\Contracts\DatabaseManagerGetterable;
 use App\Contracts\TranslatorGetterable;
+use App\Contracts\Services\UniqueExceptExistableBridge as ExistableBridge;
 
-interface UniqueExcept extends DatabaseManagerGetterable , TranslatorGetterable
+interface UniqueExcept extends TranslatorGetterable
 {
-    public function getExcepts():array;
-    public function setExcepts(array $excepts):void;
-    public function getColumnName():string|null;
-    public function setColumnName(string $columnName):void;
-    public function getTableName():string;
-    public function setTableName(string $tableName):void;
+    public function getExistableBridge():ExistableBridge;
+    public function setExistableBridge(ExistableBridge $bridge);
 }
