@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Contracts\UserSeederContract;
+use App\Contracts\Seeder\User;
 use Database\Seeders\UserSeeder;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
@@ -15,14 +15,14 @@ class UserSeederServiceProvider extends ServiceProvider implements DeferrablePro
     public function register(): void
     {
         $this->app->bind(
-            UserSeederContract::class,UserSeeder::class
+            User::class,UserSeeder::class
         );
-        $this->app->alias(UserSeederContract::class,'contract.seeder.user');
+        $this->app->alias(User::class,'contract.seeder.user');
     }
     public function provides():array
     {
         return [
-            UserSeederContract::class,'contract.seeder.user'
+            User::class,'contract.seeder.user'
         ];
     }
 }
