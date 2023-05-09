@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Seeder;
 
 use App\Contracts\Seeder\Role;
 use Database\Seeders\RoleSeeder;
