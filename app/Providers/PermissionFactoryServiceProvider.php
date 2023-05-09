@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Contracts\PermissionFactoryContract;
+use App\Contracts\Factories\Permission;
 use Database\Factories\PermissionFactory;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
@@ -11,13 +11,13 @@ class PermissionFactoryServiceProvider extends ServiceProvider implements Deferr
 {
     public function register(): void
     {
-        $this->app->bind(PermissionFactoryContract::class,PermissionFactory::class);
-        $this->app->alias(PermissionFactoryContract::class,'contract.factory.permission');
+        $this->app->bind(Permission::class,PermissionFactory::class);
+        $this->app->alias(Permission::class,'contract.factory.permission');
     }
     public function provides():array
     {
         return [
-            PermissionFactoryContract::class , 'contract.factory.permission'
+            Permission::class , 'contract.factory.permission'
         ];
     }
 
