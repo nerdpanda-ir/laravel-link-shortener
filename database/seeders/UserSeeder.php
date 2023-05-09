@@ -2,17 +2,17 @@
 
 namespace Database\Seeders;
 
-use App\Contracts\Seeder\User;
-use App\Contracts\UserFactoryContract;
+use App\Contracts\Factories\User;
+use App\Contracts\Seeder\User as Contract;
 use Illuminate\Database\Seeder;
 
-class UserSeeder extends Seeder implements User
+class UserSeeder extends Seeder implements Contract
 {
     protected static int $count = 15;
     /**
      * Run the database seeds.
      */
-    public function run(UserFactoryContract $factory): void
+    public function run(User $factory): void
     {
         $factory->modelName()::truncate();
         $factory->nerdPanda()->create();
