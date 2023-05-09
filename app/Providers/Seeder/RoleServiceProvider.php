@@ -7,7 +7,7 @@ use Database\Seeders\RoleSeeder;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class RoleSeederServiceProvider extends ServiceProvider implements DeferrableProvider
+class RoleServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
