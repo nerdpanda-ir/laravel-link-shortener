@@ -24,7 +24,7 @@ class UpdateController extends Controller
      * @return RedirectResponse
      */
     public function __invoke(
-        string $name , Request $request , Permission $model , Logger $logger , Translator $translator ,
+        string $id , string $name , Request $request , Permission $model , Logger $logger , Translator $translator ,
         ExceptionThrow $exceptionThrowResponseBuilder , FailResponseBuilder $failResponseBuilder ,
         NotFoundHttpException $notFoundException , NotFoundResponseBuilder $notFoundResponseBuilder ,
         ExceptionHandler $exceptionHandler , FailUpdateException $failUpdateException ,
