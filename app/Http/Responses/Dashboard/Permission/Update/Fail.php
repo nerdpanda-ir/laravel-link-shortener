@@ -7,10 +7,10 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class Fail extends ResponseBuilder implements Contract
 {
-    public function build(string $permission, array $inputs): RedirectResponse
+    public function build( string $id , string $permission, array $inputs): RedirectResponse
     {
         return $this->getResponse()
-                    ->redirectToRoute('dashboard.permission.edit',$permission)
+                    ->redirectToRoute('dashboard.permission.edit',[$id,$permission])
                     ->withInput($inputs)
                     ->with('system.messages.error',[
                         $this->getTranslator()->get(
