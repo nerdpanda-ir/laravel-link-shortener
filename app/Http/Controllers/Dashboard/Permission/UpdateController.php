@@ -41,24 +41,32 @@ class UpdateController extends Controller
             if (!$updated)
                 throw $failUpdateException;
             $logger->info(
-                $translator->get('messages.log.update.permission.ok', ['Permission' => $name])
+                $translator->get(
+                    'messages.log.update.permission.ok',
+                    ['id' => $id , 'name' => $name , 'newName' => $permission->name]
+                )
             );
-            return $okResponseBuilder->build($name);
+            return $okResponseBuilder->build($permission->name);
         }catch (FailUpdateException $exception){
             $exception->setMessage(
-                $translator->get('messages.log.update.permission.fail', ['permission' => $name])
+                $translator->get(
+                    'messages.log.update.permission.fail',
+                    ['id' => $id , 'name' => $name])
             );
             $exceptionHandler->report($exception);
-            return $failResponseBuilder->build($name,$request->only(['name']));
+            return $failResponseBuilder->build($id,$name,$request->only(['name']));
         }
         catch (NotFoundHttpException $exception){
             return $notFoundResponseBuilder->build($name);
         }catch (\Throwable $exception){
+            $finalName = $permission->name ?? $name;
             $logger->emergency(
-                $translator->get('messages.log.update.permission.exceptionThrow', ['permission' => $name])
+                $translator->get(
+                    'messages.log.update.permission.exceptionThrow',
+                    ['id' => $id , 'name' => $finalName])
             );
             $exceptionHandler->report($exception);
-            return $exceptionThrowResponseBuilder->build($name,$request->only(['name']));
+            return $exceptionThrowResponseBuilder->build($id,$finalName,$request->only(['name']));
         }
     }
 }
