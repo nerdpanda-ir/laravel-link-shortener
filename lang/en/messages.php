@@ -44,6 +44,13 @@ return [
                 'fail' => 'fail to update Permission with id -> :id and name -> :name !!! ' ,
                 'ok' => 'successfully updated permission with id -> :id and name -> :name  to :newName !!! '
             ]
+        ] ,
+        'delete'=> [
+            'permission' => [
+                'exceptionThrow' => 'throw exception when delete permission with id :id !!! ' ,
+                'ok'=>'permission with id => :id successfully deleted !!!' ,
+                'fail' => 'fail delete permission with id => :id'
+            ]
         ]
     ],
     'auth'=> [
@@ -76,6 +83,13 @@ return [
             'fail' => 'fail to update :permission Permission !!! '
         ]
     ] ,
+    'delete' => [
+        'permission' => [
+            'throwException' => 'something happened when delete <b>:name</b>  permission in <b>:date</b> !!! <br> please try after or contact to Developer or Help and Support !!!' ,
+            'ok' => 'successfully deleted <b>:name</b> permission !!!' ,
+            'fail'=> 'permission <b>:name</b> no deleted !!!'
+        ]
+    ],
     'not-found'=> [
         'permission' => 'not found :permission permission in system !!!'
     ],
