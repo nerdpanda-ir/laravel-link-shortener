@@ -181,7 +181,7 @@ return [
         \App\Providers\Seeder\RoleUserServiceProvider::class ,
         \App\Providers\Seeder\PermissionUserServiceProvider::class ,
         \App\Providers\DoLoginRequestServiceProvider::class ,
-        \App\Providers\LoginMailServiceProvider::class ,
+        \App\Providers\Mails\LoginServiceProvider::class ,
         \App\Providers\UserLoginNotificationServiceProvider::class ,
         \App\Providers\PermissionsToArrayServiceProvider::class ,
         \App\Providers\PermissionsFlyWeightServiceProvider::class,
