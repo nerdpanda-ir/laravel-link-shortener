@@ -6,6 +6,6 @@ trait Createable
 {
     public function create(): bool
     {
-        return false;
+        return $this->getPermissionManager()->has('role-create');
     }
 }
