@@ -19,6 +19,7 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         //
     ];
+    // @todo has duplicated codes for crud gates !!!
     protected $gates = [
         'see-ram-usage' => [SystemMonitor::class,'ramUsage'] ,
         'see-disk-usage' => [SystemMonitor::class,'diskUsage'] ,
