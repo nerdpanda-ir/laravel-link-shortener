@@ -4,8 +4,18 @@ namespace App\Observers\Permission;
 
 use App\Models\Permission;
 use App\Contracts\Observers\Permission\Logger as Contract;
+use Psr\Log\LoggerInterface as LoggerService;
+use Illuminate\Contracts\Translation\Translator ;
 class Logger implements Contract
 {
+    protected Translator $translator;
+    protected LoggerService $logger;
+    public function __construct(LoggerService $logger , Translator $translator)
+    {
+        $this->logger = $logger ;
+        $this->translator = $translator;
+    }
+
     /**
      * Handle the Permission "created" event.
      */
