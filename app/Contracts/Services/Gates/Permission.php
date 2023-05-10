@@ -2,8 +2,7 @@
 
 namespace App\Contracts\Services\Gates;
 
-interface Permission extends Crudable
-
+interface Permission
 {
 
 }
