@@ -6,6 +6,6 @@ trait Editable
 {
     public function edit(): bool
     {
-        return false;
+        return $this->getPermissionManager()->has('role-edit');
     }
 }
