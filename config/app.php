@@ -186,7 +186,7 @@ return [
         \App\Providers\PermissionsToArrayServiceProvider::class ,
         \App\Providers\PermissionsFlyWeightServiceProvider::class,
         \App\Providers\PermissionManagerServiceProvider::class ,
-        \App\Providers\SystemMonitorGateServiceProvider::class ,
+        \App\Providers\Services\Gates\SystemMonitorServiceProvider::class ,
         \App\Providers\Services\Gates\PermissionsServiceProvider::class ,
         \App\Providers\Request\Dashboard\Permission\StoreRequestServiceProvider::class ,
         \App\Providers\Exceptions\FailStoreServiceProvider::class,
