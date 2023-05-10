@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Services;
 
-interface TranslatorKeyGetter
+interface TranslateKeyGetter
 {
 
 }
