@@ -2,11 +2,11 @@
 
 namespace App\Contracts\Services\Gates;
 
-use App\Contracts\DiskUsageableGateContract;
-use App\Contracts\RamUsageableGateContract;
+use App\Contracts\Services\Gates\SystemMonitor\DiskUsageable;
+use App\Contracts\Services\Gates\SystemMonitor\RamUsageable;
 
 interface SystemMonitor extends
-    RamUsageableGateContract , DiskUsageableGateContract
+    RamUsageable , DiskUsageable
 {
 
 }
