@@ -6,8 +6,10 @@ use App\Models\Permission;
 use App\Contracts\Observers\Permission\Logger as Contract;
 use Psr\Log\LoggerInterface as LoggerService;
 use Illuminate\Contracts\Translation\Translator ;
+use App\Traits\Observers\Permission\Logger as LoggerTrait;
 class Logger implements Contract
 {
+    use LoggerTrait;
     protected Translator $translator;
     protected LoggerService $logger;
     public function __construct(LoggerService $logger , Translator $translator)
