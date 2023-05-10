@@ -187,7 +187,7 @@ return [
         \App\Providers\PermissionsFlyWeightServiceProvider::class,
         \App\Providers\PermissionManagerServiceProvider::class ,
         \App\Providers\SystemMonitorGateServiceProvider::class ,
-        \App\Providers\PermissionsGateServiceProvider::class ,
+        \App\Providers\Services\Gates\PermissionsServiceProvider::class ,
         \App\Providers\Request\Dashboard\Permission\StoreRequestServiceProvider::class ,
         \App\Providers\Exceptions\FailStoreServiceProvider::class,
         \App\Providers\Responses\Dashboard\Permission\Store\StoreBuilderServiceProvider::class ,
