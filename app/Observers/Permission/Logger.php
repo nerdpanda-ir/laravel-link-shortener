@@ -55,6 +55,10 @@ class Logger implements Contract
      */
     public function deleted(Permission $permission): void
     {
-        //
+        $this->logger->info(
+                $this->translator->get(
+                    'messages.delete.permission.ok', ['name' => $permission->name]
+                )
+        );
     }
 }
