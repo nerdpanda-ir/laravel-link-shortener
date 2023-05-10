@@ -7,10 +7,7 @@ use App\Traits\Services\Gates\Role as RoleTrait;
 class Role extends AbstractCrudableGate implements Contract
 {
     use RoleTrait;
-    public function create(): bool
-    {
-        dd(__METHOD__);
-    }
+
 
     public function delete(): bool
     {
