@@ -23,7 +23,12 @@ class Logger implements Contract
      */
     public function created(Permission $permission): void
     {
-        //
+        $this->logger->info(
+            $this->translator->get(
+                'messages.log.store.permission.ok',
+                ['id' => $permission->id , 'name' => $permission->name ]
+            )
+        );
     }
 
     /**
