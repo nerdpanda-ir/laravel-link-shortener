@@ -41,12 +41,6 @@ class UpdateController extends Controller
             $updated = $permission->update();
             if (!$updated)
                 throw $failUpdateException;
-            $logger->info(
-                $translator->get(
-                    'messages.log.update.permission.ok',
-                    ['id' => $id , 'name' => $name , 'newName' => $permission->name]
-                )
-            );
             return $okResponseBuilder->build($permission->name);
         }catch (FailUpdateException $exception){
             $exception->setMessage(
