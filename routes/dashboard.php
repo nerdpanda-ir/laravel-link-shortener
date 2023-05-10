@@ -25,5 +25,6 @@ Route::name('permission.')->prefix('permission')->namespace('Permission')
 
 Route::name('role.')->prefix('role')->name('Role')
         ->group(function (){
-
+            Route::get('view-all','Role\ViewAllController')
+                    ->name('view-all');
         });
