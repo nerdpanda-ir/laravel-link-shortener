@@ -14,6 +14,8 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">name</th>
+                        <th scope="col">user count</th>
+                        <th scope="col">role count</th>
                         <th scope="col">creator</th>
                         <th scope="col">created</th>
                         <th scope="col">updated</th>
