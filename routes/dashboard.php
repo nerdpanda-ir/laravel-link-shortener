@@ -23,8 +23,8 @@ Route::name('permission.')->prefix('permission')->namespace('Permission')
                 ->name('delete')->middleware('can:delete-permission');
         });
 
-Route::name('role.')->prefix('role')->name('Role')
+Route::name('role.')->prefix('role')->namespace('Role')
         ->group(function (){
-            Route::get('view-all','Role\ViewAllController')
+            Route::get('view-all','ViewAllController')
                     ->name('view-all');
         });
