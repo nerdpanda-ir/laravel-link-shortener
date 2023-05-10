@@ -2,11 +2,11 @@
 
 namespace App\Observers\Permission;
 
-use App\Models\Permission;
 use App\Contracts\Observers\Permission\Logger as Contract;
 use Psr\Log\LoggerInterface as LoggerService;
 use Illuminate\Contracts\Translation\Translator ;
 use App\Traits\Observers\Permission\Logger as LoggerTrait;
+use App\Contracts\Model\Permission ;
 class Logger implements Contract
 {
     use LoggerTrait;
