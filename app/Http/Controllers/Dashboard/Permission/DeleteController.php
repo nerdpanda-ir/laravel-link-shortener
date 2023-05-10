@@ -36,10 +36,6 @@ class DeleteController extends Controller
             $deleted = $permission->delete();
             if (!$deleted)
                 throw $failDeleteException;
-            // @todo create observer or listener
-            $logger->info(
-                $translator->get('messages.delete.permission.ok', ['name' => $permission->name])
-            );
             return $okResponseBuilder->build($permission->name);
         }catch (NotFoundHttpException $exception ){
             return $notFoundResponseBuilder->build($name);
