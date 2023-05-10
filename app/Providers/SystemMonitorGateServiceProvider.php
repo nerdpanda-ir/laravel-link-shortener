@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use App\Services\Gates\SystemMonitor as Entity;
+use App\Contracts\Services\Gates\SystemMonitor as Contract;
 
 class SystemMonitorGateServiceProvider extends ServiceProvider implements DeferrableProvider
 {
@@ -13,12 +14,12 @@ class SystemMonitorGateServiceProvider extends ServiceProvider implements Deferr
      */
     public function register(): void
     {
-        $this->app->singleton(Entity::class);
+        $this->app->bind(Contract::class , Entity::class);
     }
     public function provides():array
     {
         return [
-            Entity::class
+            Contract::class
         ];
     }
 }
