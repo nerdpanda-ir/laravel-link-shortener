@@ -22,3 +22,8 @@ Route::name('permission.')->prefix('permission')->namespace('Permission')
             Route::delete('delete/{id}/{name}','DeleteController')
                 ->name('delete')->middleware('can:delete-permission');
         });
+
+Route::name('role.')->prefix('role')->name('Role')
+        ->group(function (){
+
+        });
