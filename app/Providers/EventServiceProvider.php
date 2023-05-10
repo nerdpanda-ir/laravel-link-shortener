@@ -9,6 +9,8 @@ use App\Listeners\Job\LogProcessingListener;
 use App\Listeners\LoginEvent\LoggerListener;
 use App\Listeners\LoginEvent\NotifyUserListener;
 use App\Listeners\LogoutEvent\UserLogoutLoggerListener;
+use App\Models\Permission;
+use App\Observers\Permission\Logger;
 use Illuminate\Auth\Events\Attempting;
 use Illuminate\Auth\Events\Authenticated;
 use Illuminate\Auth\Events\Failed;
@@ -57,7 +59,11 @@ class EventServiceProvider extends ServiceProvider
             LoadUserPermissionsListener::class
         ]
     ];
-
+    protected $observers = [
+        Permission::class => [
+            Logger::class
+        ]
+    ];
     /**
      * Register any events for your application.
      */
