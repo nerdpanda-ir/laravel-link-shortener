@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Services\Gates;
+use App\Contracts\Services\Gates\Permission as Contract;
 use App\Services\GateBase;
-use App\Contracts\PermissionGateContract as Contract;
 use App\Traits\Services\Gates\Permission\Createable;
 use App\Traits\Services\Gates\Permission\Deleteable;
 use App\Traits\Services\Gates\Permission\Editable;
