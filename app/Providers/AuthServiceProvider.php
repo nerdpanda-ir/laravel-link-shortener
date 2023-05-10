@@ -26,6 +26,10 @@ class AuthServiceProvider extends ServiceProvider
         'create-permission' => [Permission::class , 'create'] ,
         'delete-permission' => [Permission::class , 'delete'] ,
         'edit-permission' => [Permission::class , 'edit'] ,
+        'view-all-roles' => [Role::class , 'viewAll'] ,
+        'create-role' => [Role::class , 'create'] ,
+        'edit-role' => [Role::class , 'edit'] ,
+        'delete-role' => [Role::class , 'delete'] ,
     ];
 
     /**
