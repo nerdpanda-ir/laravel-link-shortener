@@ -6,6 +6,6 @@ trait Deleteable
 {
     public function delete(): bool
     {
-        return false;
+        return $this->getPermissionManager()->has('role-delete');
     }
 }
