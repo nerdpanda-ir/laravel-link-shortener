@@ -207,6 +207,7 @@ return [
         App\Providers\Responses\Dashboard\Permission\Delete\OkServiceProvider::class ,
         \App\Providers\Exceptions\FailDeleteServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\Delete\FailServiceProvider::class ,
+        \App\Providers\Observers\Permission\LoggerServiceProvider::class ,
     ])->toArray(),
 
     /*
