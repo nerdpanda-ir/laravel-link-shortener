@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Services\Gates;
 
-interface GateDeleteable
+interface Deleteable
 {
     public function delete():bool;
 }
