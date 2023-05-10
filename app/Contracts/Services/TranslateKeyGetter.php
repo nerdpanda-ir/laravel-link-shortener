@@ -2,7 +2,9 @@
 
 namespace App\Contracts\Services;
 
-interface TranslateKeyGetter
+use App\Contracts\Services\TranslateKeyGetter\ModelLoggable;
+
+interface TranslateKeyGetter extends ModelLoggable
 {
 
 }
