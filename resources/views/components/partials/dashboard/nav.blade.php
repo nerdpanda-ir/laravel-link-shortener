@@ -33,5 +33,16 @@
                 @endcan
             </ul>
         @endcanany
+        @canany(['create-role','view-all-roles'])
+            <x-partials.sidebar-heading name="Roles" uri="{{route('dashboard.role.create')}}"/>
+            <ul class="nav flex-column mb-2">
+                @can('view-all-roles')
+                    <x-partials.sidebar-link-item title="All" uri="{{route('dashboard.role.view-all')}}" />
+                @endcan
+                @can('create-role')
+                    <x-partials.sidebar-link-item title="Create" uri="{{route('dashboard.permission.create')}}"/>
+                @endcan
+            </ul>
+        @endcanany
     </div>
 </nav>
