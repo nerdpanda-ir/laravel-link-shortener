@@ -41,20 +41,4 @@ class Logger implements Contract
     {
         //
     }
-
-    /**
-     * Handle the Permission "restored" event.
-     */
-    public function restored(Permission $permission): void
-    {
-        //
-    }
-
-    /**
-     * Handle the Permission "force deleted" event.
-     */
-    public function forceDeleted(Permission $permission): void
-    {
-        //
-    }
 }
