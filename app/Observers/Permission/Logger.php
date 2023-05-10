@@ -3,6 +3,7 @@
 namespace App\Observers\Permission;
 
 use App\Contracts\Observers\Permission\Logger as Contract;
+use App\Contracts\Services\TranslateKeyGetter;
 use Psr\Log\LoggerInterface as LoggerService;
 use Illuminate\Contracts\Translation\Translator ;
 use App\Traits\Observers\Permission\Logger as LoggerTrait;
@@ -33,10 +34,20 @@ class Logger implements Contract
 
     /**
      * Handle the Permission "updated" event.
+     * @param \App\Models\Permission $permission
      */
     public function updated(Permission $permission): void
     {
-        //
+        $this->getLogger()->info(
+                $this->getTranslator()->get(
+                    'messages.log.update.permission.ok',
+                        [
+                            'id' => $permission->getOriginal('id') ,
+                            'name' => $permission->getOriginal('name') ,
+                            'newName' => $permission->name
+                        ]
+                )
+        );
     }
 
     /**
