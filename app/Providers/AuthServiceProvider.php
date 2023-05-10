@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
-use App\Services\Gates\Permission;
+use App\Contracts\Services\Gates\Permission;
+use App\Contracts\Services\Gates\Role;
 use App\Services\Gates\SystemMonitor;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
