@@ -31,14 +31,14 @@
                         <td>
                             @if(!is_null($permission->created_at))
                                 {{$permission->created_at}}
-                                -:-
+                                <br>
                                 {{\DateServiceFacade::dateStrToCarbon($permission->created_at)?->ago()}}
                             @endif
                         </td>
                         <td>
                             @if(!is_null($permission->updated_at))
                                 {{$permission->updated_at}}
-                                -:-
+                                <br>
                                 {{\DateServiceFacade::dateStrToCarbon($permission->updated_at)?->ago()}}
                             @endif
                         </td>
