@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts\Services\Gates;
+namespace App\Contracts\Services\AbstractCrudableGate;
 
 interface Createable
 {
