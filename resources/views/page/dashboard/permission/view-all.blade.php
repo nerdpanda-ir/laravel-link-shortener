@@ -43,18 +43,20 @@
                             @endif
                         </td>
                         @canany(['edit-permission','delete-permission'])
-                            <td class="d-flex justify-content-evenly">
-                                @can('edit-permission')
-                                    <a href="{{route('dashboard.permission.edit',[$permission->id,$permission->name])}}"
-                                       class="btn btn-warning text-dark">Edit</a>
-                                @endcan
-                                @can('delete-permission')
-                                    <form action="{{route('dashboard.permission.delete' ,[$permission->id,$permission->name])}}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                            <button class="bg-danger btn text-light">Delete</button>
-                                        </form>
-                                @endcan
+                            <td class="">
+                                <section class="d-flex justify-content-evenly">
+                                    @can('edit-permission')
+                                        <a href="{{route('dashboard.permission.edit',[$permission->id,$permission->name])}}"
+                                           class="btn btn-warning text-dark">Edit</a>
+                                    @endcan
+                                    @can('delete-permission')
+                                        <form action="{{route('dashboard.permission.delete' ,[$permission->id,$permission->name])}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                                <button class="bg-danger btn text-light">Delete</button>
+                                            </form>
+                                    @endcan
+                                </section>
                             </td>
                         @endcanany
                     </tr>
