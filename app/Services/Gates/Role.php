@@ -9,10 +9,7 @@ class Role extends AbstractCrudableGate implements Contract
     use RoleTrait;
 
 
-    public function delete(): bool
-    {
-        dd(__METHOD__);
-    }
+
 
     public function edit(): bool
     {
