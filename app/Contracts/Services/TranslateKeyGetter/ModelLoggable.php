@@ -4,5 +4,5 @@ namespace App\Contracts\Services\TranslateKeyGetter;
 
 interface ModelLoggable
 {
-    public function modelLog(string $action , string $model):string;
+    public function modelLog(string $action , string $model , string $status):string;
 }
