@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Services\Gates;
 
 use App\Contracts\Services\Gates\Permission as Contract;
 use App\Services\Gates\Permission as Service;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class PermissionsGateServiceProvider extends ServiceProvider implements DeferrableProvider
+class PermissionsServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
