@@ -2,8 +2,8 @@
 
 namespace App\Contracts\Services\Gates;
 
-interface Permission extends
-    Viewallable , Createable , Editable , Deleteable
+interface Permission extends Crudable
+
 {
 
 }
