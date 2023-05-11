@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Services;
-use App\Contracts\PermissionManagerContract as PermissionManager;
 use App\Contracts\Services\Gate as Contract;
+use App\Contracts\Services\PermissionManager;
 
 class GateBase implements Contract
 {
