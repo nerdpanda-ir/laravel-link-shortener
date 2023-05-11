@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Contracts\PermissionManagerContract as Contract;
 use App\Contracts\PermissionsFlyWeightContract;
+use App\Contracts\Services\PermissionManager as Contract;
 
 class PermissionManagerService implements Contract
 {
