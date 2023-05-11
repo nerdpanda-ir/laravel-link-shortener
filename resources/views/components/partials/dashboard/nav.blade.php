@@ -40,7 +40,7 @@
                     <x-partials.sidebar-link-item title="All" uri="{{route('dashboard.role.view-all')}}" />
                 @endcan
                 @can('create-role')
-                    <x-partials.sidebar-link-item title="Create" uri="{{route('dashboard.permission.create')}}"/>
+                    <x-partials.sidebar-link-item title="Create" uri="{{route('dashboard.role.create')}}"/>
                 @endcan
             </ul>
         @endcanany
