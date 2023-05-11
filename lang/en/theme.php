@@ -1,20 +1,26 @@
 <?php
 return [
     'dashboard' => [
-        'no-result-found' => 'no found any result for display here !!!' ,
-        'view-all'=> 'view all :Name (total :total )',
+        'no_result_found' => 'no found any result for display here !!!' ,
+        'delete_btn' => 'Delete' , 'edit_btn'=> 'Edit' ,
+        'actions'=> [
+            'view_all'=> [
+                'body_title' => 'view all :Name (total :total )'
+            ]
+        ],
         'pages'=> [
             'permissions' => [
-                'view-all'=> [
-                    'title'=> "view all permissions (total : :total )" ,
-                    ''
+                'view_all'=> [
+                    'body_title'=> "view all permissions (total : :total )" ,
+                    'permissions_table' => [
+                        'headers' => [
+                            'name'=> 'name' , 'users_count' => 'users_count' ,
+                            'roles_count' => 'roles_count' , 'creator' => 'creator' ,
+                            'created' => 'created' , 'updated'=> 'updated' ,
+                            'actions'=> 'actions'
+                        ],
+                    ]
                 ],
-            ],
-            'roles'=> [
-                'view-all' => [
-                    'body-title'=> 'Show All Roles ( Total :total)' ,
-                    'no-exist-any-role' => 'No Found Any Role for display !!!'
-                ]
             ],
         ],
     ]
