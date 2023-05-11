@@ -185,7 +185,7 @@ return [
         \App\Providers\Notifications\UserLoginServiceProvider::class ,
         \App\Providers\Services\PermissionsToArrayServiceProvider::class ,
         \App\Providers\PermissionsFlyWeightServiceProvider::class,
-        \App\Providers\PermissionManagerServiceProvider::class ,
+        \App\Providers\Services\PermissionManagerServiceProvider::class ,
         \App\Providers\Services\Gates\SystemMonitorServiceProvider::class ,
         \App\Providers\Services\Gates\PermissionsServiceProvider::class ,
         \App\Providers\Request\Dashboard\Permission\StoreRequestServiceProvider::class ,
