@@ -5,7 +5,6 @@ namespace App\Contracts\Responses\Dashboard\Permission;
 use App\Contracts\TranslatorGetterable;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-interface NotFound extends TranslatorGetterable
+interface NotFound extends TranslatorGetterable , Buildable
 {
-    public function build(string $permission):RedirectResponse;
 }

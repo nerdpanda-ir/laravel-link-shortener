@@ -2,9 +2,10 @@
 
 namespace App\Contracts\Responses\Dashboard\Permission\Edit;
 
+use App\Contracts\Responses\Dashboard\Permission\Buildable;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-interface ExceptionThrow
+interface ExceptionThrow extends Buildable
 {
-    public function build(string $permission):RedirectResponse;
+
 }
