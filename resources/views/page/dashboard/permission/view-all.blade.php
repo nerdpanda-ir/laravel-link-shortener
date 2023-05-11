@@ -51,7 +51,7 @@
                                 <section class="d-flex justify-content-evenly">
                                     @can('edit-permission')
                                         <a href="{{route('dashboard.permission.edit',[$permission->id,$permission->name])}}"
-                                           class="btn btn-warning text-dark">Edit</a>
+                                           class="btn btn-warning text-dark">{{trans('theme.dashboard.edit_btn')}}</a>
                                     @endcan
                                     @can('delete-permission')
                                         <form action="{{route('dashboard.permission.delete' ,[$permission->id,$permission->name])}}" method="post">
