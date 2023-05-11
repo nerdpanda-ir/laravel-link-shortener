@@ -26,7 +26,7 @@ Route::name('permission.')->prefix('permission')->namespace('Permission')
 Route::name('role.')->prefix('role')->namespace('Role')
         ->group(function (){
             Route::get('view-all','ViewAllController')
-                    ->name('view-all');
+                    ->name('view-all')->middleware('can:view-all-roles');
 
             Route::get('create','CreateController')
                     ->name('create');
