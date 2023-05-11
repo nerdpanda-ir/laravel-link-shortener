@@ -2,8 +2,8 @@
 
 namespace App\Listeners\LoginEvent;
 
-use App\Contracts\DoLoginRequestContract as Request;
 use App\Contracts\Mails\Login as LoginMail;
+use App\Contracts\Requests\DoLogin as Request;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Contracts\Mail\Factory as MailManager;
 use Illuminate\Contracts\Translation\Translator;

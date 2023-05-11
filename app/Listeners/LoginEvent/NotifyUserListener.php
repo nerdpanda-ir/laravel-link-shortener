@@ -2,9 +2,9 @@
 
 namespace App\Listeners\LoginEvent;
 
+use App\Contracts\Requests\DoLogin as Request;
 use App\Jobs\UserLoginNotifyJob;
 use Illuminate\Auth\Events\Login;
-use App\Contracts\DoLoginRequestContract as Request;
 
 class NotifyUserListener
 {
