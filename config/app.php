@@ -180,7 +180,7 @@ return [
         \App\Providers\Model\RoleServiceProvider::class ,
         \App\Providers\Seeder\RoleUserServiceProvider::class ,
         \App\Providers\Seeder\PermissionUserServiceProvider::class ,
-        \App\Providers\DoLoginRequestServiceProvider::class ,
+        \App\Providers\Request\DoLoginServiceProvider::class ,
         \App\Providers\Mails\LoginServiceProvider::class ,
         \App\Providers\UserLoginNotificationServiceProvider::class ,
         \App\Providers\PermissionsToArrayServiceProvider::class ,
