@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Notifications;
 
 use App\Contracts\Notifications\UserLogin as Contract;
 use App\Notifications\UserLoginNotification as Entity;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class UserLoginNotificationServiceProvider extends ServiceProvider implements DeferrableProvider
+class UserLoginServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
