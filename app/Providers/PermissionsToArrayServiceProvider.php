@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
+use App\Contracts\Services\PermissionsToArray as Contract;
+use App\Services\PermissionsToArrayJustNameStrategyService as Service;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use App\Contracts\PermissionsToArrayContract as Contract ;
-use App\Services\PermissionsToArrayJustNameStrategyService as Service;
+
 class PermissionsToArrayServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void

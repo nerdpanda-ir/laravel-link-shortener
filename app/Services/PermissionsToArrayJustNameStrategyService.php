@@ -2,10 +2,10 @@
 
 namespace App\Services;
 
-use App\Contracts\PermissionsToArrayContract;
+use App\Contracts\Services\PermissionsToArray;
 use Illuminate\Support\Collection;
 
-class PermissionsToArrayJustNameStrategyService extends CollectionToArrayService implements PermissionsToArrayContract
+class PermissionsToArrayJustNameStrategyService extends CollectionToArrayService implements PermissionsToArray
 {
     public function toArray(Collection $collection):array
     {
