@@ -9,6 +9,7 @@ use App\Listeners\Job\LogProcessingListener;
 use App\Listeners\LoginEvent\LoggerListener;
 use App\Listeners\LoginEvent\NotifyUserListener;
 use App\Listeners\LogoutEvent\UserLogoutLoggerListener;
+use App\Listeners\QueryLoggerListener;
 use App\Models\Permission;
 use App\Observers\Permission\Logger;
 use Illuminate\Auth\Events\Attempting;
@@ -18,6 +19,7 @@ use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
+use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Queue\Events\JobFailed;
 use Illuminate\Queue\Events\JobProcessed;
@@ -57,6 +59,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         Authenticated::class => [
             LoadUserPermissionsListener::class
+        ],
+        QueryExecuted::class => [
+            QueryLoggerListener::class ,
         ]
     ];
     protected $observers = [
