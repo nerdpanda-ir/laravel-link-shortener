@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Contracts\DoLoginRequestContract as RequestContract;
+use App\Contracts\Requests\DoLogin as RequestContract;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Contracts\Auth\Factory as Auth;
 use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Routing\Redirector;
-use  Psr\Log\LoggerInterface;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 class DoLoginController extends Controller
