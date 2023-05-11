@@ -2,7 +2,8 @@
 
 namespace App\Services;
 use App\Contracts\PermissionManagerContract as PermissionManager;
-use App\Contracts\GateContract as Contract;
+use App\Contracts\Services\Gate as Contract;
+
 class GateBase implements Contract
 {
     protected PermissionManager $permissionManager;
