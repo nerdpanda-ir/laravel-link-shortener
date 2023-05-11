@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
+use App\Contracts\Notifications\UserLogin as Contract;
+use App\Notifications\UserLoginNotification as Entity;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use App\Contracts\UserLoginNotificationContract as Contract;
-use App\Notifications\UserLoginNotification as Entity;
+
 class UserLoginNotificationServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void

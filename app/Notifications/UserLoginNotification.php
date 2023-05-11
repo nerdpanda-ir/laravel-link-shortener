@@ -4,7 +4,7 @@ namespace App\Notifications;
 
 use App\Contracts\Mails\Login;
 use App\Contracts\Model\Userable;
-use App\Contracts\UserLoginNotificationContract as Contract;
+use App\Contracts\Notifications\UserLogin as Contract;
 use Illuminate\Contracts\Mail\Mailable;
 use Illuminate\Notifications\Notification;
 
