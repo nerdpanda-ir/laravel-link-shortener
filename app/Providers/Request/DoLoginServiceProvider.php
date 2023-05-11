@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Request;
 
 use App\Contracts\Requests\DoLogin as Contract;
 use App\Http\Requests\DoLoginRequest as Request;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class DoLoginRequestServiceProvider extends ServiceProvider implements DeferrableProvider
+class DoLoginServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
@@ -15,6 +15,6 @@ class DoLoginRequestServiceProvider extends ServiceProvider implements Deferrabl
     }
     public function provides():array
     {
-        return [Contract::class,Request::class];
+        return [Contract::class];
     }
 }
