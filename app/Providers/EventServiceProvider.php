@@ -9,6 +9,7 @@ use App\Listeners\Job\LogProcessingListener;
 use App\Listeners\LoginEvent\LoggerListener;
 use App\Listeners\LoginEvent\NotifyUserListener;
 use App\Listeners\LogoutEvent\UserLogoutLoggerListener;
+use App\Listeners\QueryExecutedEvent\QueryDisplayOnConsoleListener;
 use App\Listeners\QueryExecutedEvent\QueryDisplayOnWebListener;
 use App\Listeners\QueryExecutedEvent\QueryLoggerListener;
 use App\Models\Permission;
@@ -60,6 +61,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         QueryExecuted::class => [
             QueryLoggerListener::class , QueryDisplayOnWebListener::class ,
+            QueryDisplayOnConsoleListener::class
         ]
     ];
     protected $observers = [
