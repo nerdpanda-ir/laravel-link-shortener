@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Listeners;
+namespace App\Listeners\QueryExecutedEvent;
 
-use Illuminate\Database\Events\QueryExecuted;
 use App\Contracts\LoggerGetterable;
 use App\Traits\LoggerGetterable as LoggerGetterableTrait;
+use Illuminate\Database\Events\QueryExecuted;
 use Psr\Log\LoggerInterface as Logger;
 
 class QueryLoggerListener implements LoggerGetterable
