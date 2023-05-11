@@ -2,13 +2,13 @@
 
 namespace App\Services;
 
-use App\Contracts\PermissionsFlyWeightContract;
 use App\Contracts\Services\PermissionManager as Contract;
+use App\Contracts\Services\PermissionsFlyWeight;
 
 class PermissionManagerService implements Contract
 {
-    protected PermissionsFlyWeightContract $permissionFlyWeight;
-    public function __construct(PermissionsFlyWeightContract $permissionFlyWeight)
+    protected PermissionsFlyWeight $permissionFlyWeight;
+    public function __construct(PermissionsFlyWeight $permissionFlyWeight)
     {
         $this->permissionFlyWeight = $permissionFlyWeight ;
     }

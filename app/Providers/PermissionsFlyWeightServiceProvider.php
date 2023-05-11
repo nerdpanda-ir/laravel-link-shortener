@@ -2,12 +2,13 @@
 
 namespace App\Providers;
 
+use App\Contracts\Services\PermissionsFlyWeight as Contract;
+use App\Services\PermissionsFlyWeightService as Service;
 use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use App\Contracts\PermissionsFlyWeightContract as Contract;
-use App\Services\PermissionsFlyWeightService as Service;
+
 class PermissionsFlyWeightServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
