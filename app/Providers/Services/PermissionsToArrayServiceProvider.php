@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Services;
 
 use App\Contracts\Services\PermissionsToArray as Contract;
 use App\Services\PermissionsToArrayJustNameStrategyService as Service;
