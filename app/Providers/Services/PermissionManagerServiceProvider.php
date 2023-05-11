@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Services;
 
 use App\Contracts\Services\PermissionManager as Contract;
 use App\Services\PermissionManagerService as Service;
