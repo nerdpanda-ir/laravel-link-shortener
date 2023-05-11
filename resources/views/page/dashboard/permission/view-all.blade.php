@@ -29,6 +29,8 @@
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$permission->name}}</td>
+                        <td><a href="#">{{$permission->users_count}}</a> </td>
+                        <td><a href="">{{$permission->roles_count}}</a></td>
                         <td>{{$permission->creator?->name}}</td>
                         <td>
                             @if(!is_null($permission->created_at))
