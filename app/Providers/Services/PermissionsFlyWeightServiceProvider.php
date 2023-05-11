@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Providers\Services;
 
 use App\Contracts\Services\PermissionsFlyWeight as Contract;
 use App\Services\PermissionsFlyWeightService as Service;
