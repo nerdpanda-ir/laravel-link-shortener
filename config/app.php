@@ -183,7 +183,7 @@ return [
         \App\Providers\Request\DoLoginServiceProvider::class ,
         \App\Providers\Mails\LoginServiceProvider::class ,
         \App\Providers\Notifications\UserLoginServiceProvider::class ,
-        \App\Providers\PermissionsToArrayServiceProvider::class ,
+        \App\Providers\Services\PermissionsToArrayServiceProvider::class ,
         \App\Providers\PermissionsFlyWeightServiceProvider::class,
         \App\Providers\PermissionManagerServiceProvider::class ,
         \App\Providers\Services\Gates\SystemMonitorServiceProvider::class ,
