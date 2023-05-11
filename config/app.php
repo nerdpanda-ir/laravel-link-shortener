@@ -184,7 +184,7 @@ return [
         \App\Providers\Mails\LoginServiceProvider::class ,
         \App\Providers\Notifications\UserLoginServiceProvider::class ,
         \App\Providers\Services\PermissionsToArrayServiceProvider::class ,
-        \App\Providers\PermissionsFlyWeightServiceProvider::class,
+        \App\Providers\Services\PermissionsFlyWeightServiceProvider::class,
         \App\Providers\Services\PermissionManagerServiceProvider::class ,
         \App\Providers\Services\Gates\SystemMonitorServiceProvider::class ,
         \App\Providers\Services\Gates\PermissionsServiceProvider::class ,
