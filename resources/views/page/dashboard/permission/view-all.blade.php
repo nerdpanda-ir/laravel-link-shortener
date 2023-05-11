@@ -4,7 +4,7 @@
     $total = $permissions->total();
 @endphp
 @section('dashboard-title')
-    <h1>{{trans('theme.dashboard.pages.permissions.view-all.title', ['total' => $total])}}</h1>
+    <h1>{{trans('theme.dashboard.pages.permissions.view_all.body_title', ['total' => $total])}}</h1>
 @endsection
 @section('dashboard-content')
     @unless($permissions->isEmpty())
