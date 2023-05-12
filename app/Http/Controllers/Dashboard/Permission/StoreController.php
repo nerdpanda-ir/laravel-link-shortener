@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard\Permission;
 
-use App\Contracts\Exceptions\FailStore;
+use App\Contracts\Exceptions\FailCrud;
 use App\Contracts\Model\Permission as Permission;
 use App\Contracts\Requests\Dashboard\Permission\StoreRequest as Request;
 use App\Contracts\Responses\Dashboard\Permission\Store\ExceptionHappenBuilder;
@@ -24,7 +24,7 @@ class StoreController extends Controller
      */
     public function __invoke(
         Request $request , Permission $permission  , Response $response ,
-        Logger $logger , Translator $translator , Auth $auth , FailStore $failStore ,
+        Logger $logger , Translator $translator , Auth $auth , FailCrud $failStore ,
         StoreBuilder $storeResponseBuilder , FailStoreBuilder $failStoreResponseBuilder ,
         ExceptionHappenBuilder $exceptionHappenResponseBuilder
     ):BaseResponse
@@ -40,12 +40,10 @@ class StoreController extends Controller
             if (!$created)
                 throw $failStore;
             return $storeResponseBuilder->build($request->name);
-        } catch (FailStore $exception){
+        } catch (FailCrud $exception){
+            $exception->setContext(['permission' => $request->name]);
             $exception->setMessage(
-                $translator->get(
-                    'messages.store.permission.fail',
-                    ['permission' => $request->name]
-                )
+                $translator->get('exceptions.crud',['action' => 'store permission'])
             );
             report($exception);
             return $failStoreResponseBuilder->build(
