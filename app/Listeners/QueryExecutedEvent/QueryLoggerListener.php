@@ -18,7 +18,6 @@ class QueryLoggerListener implements LoggerGetterable
 
     public function handle(QueryExecuted $event): void
     {
-        $this->logger->debug('query Executed !!!' ,[$event]);
         if (!config('queryExecuted.log'))
             return;
         $payload = [];
