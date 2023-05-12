@@ -33,11 +33,6 @@ return [
                 'ok' => 'successfully created permission with id -> :id and name -> :name ' ,
             ]
         ] ,
-        'edit'=> [
-            'permission' => [
-                'exceptionThrow'=> 'have exception when edit permission with id -> :id and name :name !!!'
-            ]
-        ] ,
         'update' => [
             'permission' => [
                 'exceptionThrow' => 'exception throw when update permission with id -> :id and name-> :name!!!' ,
