@@ -10,7 +10,7 @@ class RequestLoggerMiddleware
     public function handle(Request $request, Closure $next)
     {
         try {
-            \Log::info(trans('messages.log.request'),[
+            \Log::info(trans('log.request_start'),[
                 'ip'=> $request->ip() , 'method'=> $request->method() , 'route'=> $request->route()->getName() ,
                 'destination' => $request->fullUrl() , 'action'=> $request->route()->getAction() ,
                 'inputs' => $request->all() ,
