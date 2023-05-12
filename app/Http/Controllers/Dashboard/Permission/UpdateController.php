@@ -56,7 +56,7 @@ class UpdateController extends Controller
         }catch (\Throwable $exception){
             $finalName = $permission->name ?? $name;
             $logger->emergency(
-                $translator->get('exceptions.actions.exception_throw') ,
+                $translator->get('exceptions.crud', ['action' => 'update permission']) ,
                 ['id' => $id , 'name' => $finalName]
             );
             $exceptionHandler->report($exception);
