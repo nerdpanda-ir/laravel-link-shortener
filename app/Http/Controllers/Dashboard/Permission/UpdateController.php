@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Dashboard\Permission;
 
-use App\Contracts\Exceptions\FailUpdate as FailUpdateException;
+use App\Contracts\Exceptions\FailCrud as FailUpdateException;
 use App\Contracts\Model\Permission as Permission;
 use App\Contracts\Requests\Dashboard\Permission\Update as Request;
 use App\Contracts\Responses\Dashboard\Permission\NotFound as NotFoundResponseBuilder;
 use App\Contracts\Responses\Dashboard\Permission\Update\ExceptionThrow;
 use App\Contracts\Responses\Dashboard\Permission\Update\Fail as FailResponseBuilder;
 use App\Contracts\Responses\Dashboard\Permission\Update\Ok as OkResponseBuilder;
+use App\Exceptions\FailCrud;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Translation\Translator;
@@ -28,7 +29,7 @@ class UpdateController extends Controller
         string $id , string $name , Request $request , Permission $model , Logger $logger , Translator $translator ,
         ExceptionThrow $exceptionThrowResponseBuilder , FailResponseBuilder $failResponseBuilder ,
         NotFoundHttpException $notFoundException , NotFoundResponseBuilder $notFoundResponseBuilder ,
-        ExceptionHandler $exceptionHandler , FailUpdateException $failUpdateException ,
+        ExceptionHandler $exceptionHandler , FailCrud $failUpdateException ,
         OkResponseBuilder $okResponseBuilder
     ):RedirectResponse
     {
@@ -43,11 +44,8 @@ class UpdateController extends Controller
                 throw $failUpdateException;
             return $okResponseBuilder->build($permission->name);
         }catch (FailUpdateException $exception){
-            $exception->setMessage(
-                $translator->get(
-                    'messages.log.update.permission.fail',
-                    ['id' => $id , 'name' => $name])
-            );
+            $exception->setContext(['id' => $id , 'name' => $name]);
+            $exception->setMessage($translator->get('exceptions.crud', ['action' => 'update permission']));
             $exceptionHandler->report($exception);
             return $failResponseBuilder->build($id,$name,$request->only(['name']));
         }
