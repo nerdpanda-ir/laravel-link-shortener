@@ -49,7 +49,6 @@ return [
             'permission' => [
                 'exceptionThrow' => 'throw exception when delete permission with id :id !!! ' ,
                 'ok'=>'permission with id => :id successfully deleted !!!' ,
-                'fail' => 'fail delete permission with id => :id'
             ]
         ]
     ],
