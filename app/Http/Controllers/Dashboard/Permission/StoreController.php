@@ -53,7 +53,7 @@ class StoreController extends Controller
             );
         } catch (\Throwable $throwable){
             $logger->emergency(
-                $translator->get('exceptions.actions.store.permission.exception_throw') ,
+                $translator->get('exceptions.actions.exception_throw', ['action' => 'store permission']) ,
             );
             report($throwable);
             return $exceptionHappenResponseBuilder->build($request->only('name'));
