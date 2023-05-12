@@ -28,22 +28,6 @@ return [
             'processed' => 'done processing job :name' ,
             'failed' => 'failed processing job :name',
         ] ,
-        'store' => [
-            'permission'=> [
-                'ok' => 'successfully created permission with id -> :id and name -> :name ' ,
-            ]
-        ] ,
-        'update' => [
-            'permission' => [
-                'fail' => 'fail to update Permission with id -> :id and name -> :name !!! ' ,
-                'ok' => 'successfully updated permission with id -> :id and name -> :name  to :newName !!! '
-            ]
-        ] ,
-        'delete'=> [
-            'permission' => [
-                'ok'=>'permission with id => :id successfully deleted !!!' ,
-            ]
-        ]
     ],
     'auth'=> [
         'login' => [
