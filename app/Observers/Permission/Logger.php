@@ -24,12 +24,7 @@ class Logger implements Contract
      */
     public function created(Permission $permission): void
     {
-        $this->logger->info(
-            $this->translator->get(
-                'messages.log.store.permission.ok',
-                ['id' => $permission->id , 'name' => $permission->name ]
-            )
-        );
+        $this->logger->info($this->translator->get('log.actions.create'),['item'=>$permission]);
     }
 
     /**
@@ -38,16 +33,11 @@ class Logger implements Contract
      */
     public function updated(Permission $permission): void
     {
-        $this->getLogger()->info(
-                $this->getTranslator()->get(
-                    'messages.log.update.permission.ok',
-                        [
-                            'id' => $permission->getOriginal('id') ,
-                            'name' => $permission->getOriginal('name') ,
-                            'newName' => $permission->name
-                        ]
-                )
+        $this->getLogger()->debug(
+            $this->getTranslator()->get('log.actions.updated') ,
+            ['item'=> $permission]
         );
+
     }
 
     /**
@@ -55,10 +45,9 @@ class Logger implements Contract
      */
     public function deleted(Permission $permission): void
     {
-        $this->logger->info(
-                $this->translator->get(
-                    'messages.delete.permission.ok', ['name' => $permission->name]
-                )
+        $this->getLogger()->info(
+            $this->getTranslator()->get('log.actions.delete') ,
+            ['item'=> $permission]
         );
     }
 }
