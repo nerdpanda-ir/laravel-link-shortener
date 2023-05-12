@@ -1,8 +1,6 @@
 <?php
 return [
     'log' => [
-        'request' => 'Request Start' ,
-        'response' => 'Delivered Response To User' ,
         'auth' => [
             'login' => [
                 'start' => 'user start login action' ,
