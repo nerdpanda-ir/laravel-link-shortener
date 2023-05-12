@@ -2,11 +2,12 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\LoggerMiddleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ResponseLoggerMiddleware
+class ResponseLoggerMiddleware extends LoggerMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
@@ -14,9 +15,11 @@ class ResponseLoggerMiddleware
     }
     public function terminate(Request $request , Response $response):void {
         try {
-            \Log::info(trans('messages.log.response'),[
-                'status_code' => $response->getStatusCode() ,
-            ]);
+            $this->getLogger()->info(
+                $this->getTranslator()->get('log.response_delivered') , [
+                    'status_code' => $response->getStatusCode() ,
+                ]
+            );
         } catch (\Throwable $exception){
             report($exception);
         }
