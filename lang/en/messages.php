@@ -41,7 +41,6 @@ return [
         ] ,
         'delete'=> [
             'permission' => [
-                'exceptionThrow' => 'throw exception when delete permission with id :id !!! ' ,
                 'ok'=>'permission with id => :id successfully deleted !!!' ,
             ]
         ]
@@ -59,26 +58,20 @@ return [
     ] ,
     'store'=> [
         'permission' => [
-            'exceptionThrow'=> 'when create permission something happen please try after !!! ' ,
             'success' => 'successfully created :permission permission in system !!! ' ,
             'fail' => 'create :permission permission is fail please try after !!!'
         ]
     ] ,
     'edit'=> [
-        'permission'=> [
-            'exceptionThrow'=> 'when edit :permission permission something happened please try after or contact to developer or help and support !!!'
-        ]
     ],
     'update'=>[
         'permission' => [
-            'exceptionThrow' => 'something happened when updating :permission Permission !!!' ,
             'success' => 'successfully updated :permission Permission !!!' ,
             'fail' => 'fail to update :permission Permission !!! '
         ]
     ] ,
     'delete' => [
         'permission' => [
-            'throwException' => 'something happened when delete :name  permission in :date !!!  please try after or contact to Developer or Help and Support !!!' ,
             'ok' => 'successfully deleted :name permission !!!' ,
             'fail'=> 'permission :name no deleted !!!'
         ]
