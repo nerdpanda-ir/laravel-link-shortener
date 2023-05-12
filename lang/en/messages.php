@@ -30,7 +30,6 @@ return [
         ] ,
         'store' => [
             'permission'=> [
-                'exceptionThrow' => 'we have error when store the permission !!! ' ,
                 'ok' => 'successfully created permission with id -> :id and name -> :name ' ,
             ]
         ] ,
