@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Services\ResponseVisitors;
 
-interface DeleteActionResponseVisitor
+interface DeleteAction
 {
 
 }
