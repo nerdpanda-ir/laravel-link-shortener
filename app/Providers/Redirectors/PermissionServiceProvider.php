@@ -11,6 +11,7 @@ class PermissionServiceProvider extends ServiceProvider implements DeferrablePro
     public function register(): void
     {
         $this->app->singleton(Contract::class,Redirector::class);
+        $this->app->alias(Contract::class, 'contract.redirector.permission');
     }
     public function provides():array
     {
