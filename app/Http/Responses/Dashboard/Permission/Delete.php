@@ -20,7 +20,8 @@ class Delete extends DeleteAction implements Contract
 
     public function throwException(): RedirectResponse
     {
-        // TODO: Implement throwException() method.
+        return $this->getResponse()
+                    ->redirectToRoute('dashboard.permission.view-all');
     }
 
 
