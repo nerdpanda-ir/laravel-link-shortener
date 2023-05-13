@@ -24,7 +24,7 @@ class Logger implements Contract
      */
     public function created(Permission $permission): void
     {
-        $this->logger->info($this->translator->get('log.actions.create'),['item'=>$permission]);
+        $this->logger->info($this->translator->get('log.crud.create.ok'),['item'=>$permission]);
     }
 
     /**
@@ -34,7 +34,7 @@ class Logger implements Contract
     public function updated(Permission $permission): void
     {
         $this->getLogger()->debug(
-            $this->getTranslator()->get('log.actions.updated') ,
+            $this->getTranslator()->get('log.crud.updated.ok') ,
             ['item'=> $permission]
         );
 
@@ -46,7 +46,7 @@ class Logger implements Contract
     public function deleted(Permission $permission): void
     {
         $this->getLogger()->info(
-            $this->getTranslator()->get('log.actions.delete') ,
+            $this->getTranslator()->get('log.crud.delete.ok') ,
             ['item'=> $permission]
         );
     }
