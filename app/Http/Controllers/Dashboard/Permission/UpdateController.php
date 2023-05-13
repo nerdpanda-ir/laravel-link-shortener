@@ -45,7 +45,7 @@ class UpdateController extends Controller
             return $okResponseBuilder->build($permission->name);
         }catch (FailUpdateException $exception){
             $exception->setContext(['id' => $id , 'name' => $name]);
-            $exception->setMessage($translator->get('exceptions.crud', ['action' => 'update permission']));
+            $exception->setMessage($translator->get('log.crud.updated.fail', ['item' => 'permission']));
             $exceptionHandler->report($exception);
             return $failResponseBuilder->build($id,$name,$request->only(['name']));
         }
@@ -54,7 +54,7 @@ class UpdateController extends Controller
         }catch (\Throwable $exception){
             $finalName = $permission->name ?? $name;
             $logger->emergency(
-                $translator->get('exceptions.crud', ['action' => 'update permission']) ,
+                $translator->get('log.crud.updated.fail', ['item' => 'permission']) ,
                 ['id' => $id , 'name' => $finalName]
             );
             $exceptionHandler->report($exception);
