@@ -44,7 +44,7 @@ class EditController extends Controller
         } catch (\Throwable $exception){
             $finalName = $permission->name ?? $name ;
             $logger->emergency(
-                $translator->get('exceptions.crud',['action' => 'edit permission'] ) ,
+                $translator->get('log.crud.edit.throw_exception',['item' => 'permission'] ) ,
                 ['id' => $id ,'name' => $finalName]
             );
             $exceptionHandler->report($exception);
