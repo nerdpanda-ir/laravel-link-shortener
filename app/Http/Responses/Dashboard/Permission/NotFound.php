@@ -24,7 +24,7 @@ class NotFound extends ResponseBuilder implements Contract
                         ->redirectToRoute('dashboard.permission.view-all')
                         ->with('system.messages.error',[
                             $this->getTranslator()->get(
-                                'messages.not-found.permission', ['permission' => $permission]
+                                'messages.not_found', ['item' => 'permission with name : '.$permission]
                             )
                         ]);
     }
