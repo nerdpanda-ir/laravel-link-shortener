@@ -203,7 +203,6 @@ return [
         \App\Providers\Services\UniqueExceptPermissionUpdateBridge::class ,
         \App\Providers\Responses\Dashboard\Permission\Delete\ThrowExceptionServiceProvider::class ,
         App\Providers\Responses\Dashboard\Permission\Delete\OkServiceProvider::class ,
-        \App\Providers\Responses\Dashboard\Permission\Delete\FailServiceProvider::class ,
         \App\Providers\Observers\Permission\LoggerServiceProvider::class ,
         \App\Providers\Services\Gates\RoleServiceProvider::class ,
         \App\Providers\Exceptions\FailCrudServiceProvider::class ,
