@@ -8,6 +8,9 @@ return [
             'throw_exception' => 'has exception when create :item ' ,
             'fail' => 'fail to create :item ' ,
         ] ,
+        'edit' => [
+            'throw_exception' => 'has exception when edit :item' ,
+        ],
         'updated' => [
             'ok'=>'successfully updated' ,
             'throw_exception' => 'has exception when update :item ' ,
