@@ -207,6 +207,7 @@ return [
         \App\Providers\Observers\Permission\LoggerServiceProvider::class ,
         \App\Providers\Services\Gates\RoleServiceProvider::class ,
         \App\Providers\Exceptions\FailCrudServiceProvider::class ,
+        \App\Providers\Services\ResponseVisitors\DeleteActionServiceProvider::class ,
     ])->toArray(),
 
     /*
