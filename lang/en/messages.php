@@ -41,15 +41,15 @@ return [
     'crud' => [
         'create'=> [
             'ok'=> 'successfully created :item !!!' ,
-            'fail' => 'fail to create :item please try after !!!' ,
+            'fail' => 'in the :date when create :item something happened in system ، please try after for create this and report this message to admin or developer or help and support !!!' ,
         ],
         'update' => [
             'ok' => 'successfully updated :item !!!' ,
-            'fail' => 'fail to update :item please try after !!!' ,
+            'fail' => 'in the :date when update :item something happened in system ، please try after for update this and report this message to admin or developer or help and support !!!' ,
         ],
         'delete'=> [
             'ok' => 'successfully deleted :item !!!' ,
-            'fail' => 'fail to deleted :item please try after !!!',
+            'fail' => 'in the :date when delete :item something happened in system ، please try after for delete this and report this message to admin or developer or help and support !!!',
         ]
     ],
     'not-found'=> [
