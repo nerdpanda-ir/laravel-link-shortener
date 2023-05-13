@@ -208,6 +208,7 @@ return [
         \App\Providers\Services\ResponseVisitors\DeleteActionServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\DeleteServiceProvider::class ,
         \App\Providers\Redirectors\PermissionServiceProvider::class ,
+        \App\Providers\Services\ResponseVisitors\NotFoundServiceProvider::class ,
     ])->toArray(),
 
     /*
