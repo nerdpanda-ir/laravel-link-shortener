@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 interface CrudActionResponseVisitor extends TranslatorGetterable
 {
-    public function ok(Response $response):Response;
-    public function fail(Response $response):Response;
-    public function ThrowException(Response $response):Response;
+    public function ok(Response $response , string $item):Response;
+    public function fail(Response $response , string $item):Response;
+    public function ThrowException(Response $response , string $item ):Response;
 }
