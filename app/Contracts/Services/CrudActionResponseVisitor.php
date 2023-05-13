@@ -4,7 +4,7 @@ namespace App\Contracts\Services;
 
 use Symfony\Component\HttpFoundation\Response;
 
-interface CrudResponseVisitor
+interface CrudActionResponseVisitor
 {
     public function ok(Response $response):Response;
     public function fail(Response $response):Response;
