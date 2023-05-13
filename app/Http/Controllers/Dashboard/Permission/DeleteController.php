@@ -47,7 +47,7 @@ class DeleteController extends Controller
         }catch (\Throwable $exception){
             $finalName = $permission->name ?? $name;
             $logger->emergency(
-                $translator->get('exceptions.crud', ['action' => 'delete permission']) ,
+                $translator->get('log.crud.delete.throw_exception', ['item' => 'permission']) ,
                 ['id' => $id]
             );
             $exceptionHandler->report($exception);
