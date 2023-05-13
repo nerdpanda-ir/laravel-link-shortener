@@ -5,7 +5,7 @@ namespace App\Contracts\Services\ResponseVisitors;
 use App\Contracts\TranslatorGetterable;
 use Symfony\Component\HttpFoundation\Response;
 
-interface CrudActionResponseVisitor extends TranslatorGetterable
+interface Cruds extends TranslatorGetterable
 {
     public function ok(Response $response , string $item):Response;
     public function fail(Response $response , string $item):Response;

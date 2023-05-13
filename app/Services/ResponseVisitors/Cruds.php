@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Services\ResponseVisitors;
-use App\Contracts\Services\ResponseVisitors\CrudActionResponseVisitor as Contract;
+use App\Contracts\Services\ResponseVisitors\Cruds as Contract;
 use App\Traits\TranslatorGetterable;
 use Illuminate\Contracts\Translation\Translator;
 
-abstract class CrudActionResponseVisitor implements Contract
+abstract class Cruds implements Contract
 {
     use TranslatorGetterable;
     protected Translator $translator;

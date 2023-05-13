@@ -5,7 +5,7 @@ namespace App\Services\ResponseVisitors;
 use App\Contracts\Services\ResponseVisitors\DeleteActionResponseVisitor as Contract;
 use Symfony\Component\HttpFoundation\Response;
 
-class DeleteResponseVisitor extends CrudActionResponseVisitor
+class DeleteResponseVisitor extends Cruds
     implements Contract
 {
     public function ok(Response $response, string $item): Response
