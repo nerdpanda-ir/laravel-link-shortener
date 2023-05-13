@@ -38,24 +38,18 @@ return [
             'exceptionThrow' => 'your logout process is fail please try after or contact to help and support !!!'
         ]
     ] ,
-    'store'=> [
-        'permission' => [
-            'success' => 'successfully created :permission permission in system !!! ' ,
-            'fail' => 'create :permission permission is fail please try after !!!'
-        ]
-    ] ,
-    'edit'=> [
-    ],
-    'update'=>[
-        'permission' => [
-            'success' => 'successfully updated :permission Permission !!!' ,
-            'fail' => 'fail to update :permission Permission !!! '
-        ]
-    ] ,
-    'delete' => [
-        'permission' => [
-            'ok' => 'successfully deleted :name permission !!!' ,
-            'fail'=> 'permission :name no deleted !!!'
+    'crud' => [
+        'create'=> [
+            'ok'=> 'successfully created :item !!!' ,
+            'fail' => 'fail to create :item please try after !!!' ,
+        ],
+        'update' => [
+            'ok' => 'successfully updated :item !!!' ,
+            'fail' => 'fail to update :item please try after !!!' ,
+        ],
+        'delete'=> [
+            'ok' => 'successfully deleted :item !!!' ,
+            'fail' => 'fail to deleted :item please try after !!!',
         ]
     ],
     'not-found'=> [
