@@ -2,11 +2,11 @@
 
 namespace App\Services\ResponseVisitors;
 
-use App\Contracts\Services\ResponseVisitors\DeleteActionResponseVisitor as Contract;
+use App\Contracts\Services\ResponseVisitors\DeleteAction as Contract;
 use Illuminate\Http\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 
-class DeleteResponseVisitor extends Cruds
+class DeleteAction extends Cruds
     implements Contract
 {
     public function ok(RedirectResponse $response, string $item): Response
