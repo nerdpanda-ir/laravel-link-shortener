@@ -14,7 +14,8 @@ class Delete extends DeleteAction implements Contract
 
     public function fail(): RedirectResponse
     {
-        // TODO: Implement fail() method.
+        return $this->getResponse()
+                    ->redirectToRoute('dashboard.permission.view-all');
     }
 
     public function throwException(): RedirectResponse
