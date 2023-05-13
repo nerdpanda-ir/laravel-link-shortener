@@ -3,12 +3,13 @@
 namespace App\Services\ResponseVisitors;
 
 use App\Contracts\Services\ResponseVisitors\DeleteActionResponseVisitor as Contract;
+use Illuminate\Http\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class DeleteResponseVisitor extends Cruds
     implements Contract
 {
-    public function ok(Response $response, string $item): Response
+    public function ok(RedirectResponse $response, string $item): Response
     {
         $message = [
             $this->getTranslator()->get('messages.crud.delete.ok', ['item' => $item])
@@ -16,7 +17,7 @@ class DeleteResponseVisitor extends Cruds
         return $response->with('system.messages.ok',$message);
     }
 
-    public function fail(Response $response, string $item): Response
+    public function fail(RedirectResponse $response, string $item): Response
     {
         $message = [
             $this->getTranslator()->get('messages.crud.delete.fail', ['item' => $item])
@@ -24,7 +25,7 @@ class DeleteResponseVisitor extends Cruds
         return $response->with('system.messages.ok',$message);
     }
 
-    public function ThrowException(Response $response, string $item): Response
+    public function ThrowException(RedirectResponse $response, string $item): Response
     {
         $message = [
             $this->getTranslator()->get(
