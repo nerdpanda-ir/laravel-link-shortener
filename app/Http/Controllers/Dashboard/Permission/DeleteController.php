@@ -40,7 +40,7 @@ class DeleteController extends Controller
         }catch (NotFoundHttpException $exception ){
             return $notFoundResponseBuilder->build($name);
         }catch (FailCrud $exception){
-            $exception->setMessage($translator->get('exceptions.crud',['action' => 'delete permission']));
+            $exception->setMessage($translator->get('log.crud.delete.fail', ['item' => 'permission']));
             $exception->setContext(['permission_id'=> $permission->id, 'permission_name'=> $permission->name]);
             $exceptionHandler->report($exception);
             return $failDeleteResponseBuilder->build($permission->name);
