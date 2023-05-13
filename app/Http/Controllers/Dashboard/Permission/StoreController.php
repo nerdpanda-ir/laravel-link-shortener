@@ -43,7 +43,7 @@ class StoreController extends Controller
         } catch (FailCrud $exception){
             $exception->setContext(['permission' => $request->name]);
             $exception->setMessage(
-                $translator->get('exceptions.crud',['action' => 'store permission'])
+                $translator->get('log.crud.create.fail',['item' => 'permission'])
             );
             report($exception);
             return $failStoreResponseBuilder->build(
@@ -51,7 +51,7 @@ class StoreController extends Controller
             );
         } catch (\Throwable $throwable){
             $logger->emergency(
-                $translator->get('exceptions.crud', ['action' => 'store permission']) ,
+                $translator->get('log.crud.create.throw_exception', ['item' => 'permission']) ,
             );
             report($throwable);
             return $exceptionHappenResponseBuilder->build($request->only('name'));
