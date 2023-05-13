@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\ResponseVisitors;
 
-use App\Contracts\Services\DeleteActionResponseVisitor as Contract;
+use App\Contracts\Services\ResponseVisitors\DeleteActionResponseVisitor as Contract;
 use Symfony\Component\HttpFoundation\Response;
 
 class DeleteResponseVisitor extends CrudActionResponseVisitor
