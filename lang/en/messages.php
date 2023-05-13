@@ -27,20 +27,25 @@ return [
             'failed' => 'failed processing job :name',
         ] ,
     ],
+    'fail_crud' => 'fail to :action !!!' ,
     'crud' => [
         'create'=> [
             'ok'=> 'successfully created :item !!!' ,
-            'fail' => 'in the :date when create :item something happened in system ، please try after for create this and report this message to admin or developer or help and support !!!' ,
+            'fail' => 'fail to create :item !!!' ,
+            'throw_exception' => 'in the :date when create :item something happened in system ، please try after for create this and report this message to admin or developer or help and support !!!' ,
         ],
         'update' => [
             'ok' => 'successfully updated :item !!!' ,
-            'fail' => 'in the :date when update :item something happened in system ، please try after for update this and report this message to admin or developer or help and support !!!' ,
+            'fail' => 'fail to update :item !!!' ,
+            'throw_exception' => 'in the :date when update :item something happened in system ، please try after for update this and report this message to admin or developer or help and support !!!' ,
         ],
         'delete'=> [
             'ok' => 'successfully deleted :item !!!' ,
-            'fail' => 'in the :date when delete :item something happened in system ، please try after for delete this and report this message to admin or developer or help and support !!!',
+            'fail' => 'fail to delete :item !!!' ,
+            'throw_exception' => 'in the :date when delete :item something happened in system ، please try after for delete this and report this message to admin or developer or help and support !!!',
         ]
     ],
+    'not_found' => 'not found any result in system for :item !!!' ,
     'auth'=> [
         'login' => [
             'ok' => 'welcome :name your successfully logged in ' ,
@@ -52,7 +57,4 @@ return [
             'exceptionThrow' => 'your logout process is fail please try after or contact to help and support !!!'
         ]
     ] ,
-    'not-found'=> [
-        'permission' => 'not found :permission permission in system !!!'
-    ],
 ];
