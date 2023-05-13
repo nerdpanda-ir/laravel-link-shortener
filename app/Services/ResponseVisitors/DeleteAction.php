@@ -3,13 +3,12 @@
 namespace App\Services\ResponseVisitors;
 
 use App\Contracts\Services\ResponseVisitors\DeleteAction as Contract;
-use Illuminate\Http\RedirectResponse;
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class DeleteAction extends Cruds
     implements Contract
 {
-    public function ok(RedirectResponse $response, string $item): Response
+    public function ok(RedirectResponse $response, string $item): RedirectResponse
     {
         $message = [
             $this->getTranslator()->get('messages.crud.delete.ok', ['item' => $item])
@@ -17,15 +16,15 @@ class DeleteAction extends Cruds
         return $response->with('system.messages.ok',$message);
     }
 
-    public function fail(RedirectResponse $response, string $item): Response
+    public function fail(RedirectResponse $response, string $item): RedirectResponse
     {
         $message = [
             $this->getTranslator()->get('messages.crud.delete.fail', ['item' => $item])
         ];
-        return $response->with('system.messages.ok',$message);
+        return $response->with('system.messages.error',$message);
     }
 
-    public function ThrowException(RedirectResponse $response, string $item): Response
+    public function ThrowException(RedirectResponse $response, string $item): RedirectResponse
     {
         $message = [
             $this->getTranslator()->get(
@@ -33,7 +32,7 @@ class DeleteAction extends Cruds
                 ['item' => $item , 'date' => date('Y-m-d H:i:s')]
             )
         ];
-        return $response->with('system.messages.ok',$message);
+        return $response->with('system.messages.error',$message);
     }
 
 
