@@ -16,8 +16,8 @@ class ThrowException extends ResponseBuilder implements Contract
                     ->with(
                         'system.messages.error' , [
                             $this->getTranslator()->get(
-                                'messages.delete.permission.throwException',
-                                ['name' => $permission, 'date' => date("Y-m-d H:i:s")]
+                                'messages.crud.delete.throw_exception',
+                                ['item' => 'permission '.$permission ,'date' => date("Y-m-d H:i:s")]
                             )
                         ]
                     );
