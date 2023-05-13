@@ -10,12 +10,12 @@ return [
         ] ,
         'updated' => [
             'ok'=>'successfully updated' ,
-            'throw_exception' => 'has exception when create :item ' ,
+            'throw_exception' => 'has exception when update :item ' ,
             'fail' => 'fail to update :item ' ,
         ],
         'delete' => [
             'ok'=> 'successfully deleted' ,
-            'throw_exception' => 'has exception when create :item ' ,
+            'throw_exception' => 'has exception when delete :item ' ,
             'fail' => 'fail to delete :item ' ,
         ],
     ]
