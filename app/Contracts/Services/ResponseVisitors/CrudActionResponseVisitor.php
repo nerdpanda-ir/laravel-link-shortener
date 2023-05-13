@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts\Services;
+namespace App\Contracts\Services\ResponseVisitors;
 
 use App\Contracts\TranslatorGetterable;
 use Symfony\Component\HttpFoundation\Response;

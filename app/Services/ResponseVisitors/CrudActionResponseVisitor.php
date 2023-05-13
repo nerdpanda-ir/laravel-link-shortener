@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Services;
-use App\Contracts\Services\CrudActionResponseVisitor as Contract;
+namespace App\Services\ResponseVisitors;
+use App\Contracts\Services\ResponseVisitors\CrudActionResponseVisitor as Contract;
 use App\Traits\TranslatorGetterable;
 use Illuminate\Contracts\Translation\Translator;
 
