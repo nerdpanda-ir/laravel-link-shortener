@@ -208,7 +208,7 @@ return [
         \App\Providers\Exceptions\FailCrudServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\DeleteActionServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Permission\DeleteServiceProvider::class ,
-
+        \App\Providers\Redirectors\PermissionServiceProvider::class ,
     ])->toArray(),
 
     /*
