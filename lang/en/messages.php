@@ -27,17 +27,6 @@ return [
             'failed' => 'failed processing job :name',
         ] ,
     ],
-    'auth'=> [
-        'login' => [
-            'ok' => 'welcome :name your successfully logged in ' ,
-            'fail' => 'email or password wrong' ,
-            'exceptionThrow' => 'something happened please try after or contact to help and support '
-        ],
-        'logout'=> [
-            'ok'=> 'dear :name your successfully logout !!!' ,
-            'exceptionThrow' => 'your logout process is fail please try after or contact to help and support !!!'
-        ]
-    ] ,
     'crud' => [
         'create'=> [
             'ok'=> 'successfully created :item !!!' ,
@@ -52,6 +41,17 @@ return [
             'fail' => 'in the :date when delete :item something happened in system ، please try after for delete this and report this message to admin or developer or help and support !!!',
         ]
     ],
+    'auth'=> [
+        'login' => [
+            'ok' => 'welcome :name your successfully logged in ' ,
+            'fail' => 'email or password wrong' ,
+            'exceptionThrow' => 'something happened please try after or contact to help and support '
+        ],
+        'logout'=> [
+            'ok'=> 'dear :name your successfully logout !!!' ,
+            'exceptionThrow' => 'your logout process is fail please try after or contact to help and support !!!'
+        ]
+    ] ,
     'not-found'=> [
         'permission' => 'not found :permission permission in system !!!'
     ],
