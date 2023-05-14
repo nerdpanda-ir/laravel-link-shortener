@@ -6,5 +6,5 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 interface Createable
 {
-    public function create():RedirectResponse;
+    public function create(array $inputs = []):RedirectResponse;
 }
