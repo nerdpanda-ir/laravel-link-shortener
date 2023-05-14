@@ -8,7 +8,7 @@ use App\Contracts\Requests\Dashboard\Permission\StoreRequest as Request;
 use App\Contracts\Responses\Dashboard\Permission\Store\ExceptionHappenBuilder;
 use App\Contracts\Responses\Dashboard\Permission\Store\StoreBuilder;
 use App\Contracts\Services\DateService;
-use App\Contracts\Services\ResponseVisitors\StoreAction;
+use App\Contracts\Services\ResponseVisitors\SaveAction;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\Dashboard\Permission\Store\FailStoreBuilder;
 use Illuminate\Contracts\Auth\Factory as Auth;
@@ -17,7 +17,7 @@ use Illuminate\Contracts\Translation\Translator;
 use Psr\Log\LoggerInterface as Logger;
 use Symfony\Component\HttpFoundation\RedirectResponse as BaseResponse;
 use App\Http\Redirector\Permission as Redirector;
-class StoreController extends Controller
+class SaveController extends Controller
 {
 
     /**
@@ -25,9 +25,9 @@ class StoreController extends Controller
      * @param \App\Models\Permission $permission
      */
     public function __invoke(
-        Request $request , Permission $permission , DateService $dateService ,
-        Logger $logger , Translator $translator , Auth $auth , FailCrud $failStore ,
-        StoreAction $visitor , Redirector $redirector
+        Request    $request , Permission $permission , DateService $dateService ,
+        Logger     $logger , Translator $translator , Auth $auth , FailCrud $failStore ,
+        SaveAction $visitor , Redirector $redirector
     ):BaseResponse
     {
         try {
