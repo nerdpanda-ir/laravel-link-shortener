@@ -32,7 +32,9 @@ class StoreAction extends Cruds implements Contract
 
     public function ok(RedirectResponse $response, string $item): RedirectResponse
     {
-        // TODO: Implement ok() method.
+        return $response->with('system.messages.ok',[
+            $this->getTranslator()->get('messages.crud.save.ok', ['item' => $item])
+        ]);
     }
 
 }
