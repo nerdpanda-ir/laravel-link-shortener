@@ -1,11 +1,11 @@
 <?php
 
 namespace App\Services\ResponseVisitors;
-use App\Contracts\Services\ResponseVisitors\StoreAction as Contract;
+use App\Contracts\Services\ResponseVisitors\SaveAction as Contract;
 use Illuminate\Contracts\Translation\Translator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-class StoreAction extends Cruds implements Contract
+class SaveAction extends Cruds implements Contract
 {
     public function __construct(Translator $translator)
     {
