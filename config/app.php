@@ -203,7 +203,7 @@ return [
         \App\Providers\Redirectors\PermissionServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\NotFoundServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\EditActionServiceProvider::class ,
-        \App\Providers\Services\ResponseVisitors\StoreActionServiceProvider::class ,
+        \App\Providers\Services\ResponseVisitors\SaveActionServiceProvider::class ,
     ])->toArray(),
 
     /*
