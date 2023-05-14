@@ -34,6 +34,9 @@ return [
             'fail' => 'fail to create :item !!!' ,
             'throw_exception' => 'in the :date when create :item something happened in system ، please try after for create this and report this message to admin or developer or help and support !!!' ,
         ],
+        'edit' => [
+            'throw_exception' => 'in the :date when edit :item something happened in system ، please try after for update this and report this message to admin or developer or help and support !!!'
+        ],
         'update' => [
             'ok' => 'successfully updated :item !!!' ,
             'fail' => 'fail to update :item !!!' ,
