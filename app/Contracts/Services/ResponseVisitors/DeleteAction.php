@@ -2,10 +2,6 @@
 
 namespace App\Contracts\Services\ResponseVisitors;
 
-use Symfony\Component\HttpFoundation\RedirectResponse;
-
-interface DeleteAction extends Okable , ExceptionThrowable
+interface DeleteAction extends Okable , Failable ,  ExceptionThrowable
 {
-
-    public function  fail(RedirectResponse $response, string $item): RedirectResponse;
 }
