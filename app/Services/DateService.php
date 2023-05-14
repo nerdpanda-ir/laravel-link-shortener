@@ -15,7 +15,7 @@ class DateService implements Contract
             return false;
         return Carbon::createFromTimestamp($dateStrTimestamp);
     }
-    public function date(string $format = 'Y-m-d H:i:s', ?int $timestamp): string|false
+    public function date(string $format = 'Y-m-d H:i:s', ?int $timestamp = null): string|false
     {
         return date($format,$timestamp);
     }
