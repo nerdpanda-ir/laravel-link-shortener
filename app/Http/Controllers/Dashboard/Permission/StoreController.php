@@ -7,6 +7,7 @@ use App\Contracts\Model\Permission as Permission;
 use App\Contracts\Requests\Dashboard\Permission\StoreRequest as Request;
 use App\Contracts\Responses\Dashboard\Permission\Store\ExceptionHappenBuilder;
 use App\Contracts\Responses\Dashboard\Permission\Store\StoreBuilder;
+use App\Contracts\Services\DateService;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\Dashboard\Permission\Store\FailStoreBuilder;
 use Illuminate\Contracts\Auth\Factory as Auth;
@@ -23,7 +24,7 @@ class StoreController extends Controller
      * @param \App\Models\Permission $permission
      */
     public function __invoke(
-        Request $request , Permission $permission  , Response $response ,
+        Request $request , Permission $permission  , Response $response , DateService $dateService ,
         Logger $logger , Translator $translator , Auth $auth , FailCrud $failStore ,
         StoreBuilder $storeResponseBuilder , FailStoreBuilder $failStoreResponseBuilder ,
         ExceptionHappenBuilder $exceptionHappenResponseBuilder
@@ -32,7 +33,7 @@ class StoreController extends Controller
         try {
             $data = [
                 'created_by'=>  $auth->guard('web')->user()->id ,
-                'created_at' => date("Y-m-d H:i:s") ,
+                'created_at' => $dateService->date() ,
             ];
             $data = array_merge($request->only('name'), $data);
             $permission->setRawAttributes($data);
