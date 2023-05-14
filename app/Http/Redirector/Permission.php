@@ -13,4 +13,9 @@ class Permission extends Redirector implements  Contract
         return $this->getRedirector()
                     ->route('dashboard.permission.view-all');
     }
+    public function create(): RedirectResponse
+    {
+        return $this->getRedirector()
+                    ->route('dashboard.permission.create');
+    }
 }
