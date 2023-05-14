@@ -29,7 +29,7 @@ return [
     ],
     'fail_crud' => 'fail to :action !!!' ,
     'crud' => [
-        'create'=> [
+        'save'=> [
             'ok'=> 'successfully created :item !!!' ,
             'fail' => 'fail to create :item !!!' ,
             'throw_exception' => 'in the :date when create :item something happened in system ، please try after for create this and report this message to admin or developer or help and support !!!' ,
