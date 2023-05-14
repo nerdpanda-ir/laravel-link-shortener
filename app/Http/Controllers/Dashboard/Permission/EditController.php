@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Dashboard\Permission;
 
 use App\Contracts\Model\Permission as Permission;
 use App\Contracts\Responses\Dashboard\Permission\Edit\ExceptionThrow;
-use App\Contracts\Responses\Dashboard\Permission\NotFound;
+use App\Contracts\Services\ResponseVisitors\EditAction;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Translation\Translator;
@@ -13,7 +13,8 @@ use Illuminate\Contracts\View\View;
 use Psr\Log\LoggerInterface as Logger;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-
+use App\Contracts\Services\ResponseVisitors\NotFound ;
+use App\Contracts\Redirectors\Permission as Redirector;
 class EditController extends Controller
 {
 
@@ -23,9 +24,8 @@ class EditController extends Controller
      */
     public function __invoke(
         string $id , string $name , Permission $model , ViewFactory $viewFactory ,  Logger $logger ,
-        Translator $translator ,
+        Translator $translator , NotFound $notFound , Redirector $redirector , EditAction $editAction ,
         NotFoundHttpException $notFoundHttpException , ExceptionHandler $exceptionHandler ,
-        NotFound $notFoundResponseBuilder , ExceptionThrow $exceptionThrowResponseBuilder ,
     ): View | RedirectResponse
     {
         try {
@@ -35,7 +35,7 @@ class EditController extends Controller
             return $viewFactory
                         ->make('page.dashboard.permission.edit',['id'=> $id , 'name' => $permission->name]);
         }catch (NotFoundHttpException $exception){
-            return $notFoundResponseBuilder->build($name);
+            return $notFound->visit($redirector->viewAll(),'permission '.$name);
             // if should you render 404 page you must render exception with laravel exception handler !!!
             // you can get exception handler from container and call render method or
             #return $exceptionHandler->render(\request(),$exception);
@@ -48,7 +48,7 @@ class EditController extends Controller
                 ['id' => $id ,'name' => $finalName]
             );
             $exceptionHandler->report($exception);
-            return $exceptionThrowResponseBuilder->build($finalName);
+            return $editAction->throwException($redirector->viewAll(),$finalName . ' permission');
         }
     }
 }
