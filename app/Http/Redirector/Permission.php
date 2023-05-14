@@ -19,4 +19,12 @@ class Permission extends Redirector implements  Contract
                     ->route('dashboard.permission.create')
                     ->withInput($inputs);
     }
+    public function edit(string $id, string $name , array $inputs = []): RedirectResponse
+    {
+        return $this->getRedirector()
+                    ->route(
+                        'dashboard.permission.edit',
+                        ['id'=>$id , 'name'=>$name]
+                    )->withInput($inputs);
+    }
 }
