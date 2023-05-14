@@ -27,7 +27,6 @@ class StoreController extends Controller
     public function __invoke(
         Request $request , Permission $permission , DateService $dateService ,
         Logger $logger , Translator $translator , Auth $auth , FailCrud $failStore ,
-        StoreBuilder $storeResponseBuilder , FailStoreBuilder $failStoreResponseBuilder ,
         StoreAction $visitor , Redirector $redirector
     ):BaseResponse
     {
@@ -41,19 +40,22 @@ class StoreController extends Controller
             $created = $permission->save();
             if (!$created)
                 throw $failStore;
-            return $storeResponseBuilder->build($request->name);
+            return $visitor->ok($redirector->viewAll(),"permission with name : $request->name");
         } catch (FailCrud $exception){
             $exception->setContext(['permission' => $request->name]);
             $exception->setMessage(
                 $translator->get('log.crud.create.fail',['item' => 'permission'])
             );
             report($exception);
-            return $failStoreResponseBuilder->build(
-                $request->only('name'),$exception->getMessage()
+            return $visitor->fail(
+                $redirector->create($request->only('name')) ,
+                'permission with name -> '. $request->name
             );
         } catch (\Throwable $throwable){
             $logger->emergency(
-                $translator->get('log.crud.create.throw_exception', ['item' => 'permission']) ,
+                $translator->get(
+                    'log.crud.create.throw_exception', ['item' => 'permission with name'. $request->name]
+                )
             );
             report($throwable);
             return $visitor->throwException(
