@@ -17,7 +17,7 @@ class StoreAction extends Cruds implements Contract
         // @todo date from parent
         return $response->with('system.messages.error',[
             $this->getTranslator()->get(
-                'messages.crud.create.throw_exception',
+                'messages.crud.save.throw_exception',
                     ['date' => date('Y-m-d H:i:s'), 'item' => $item]
             )
         ]);
