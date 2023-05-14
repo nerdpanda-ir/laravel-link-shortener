@@ -13,9 +13,10 @@ class Permission extends Redirector implements  Contract
         return $this->getRedirector()
                     ->route('dashboard.permission.view-all');
     }
-    public function create(): RedirectResponse
+    public function create(array $inputs = []): RedirectResponse
     {
         return $this->getRedirector()
-                    ->route('dashboard.permission.create');
+                    ->route('dashboard.permission.create')
+                    ->withInput($inputs);
     }
 }
