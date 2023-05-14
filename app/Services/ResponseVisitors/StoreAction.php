@@ -25,7 +25,9 @@ class StoreAction extends Cruds implements Contract
 
     public function fail(RedirectResponse $response, string $item): RedirectResponse
     {
-        // TODO: Implement fail() method.
+        return $response->with('system.messages.error',[
+           $this->getTranslator()->get('messages.crud.save.fail', ['item' => $item])
+        ]);
     }
 
     public function ok(RedirectResponse $response, string $item): RedirectResponse
