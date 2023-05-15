@@ -2,7 +2,7 @@
 
 namespace App\Listeners\LoginEvent;
 
-use App\Contracts\Requests\DoLogin as Request;
+use Illuminate\Http\Request;
 use App\Jobs\UserLoginNotifyJob;
 use Illuminate\Auth\Events\Login;
 
