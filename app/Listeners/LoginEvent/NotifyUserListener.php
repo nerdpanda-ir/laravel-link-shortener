@@ -2,13 +2,15 @@
 
 namespace App\Listeners\LoginEvent;
 
+use App\Contracts\DateServiceGetterable;
 use App\Contracts\Services\DateService;
 use Illuminate\Http\Request;
 use App\Jobs\UserLoginNotifyJob;
 use Illuminate\Auth\Events\Login;
-
-class NotifyUserListener
+use App\Traits\DateServiceGetterable as DateServiceGetterableTrait;
+class NotifyUserListener implements DateServiceGetterable
 {
+    use DateServiceGetterableTrait;
     protected Request $request;
     protected DateService $dateService;
     public function __construct(Request $request , DateService $dateService)
@@ -19,6 +21,8 @@ class NotifyUserListener
 
     public function handle(Login $event): void
     {
-        UserLoginNotifyJob::dispatch($event->user,$this->request->ip(),date("Y-m-d H:i:s"));
+        UserLoginNotifyJob::dispatch(
+            $event->user,$this->request->ip(),$this->getDateService()->date()
+        );
     }
 }
