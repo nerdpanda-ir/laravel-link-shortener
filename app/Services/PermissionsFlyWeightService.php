@@ -3,10 +3,12 @@
 namespace App\Services;
 use App\Contracts\Model\Userable as User;
 use App\Contracts\Services\PermissionsFlyWeight as Contract;
+use App\Traits\UserSeeterable;
 use Illuminate\Database\Eloquent\Collection;
 
 class PermissionsFlyWeightService implements Contract
 {
+    use UserSeeterable;
     protected array $permissions;
     /**
      * @var \App\Models\User $user
