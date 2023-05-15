@@ -203,6 +203,7 @@ return [
         \App\Providers\Services\ResponseVisitors\SaveActionServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\UpdateActionServiceProvider::class ,
         \App\Providers\Events\Login::class,
+        \App\Providers\Redirectors\Dashboard::class ,
     ])->toArray(),
 
     /*
