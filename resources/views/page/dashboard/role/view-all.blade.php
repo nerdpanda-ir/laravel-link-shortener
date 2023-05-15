@@ -32,8 +32,8 @@
                         <td>{{$loop->iteration}}</td>
                         <td>{{$role->name}}</td>
                         <td>{{$role->creator->name}}</td>
-                        <td>{{$role->users_count}}</td>
-                        <td>{{$role->permissions_count}}</td>
+                        <td><a href="">{{$role->users_count}}</a></td>
+                        <td><a href="">{{$role->permissions_count}}</a></td>
                         <td>
                             @unless(is_null($role->created_at))
                                 {{$role->created_at}}
