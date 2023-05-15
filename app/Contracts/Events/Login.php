@@ -2,7 +2,9 @@
 
 namespace App\Contracts\Events;
 
-interface Login
+use App\Contracts\UserGetterable;
+
+interface Login extends UserGetterable
 {
 
 }
