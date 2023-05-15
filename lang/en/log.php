@@ -21,5 +21,8 @@ return [
             'throw_exception' => 'has exception when delete :item ' ,
             'fail' => 'fail to delete :item ' ,
         ],
+        'view_all' => [
+            'throw_exception' => 'has exception when select :item' ,
+        ]
     ]
 ];
