@@ -16,7 +16,7 @@ use App\Models\Permission;
 use App\Observers\Permission\Logger;
 use Illuminate\Auth\Events\Authenticated;
 use Illuminate\Auth\Events\Failed;
-use Illuminate\Auth\Events\Login;
+use App\Events\Login;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
