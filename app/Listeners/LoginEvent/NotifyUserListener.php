@@ -6,7 +6,7 @@ use App\Contracts\DateServiceGetterable;
 use App\Contracts\Services\DateService;
 use Illuminate\Http\Request;
 use App\Jobs\UserLoginNotifyJob;
-use Illuminate\Auth\Events\Login;
+use App\Contracts\Events\Login;
 use App\Traits\DateServiceGetterable as DateServiceGetterableTrait;
 class NotifyUserListener implements DateServiceGetterable
 {
@@ -22,7 +22,7 @@ class NotifyUserListener implements DateServiceGetterable
     public function handle(Login $event): void
     {
         UserLoginNotifyJob::dispatch(
-            $event->user,$this->request->ip(),$this->getDateService()->date()
+            $event->getUser(),$this->request->ip(),$this->getDateService()->date()
         );
     }
 }
