@@ -2,7 +2,7 @@
 
 namespace App\Listeners\LoginEvent;
 
-use Illuminate\Auth\Events\Login;
+use App\Contracts\Events\Login;
 use Illuminate\Contracts\Translation\Translator;
 use Psr\Log\LoggerInterface as Logger;
 
