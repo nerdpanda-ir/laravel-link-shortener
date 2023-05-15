@@ -19,7 +19,7 @@ class LoggerListener
     public function handle(Login $event): void
     {
         $this->logger->info(
-            $this->translator->get('messages.log.auth.login.ok')
+            $this->translator->get('messages.log.auth.login.ok', ['user'=> $event->getUser()])
         );
     }
 }
