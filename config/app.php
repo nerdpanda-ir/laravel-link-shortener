@@ -202,6 +202,7 @@ return [
         \App\Providers\Services\ResponseVisitors\EditActionServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\SaveActionServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\UpdateActionServiceProvider::class ,
+        \App\Providers\Events\Login::class,
     ])->toArray(),
 
     /*
