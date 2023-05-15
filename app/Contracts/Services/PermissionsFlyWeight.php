@@ -3,9 +3,9 @@
 namespace App\Contracts\Services;
 
 use App\Contracts\PermissionsGetterableContract;
-use App\Contracts\UserSetterableContract;
+use App\Contracts\UserSetterable;
 
-interface PermissionsFlyWeight extends UserSetterableContract , PermissionsGetterableContract
+interface PermissionsFlyWeight extends UserSetterable , PermissionsGetterableContract
 {
 
 }
