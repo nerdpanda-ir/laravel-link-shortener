@@ -12,10 +12,11 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 use App\Contracts\Events\Login as Contract;
+use App\Traits\Userable as UserableTrait;
 class Login implements Contract
 {
 
-    use Dispatchable, InteractsWithSockets, SerializesModels , UserGetterable;
+    use Dispatchable, InteractsWithSockets, SerializesModels , UserableTrait;
     protected Userable $user;
 
     /**
