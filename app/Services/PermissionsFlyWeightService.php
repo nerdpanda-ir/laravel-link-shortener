@@ -37,11 +37,5 @@ class PermissionsFlyWeightService implements Contract
         return $this->permissions = $toArrayStrategy->toArray($permissions);
     }
 
-    /**
-     * @param User $user
-     */
-    public function setUser(User $user): void
-    {
-        $this->user = $user;
-    }
+
 }
