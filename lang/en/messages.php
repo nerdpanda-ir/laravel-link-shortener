@@ -46,6 +46,9 @@ return [
             'ok' => 'successfully deleted :item !!!' ,
             'fail' => 'fail to delete :item !!!' ,
             'throw_exception' => 'in the :date when delete :item something happened in system ، please try after for delete this and report this message to admin or developer or help and support !!!',
+        ] ,
+        'view_all' => [
+            'throw_exception' => 'in the :date when view all :item something happened in system ، please try after for view all this and report this message to admin or developer or help and support !!!'
         ]
     ],
     'not_found' => 'not found any result in system for :item !!!' ,
