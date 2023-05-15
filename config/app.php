@@ -205,6 +205,7 @@ return [
         \App\Providers\Events\Login::class,
         \App\Providers\Redirectors\Dashboard::class ,
         \App\Providers\Services\ResponseVisitors\ViewAllActionServiceProvider::class ,
+        \App\Providers\Redirectors\RoleServiceProvider::class ,
     ])->toArray(),
 
     /*
