@@ -2,6 +2,7 @@
 
 namespace App\Listeners\LoginEvent;
 
+use App\Contracts\Services\DateService;
 use Illuminate\Http\Request;
 use App\Jobs\UserLoginNotifyJob;
 use Illuminate\Auth\Events\Login;
@@ -9,9 +10,11 @@ use Illuminate\Auth\Events\Login;
 class NotifyUserListener
 {
     protected Request $request;
-    public function __construct(Request $request)
+    protected DateService $dateService;
+    public function __construct(Request $request , DateService $dateService)
     {
         $this->request = $request;
+        $this->dateService = $dateService ;
     }
 
     public function handle(Login $event): void
