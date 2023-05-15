@@ -17,13 +17,6 @@ class Login implements Contract
 
     use Dispatchable, InteractsWithSockets, SerializesModels , UserGetterable;
     protected Userable $user;
-    /**
-     * Create a new event instance.
-     */
-    public function __construct(Userable $user)
-    {
-        $this->user = $user ;
-    }
 
     /**
      * Get the channels the event should broadcast on.
