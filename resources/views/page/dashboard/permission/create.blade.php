@@ -3,11 +3,7 @@
     <h1>create new permission</h1>
 @endsection
 @section('dashboard-content')
-    <x-alert class="bg-dark text-warning">
-        <x-slot:message>
-            name should be unique when you create a new permission care that !!!
-        </x-slot:message>
-    </x-alert>
+    <x-partials.unique-warning field="permission name"></x-partials.unique-warning>
     <hr class="my-4">
     <x-partials.form-error-printer />
     <form class="needs-validation" novalidate="" action="{{route('dashboard.permission.store')}}" method="post">
