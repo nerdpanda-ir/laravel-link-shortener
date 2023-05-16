@@ -1,6 +1,6 @@
 @props(['field'])
-<x-alert class="bg-dark text-warning">
+<x-partials.warning-alert>
     <x-slot:message>
         {{ __('components.unique-warning', ['field' => $field]) }}
     </x-slot:message>
-</x-alert>
+</x-partials.warning-alert>
