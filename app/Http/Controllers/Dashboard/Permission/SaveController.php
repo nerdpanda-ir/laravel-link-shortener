@@ -44,7 +44,7 @@ class SaveController extends Controller
         } catch (FailCrud $exception){
             $exception->setContext(['permission' => $request->name]);
             $exception->setMessage(
-                $translator->get('log.crud.create.fail',['item' => 'permission'])
+                $translator->get('log.crud.save.fail',['item' => 'permission'])
             );
             report($exception);
             return $visitor->fail(
@@ -54,7 +54,7 @@ class SaveController extends Controller
         } catch (\Throwable $throwable){
             $logger->emergency(
                 $translator->get(
-                    'log.crud.create.throw_exception', ['item' => 'permission with name'. $request->name]
+                    'log.crud.save.throw_exception', ['item' => 'permission with name'. $request->name]
                 )
             );
             report($throwable);
