@@ -30,4 +30,7 @@ Route::name('role.')->prefix('role')->namespace('Role')
 
             Route::get('create','CreateController')
                     ->name('create')->middleware('can:create-role');
+
+            Route::post('save','SaveController')
+                    ->name('save');
         });
