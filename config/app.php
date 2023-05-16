@@ -206,6 +206,7 @@ return [
         \App\Providers\Redirectors\Dashboard::class ,
         \App\Providers\Services\ResponseVisitors\ViewAllActionServiceProvider::class ,
         \App\Providers\Redirectors\RoleServiceProvider::class ,
+        \App\Providers\Services\ResponseVisitors\CreateActionServiceProvider::class ,
     ])->toArray(),
 
     /*
