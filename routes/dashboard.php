@@ -29,5 +29,5 @@ Route::name('role.')->prefix('role')->namespace('Role')
                     ->name('view-all')->middleware('can:view-all-roles');
 
             Route::get('create','CreateController')
-                    ->name('create');
+                    ->name('create')->middleware('can:create-role');
         });
