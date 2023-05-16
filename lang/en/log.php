@@ -23,6 +23,9 @@ return [
         ],
         'view_all' => [
             'throw_exception' => 'has exception when select :item' ,
+        ],
+        'create'=> [
+            'throw_exception' => 'has exception when create :item' ,
         ]
     ]
 ];
