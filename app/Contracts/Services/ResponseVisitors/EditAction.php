@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Services\ResponseVisitors;
 
-use Symfony\Component\HttpFoundation\RedirectResponse;
+use App\Contracts\Services\ResponseVisitors\Statuses\ExceptionThrowable;
 
 interface EditAction extends ExceptionThrowable
 {

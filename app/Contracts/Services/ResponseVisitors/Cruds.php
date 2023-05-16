@@ -2,9 +2,10 @@
 
 namespace App\Contracts\Services\ResponseVisitors;
 
+use App\Contracts\Services\ResponseVisitors\Statuses\ExceptionThrowable;
+use App\Contracts\Services\ResponseVisitors\Statuses\Failable;
+use App\Contracts\Services\ResponseVisitors\Statuses\Okable;
 use App\Contracts\TranslatorGetterable;
-use Illuminate\Http\RedirectResponse;
-use Symfony\Component\HttpFoundation\Response;
 
 interface Cruds extends TranslatorGetterable , Okable , Failable , ExceptionThrowable
 {
