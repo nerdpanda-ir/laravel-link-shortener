@@ -3,7 +3,7 @@ return [
     'request_start' => 'Request Start' ,
     'response_delivered' => 'Delivered Response To User' ,
     'crud' => [
-        'create' => [
+        'save' => [
             'ok'=> 'successfully created' ,
             'throw_exception' => 'has exception when create :item ' ,
             'fail' => 'fail to create :item ' ,
