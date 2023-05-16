@@ -24,7 +24,7 @@ class Logger implements Contract
      */
     public function created(Permission $permission): void
     {
-        $this->logger->info($this->translator->get('log.crud.create.ok'),['item'=>$permission]);
+        $this->logger->info($this->translator->get('log.crud.save.ok'),['item'=>$permission]);
     }
 
     /**
