@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts\Services\ResponseVisitors;
+namespace App\Contracts\Services\ResponseVisitors\Statuses;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
 

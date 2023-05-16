@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Contracts\Services\ResponseVisitors;
+namespace App\Contracts\Services\ResponseVisitors\Statuses;
 
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Response;
 
 interface ExceptionThrowable
 {
