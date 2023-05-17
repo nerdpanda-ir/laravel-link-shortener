@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Responses\Rule\Dashboard\Role;
-use App\Contracts\Responses\Rules\Dashboard\role\save\ExplodeArrayExistsInTable as Contract;
+use App\Contracts\Responses\Rules\Dashboard\role\save\ExplodeArrayExistsInTableBridge as Contract;
 use App\Services\ResponseBuilderContainTranslator;
 use Illuminate\Support\Collection;
 use Symfony\Component\HttpFoundation\Response;
 
-class ExplodeArrayExistsInTable extends ResponseBuilderContainTranslator implements Contract
+class ExplodeArrayExistsInTableBridge extends ResponseBuilderContainTranslator implements Contract
 {
     public function Build(?Collection $arguments = null): Response
     {
