@@ -84,7 +84,7 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
             $this->getExceptionHandler()->report($exception);
             $responsePayload = collect([
                 'date'=> $this->getDateService()->date() , 'attribute'=> $attribute ,
-                'inputs' => request()->except(['__token'])
+                'inputs' => $this->getRequest()->except(['__token'])
             ]);
             $this->explodeResponseBuilder->Build($responsePayload)->send();
         }
