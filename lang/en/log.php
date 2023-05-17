@@ -2,6 +2,7 @@
 return [
     'request_start' => 'Request Start' ,
     'response_delivered' => 'Delivered Response To User' ,
+    'validations' => 'has exception in :rule ' ,
     'crud' => [
         'save' => [
             'ok'=> 'successfully created' ,
@@ -27,5 +28,5 @@ return [
         'create'=> [
             'throw_exception' => 'has exception when create :item' ,
         ]
-    ]
+    ],
 ];
