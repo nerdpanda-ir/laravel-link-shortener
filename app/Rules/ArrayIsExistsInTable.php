@@ -7,6 +7,7 @@ use App\Contracts\RuleExplodeResponseBuilder;
 use App\Contracts\Services\DateService;
 use App\Traits\DateServiceGetterable;
 use App\Traits\ExceptionHandlerGetterable;
+use App\Traits\FailRuleMessageBuilderable;
 use App\Traits\LoggerGetterable;
 use App\Traits\RuleExplodeResponseBuilderable;
 use App\Traits\RuleExplodeResponseBuilderGetterable;
@@ -23,8 +24,8 @@ use Psr\Log\LoggerInterface as Logger;
 
 class ArrayIsExistsInTable implements ValidationRule , Contract
 {
-    use TranslatorGetterable;
-    use DatabaseManagerGetterableTrait , LoggerGetterable , ExceptionHandlerGetterable , DateServiceGetterable;
+    use TranslatorGetterable ,  LoggerGetterable  , DateServiceGetterable ;
+    use DatabaseManagerGetterableTrait ,ExceptionHandlerGetterable , FailRuleMessageBuilderable ;
     use RuleExplodeResponseBuilderable ;
     protected string $table;
     protected string $column;
