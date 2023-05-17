@@ -210,6 +210,7 @@ return [
         \App\Providers\Request\Dashboard\Role\SaveServiceProvider::class ,
         \App\Providers\Rule\ArrayIsExistsInTableServiceProvider::class ,
         \App\Providers\Responses\Dashboard\Role\Save\Rule\ExplodeArrayIsExistsInTableServiceProvider::class ,
+        \App\Providers\Services\MessageBuilders\Rule\Dashboard\Role\Save\ArrayIsExistsInTableServiceProvider::class ,
     ])->toArray(),
 
     /*
