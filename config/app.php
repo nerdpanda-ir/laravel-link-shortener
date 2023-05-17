@@ -207,6 +207,9 @@ return [
         \App\Providers\Services\ResponseVisitors\ViewAllActionServiceProvider::class ,
         \App\Providers\Redirectors\RoleServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\CreateActionServiceProvider::class ,
+        \App\Providers\Request\Dashboard\Role\SaveServiceProvider::class ,
+        \App\Providers\Rule\ArrayIsExistsInTableServiceProvider::class ,
+        \App\Providers\Responses\Dashboard\Role\Save\Rule\ExplodeArrayIsExistsInTableServiceProvider::class ,
     ])->toArray(),
 
     /*
