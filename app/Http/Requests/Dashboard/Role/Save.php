@@ -2,11 +2,11 @@
 
 namespace App\Http\Requests\Dashboard\Role;
 
-use App\Contracts\Responses\Rules\Dashboard\role\save\ExplodeArrayExistsInTable;
 use App\Contracts\Rule\ArrayIsExistsInTable;
 use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Contracts\Requests\Dashboard\Role\Save as Contract;
+use App\Contracts\Responses\Rules\Dashboard\role\save\ExplodeArrayExistsInTableBridge;
 
 class Save extends FormRequest implements Contract
 {
@@ -26,7 +26,7 @@ class Save extends FormRequest implements Contract
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      */
     public function rules(
-        ArrayIsExistsInTable $arrayIsExistsInTableRule , ExplodeArrayExistsInTable $explodeRuleResponseBuilder
+        ArrayIsExistsInTable $arrayIsExistsInTableRule , ExplodeArrayExistsInTableBridge $explodeRuleResponseBuilder
     ): array
     {
         $arrayIsExistsInTableRule->setTable('permissions');
