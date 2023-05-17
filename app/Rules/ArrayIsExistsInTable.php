@@ -10,6 +10,7 @@ use App\Traits\DateServiceGetterable;
 use App\Traits\ExceptionHandlerGetterable;
 use App\Traits\FailRuleMessageBuilderable;
 use App\Traits\LoggerGetterable;
+use App\Traits\RequestGetterable;
 use App\Traits\RuleExplodeResponseBuilderable;
 use App\Traits\RuleExplodeResponseBuilderGetterable;
 use App\Traits\TranslatorGetterable;
@@ -20,6 +21,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
 use App\Traits\DatabaseManagerGetterable as DatabaseManagerGetterableTrait;
 use Illuminate\Database\ConnectionResolverInterface as DatabaseManager;
 use App\Contracts\Rule\ArrayIsExistsInTable as Contract;
+use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Psr\Log\LoggerInterface as Logger;
 
@@ -27,7 +29,7 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
 {
     use TranslatorGetterable ,  LoggerGetterable  , DateServiceGetterable ;
     use DatabaseManagerGetterableTrait ,ExceptionHandlerGetterable , FailRuleMessageBuilderable ;
-    use RuleExplodeResponseBuilderable ;
+    use RuleExplodeResponseBuilderable , RequestGetterable ;
     protected string $table;
     protected string $column;
     protected DatabaseManager $databaseManager;
@@ -41,10 +43,10 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
      */
     protected RuleExplodeResponseBuilder $explodeResponseBuilder;
     protected FailRuleMessageBuilder $failMessageBuilder;
+    protected Request $request;
     public function __construct(
         DatabaseManager $databaseManager , Translator $translator , Logger $logger ,
-        ExceptionHandler $exceptionHandler , DateService $dateService ,
-
+        ExceptionHandler $exceptionHandler , DateService $dateService , Request $request ,
     )
     {
         $this->databaseManager = $databaseManager;
@@ -52,6 +54,7 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
         $this->logger = $logger;
         $this->exceptionHandler = $exceptionHandler ;
         $this->dateService = $dateService ;
+        $this->request = $request ;
     }
 
     /**
