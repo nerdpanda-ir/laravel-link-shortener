@@ -165,6 +165,10 @@ return [
     'custom' => [
         'attribute-name' => [
             'rule-name' => 'custom-message',
+            'array_is_exists_in_table' => [
+                'ok'=> 'not found :value in system !!!' ,
+                'throw_exception'=> 'something happened in :date when validation :attribute please try after and report this message to help and support , admin or developer !!!'
+            ],
         ],
     ],
 
