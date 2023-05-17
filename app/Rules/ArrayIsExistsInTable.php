@@ -5,6 +5,7 @@ namespace App\Rules;
 use App\Contracts\DatabaseManagerGetterable;
 use App\Contracts\RuleExplodeResponseBuilder;
 use App\Contracts\Services\DateService;
+use App\Services\FailRuleMessageBuilder;
 use App\Traits\DateServiceGetterable;
 use App\Traits\ExceptionHandlerGetterable;
 use App\Traits\FailRuleMessageBuilderable;
@@ -39,6 +40,7 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
      * when this rule throw exception we use response bridge for back use to page !!!
      */
     protected RuleExplodeResponseBuilder $explodeResponseBuilder;
+    protected FailRuleMessageBuilder $failMessageBuilder;
     public function __construct(
         DatabaseManager $databaseManager , Translator $translator , Logger $logger ,
         ExceptionHandler $exceptionHandler , DateService $dateService ,
@@ -68,8 +70,8 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
             foreach ($value as $item)
                 if (!in_array($item,$names))
                     $fail(
-                        $this->getTranslator()->get(
-                            'validation.custom.attribute-name.array_is_exists_in_table', ['value' => $item ]
+                        $this->getFailMessage()->build(
+                            collect(['value'=> $item])
                         )
                     );
         }catch (\Throwable $exception){
