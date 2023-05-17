@@ -2,8 +2,8 @@
 
 namespace App\Providers\Responses\Dashboard\Role\Save\Rule;
 
-use App\Contracts\Responses\Rules\Dashboard\role\save\ExplodeArrayExistsInTable as Contract;
-use App\Http\Responses\Rule\Dashboard\Role\ExplodeArrayExistsInTable as ResponseBuilder;
+use App\Contracts\Responses\Rules\Dashboard\role\save\ExplodeArrayExistsInTableBridge as Contract;
+use App\Http\Responses\Rule\Dashboard\Role\ExplodeArrayExistsInTableBridge as ResponseBuilder;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
