@@ -9,6 +9,8 @@ class ArrayIsExistsInTable extends FailRuleMessageBuilder implements Contract
 {
     public function build(?Collection $payload = null): string
     {
-        dd("here");
+        return $this->getTranslator()->get(
+            'messages.validations.role.array_is_exists_in_table', $payload->toArray()
+        );
     }
 }
