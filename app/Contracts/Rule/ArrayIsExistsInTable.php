@@ -7,13 +7,14 @@ use App\Contracts\DateServiceGetterable;
 use App\Contracts\ExceptionHandlerGetterable;
 use App\Contracts\FailRuleMessageBuilderable;
 use App\Contracts\LoggerGetterable;
+use App\Contracts\RequestGetterable;
 use App\Contracts\RuleExplodeResponseBuilderable;
 use App\Contracts\RuleExplodeResponseBuilderGetterable;
 use App\Contracts\TranslatorGetterable;
 
 interface ArrayIsExistsInTable extends  DatabaseManagerGetterable , TranslatorGetterable , LoggerGetterable ,
     ExceptionHandlerGetterable , DateServiceGetterable , RuleExplodeResponseBuilderable ,
-    FailRuleMessageBuilderable
+    FailRuleMessageBuilderable , RequestGetterable
 {
     public function getTable(): string;
     public function setTable(string $table): void;
