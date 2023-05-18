@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use App\Contracts\Model\Permission as Contract;
-use App\Traits\Model\DisableTimestamp;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use NerdPanda\Traits\Model\DisableTimestamp;
 
 class Permission extends Model implements Contract
 {
