@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Contracts\Services;
+namespace App\Contracts;
+
+use App\Contracts\Services\ResponseVisitor;
 
 interface ResponseVisitorGetterable
 {
