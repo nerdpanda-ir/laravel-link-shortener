@@ -7,10 +7,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use NerdPanda\Traits\Model\DisableTimestamp;
 
 class Role extends Model implements Contract
 {
-    use HasFactory;
+    use HasFactory , DisableTimestamp;
     public function permissions():BelongsToMany {
         return $this->belongsToMany(Permission::class);
     }
