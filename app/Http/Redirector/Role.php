@@ -11,4 +11,10 @@ class Role extends Redirector implements Contract
     {
         return $this->getRedirector()->route('dashboard.role.view-all');
     }
+    public function create(array $inputs = []): RedirectResponse
+    {
+        return $this->getRedirector()
+                    ->route('dashboard.role.create')
+                    ->withInput($inputs);
+    }
 }
