@@ -7,28 +7,16 @@ use App\Contracts\Redirectors\Role as Redirector;
 use App\Contracts\Services\DateService;
 use App\Contracts\Services\SaveRoleStrategy as Contract;
 use App\Services\ResponseVisitors\SaveAction as ResponseVisitor;
-use App\Traits\AuthManagerGetterable;
-use App\Traits\DateServiceGetterable;
-use App\Traits\ExceptionHandlerGetterable;
-use App\Traits\FailCrudExceptionGetterable;
-use App\Traits\LoggerGetterable;
-use App\Traits\RequestGetterable;
-use App\Traits\ResponseVisitorGetterable;
-use App\Traits\RoleModelGetterable;
-use App\Traits\Services\RedirectorGetterable;
-use App\Traits\TranslatorGetterable;
 use Illuminate\Contracts\Auth\Factory as AuthManager;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Translation\Translator;
 use Psr\Log\LoggerInterface as Logger;
 use Illuminate\Http\Request;
-
+use App\Traits\Services\SaveRoleStrategy as SaveRoleStrategyTrait;
 
 abstract class SaveRoleStrategy implements Contract
 {
-    use LoggerGetterable , TranslatorGetterable , RequestGetterable , ExceptionHandlerGetterable ;
-    use ResponseVisitorGetterable , RedirectorGetterable , FailCrudExceptionGetterable , DateServiceGetterable;
-    use AuthManagerGetterable , RoleModelGetterable ;
+    use SaveRoleStrategyTrait;
     protected  Logger $logger;
     protected Translator $translator;
     protected Request $request;
