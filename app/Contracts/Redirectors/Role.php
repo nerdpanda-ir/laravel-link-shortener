@@ -2,6 +2,8 @@
 
 namespace App\Contracts\Redirectors;
 
-interface Role extends ViewAllable
+use App\Contracts\Redirectors\Permission\Createable;
+
+interface Role extends ViewAllable , Createable
 {
 }
