@@ -15,7 +15,7 @@ use App\Contracts\TranslatorGetterable;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 interface SaveRoleStrategy extends LoggerGetterable , TranslatorGetterable , RequestGetterable ,
-    ExceptionHandlerGetterable , ResponseVisitorGetterable , RedirectorGetterable , RoleModelGetterable ,
+    ExceptionHandlerGetterable , ResponseVisitorGetterable , RoleModelGetterable ,
     FailCrudExceptionGetterable , AuthManagerGetterable , DateServiceGetterable
 {
     public function save():RedirectResponse;
