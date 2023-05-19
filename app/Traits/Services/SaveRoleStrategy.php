@@ -7,6 +7,7 @@ use App\Traits\DateServiceGetterable;
 use App\Traits\ExceptionHandlerGetterable;
 use App\Traits\FailCrudExceptionGetterable;
 use App\Traits\LoggerGetterable;
+use App\Traits\RedirectorImplGetterable;
 use App\Traits\RequestGetterable;
 use App\Traits\ResponseVisitorGetterable;
 use App\Traits\RoleModelGetterable;
@@ -16,5 +17,5 @@ trait SaveRoleStrategy
 {
     use LoggerGetterable , TranslatorGetterable , RequestGetterable , ExceptionHandlerGetterable ;
     use ResponseVisitorGetterable , FailCrudExceptionGetterable , DateServiceGetterable;
-    use AuthManagerGetterable , RoleModelGetterable ;
+    use AuthManagerGetterable , RoleModelGetterable , RedirectorImplGetterable ;
 }
