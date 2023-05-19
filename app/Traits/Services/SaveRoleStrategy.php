@@ -15,6 +15,6 @@ use App\Traits\TranslatorGetterable;
 trait SaveRoleStrategy
 {
     use LoggerGetterable , TranslatorGetterable , RequestGetterable , ExceptionHandlerGetterable ;
-    use ResponseVisitorGetterable , RedirectorGetterable , FailCrudExceptionGetterable , DateServiceGetterable;
+    use ResponseVisitorGetterable , FailCrudExceptionGetterable , DateServiceGetterable;
     use AuthManagerGetterable , RoleModelGetterable ;
 }
