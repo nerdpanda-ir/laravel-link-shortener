@@ -2,7 +2,7 @@
 
 namespace App\Contracts;
 
-interface SaveRoleHasPermissionStrategy
+interface SaveRoleHasPermissionStrategy extends DatabaseManagerGetterable , PermissionModelGetterable
 {
 
 }
