@@ -32,5 +32,7 @@ Route::name('role.')->prefix('role')->namespace('Role')
                     ->name('create')->middleware('can:create-role');
 
             Route::post('save','SaveController')
-                    ->name('save');
+                    ->name('save')->middleware('can:create-role');
+
+
         });
