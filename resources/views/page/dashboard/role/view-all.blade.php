@@ -52,7 +52,8 @@
                             <td>
                                 <section class="justify-content-evenly d-flex">
                                     @can('edit-role')
-                                        <a href="" class="btn btn-warning text-dark float-start">Edit</a>
+                                        <a href="{{ route('dashboard.role.edit',[$role->id,$role->name]) }}"
+                                           class="btn btn-warning text-dark float-start">Edit</a>
                                     @endcan
                                     @can('delete-role')
                                         <form action="" method="post" class="float-start">
