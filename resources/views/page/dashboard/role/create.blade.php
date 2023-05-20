@@ -6,7 +6,7 @@
     <x-partials.unique-warning field="role name"/>
     <hr>
     <x-partials.form-error-printer />
-    <form method="post" action="">
+    <form method="post" action="{{route('dashboard.role.save')}}">
         @csrf
         <label for="name" class="form-label">Name</label>
         <div class="input-group has-validation mb-4">
@@ -29,10 +29,13 @@
             </x-partials.warning-alert>
         @endif
         <section class="input-group has-validation">
-            <select class="form-select" multiple aria-label="multiple select example"
-                    name="permissions" id="permissions">
+            <select class="form-select bg-dark text-primary" multiple aria-label="multiple select example"
+                    name="permissions[]" id="permissions">
                 @foreach($permissions as $permission)
-                    <option value="{{$permission->id}}">{{$permission->name}}</option>
+                    @php
+                        $shouldSelect = $hasOldPermissions && in_array($permission->name,$oldPermissions);
+                    @endphp
+                    <option value="{{$permission->name}}" @selected($shouldSelect)>{{$permission->name}}</option>
                 @endforeach
             </select>
             @error('permissions')
