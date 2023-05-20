@@ -34,5 +34,6 @@ Route::name('role.')->prefix('role')->namespace('Role')
             Route::post('save','SaveController')
                     ->name('save')->middleware('can:create-role');
 
-
+            Route::get('edit/{id}/{name}','EditController')
+                    ->name('edit');
         });
