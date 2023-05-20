@@ -1,4 +1,9 @@
 @extends('layouts.dashboard')
+@php
+    $hasOldPermissions = !is_null(old('permissions'));
+    if ($hasOldPermissions)
+        $oldPermissions = old('permissions');
+@endphp
 @section('dashboard-title')
     <h1> create a new role </h1>
 @endsection
