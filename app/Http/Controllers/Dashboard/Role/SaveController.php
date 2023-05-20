@@ -17,7 +17,7 @@ class SaveController extends Controller
      * @return void
      * @throws \Throwable
      */
-    public function __invoke(RoleSaveStrategyContainer $strategyContainer ):RedirectResponse
+    public function __invoke(RoleSaveStrategyContainer $strategyContainer , Request $request):RedirectResponse
     {
         return $strategyContainer->getStrategy()->save();
     }
