@@ -14,7 +14,7 @@ class UniqueExceptImplBridge
     {
         return $this->getDatabaseManager()
                     ->table($this->getTableName())
-                    ->whereNotIn('id',$this->getExcepts())
+                    ->whereNotIn($this->getExceptColumn(),$this->getExcepts())
                     ->where('name','=',$this->getOnly())
                     ->exists();
     }
