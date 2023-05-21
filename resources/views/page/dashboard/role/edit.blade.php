@@ -11,7 +11,8 @@
 @endsection
 @section('dashboard-content')
     <x-partials.unique-warning field="name" />
-    <form method="post" action="">
+    <form method="post" action="{{route('dashboard.role.update',[$role->id,$role->name])}}">
+        @method('PUT')
         @csrf
         <label for="name" class="form-label">Name</label>
         <div class="input-group has-validation mb-4">
