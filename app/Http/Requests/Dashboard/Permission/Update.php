@@ -29,6 +29,7 @@ class Update extends FormRequest implements Contract
         $bridge->setTableName('permissions');
         $bridge->setExcepts([$this->route()->parameter('id')]);
         $bridge->setOnly($this->name);
+        $bridge->setExceptColumn('id');
         $uniqueExcept->setExistableBridge($bridge);
         return [
             'name'=> ['required','max:64',$uniqueExcept]
