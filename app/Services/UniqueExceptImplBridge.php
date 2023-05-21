@@ -31,9 +31,10 @@ class UniqueExceptImplBridge
     /**
      * @param array $excepts
      */
-    public function setExcepts(array $excepts): void
+    public function setExcepts(array $excepts): self
     {
         $this->excepts = $excepts;
+        return $this;
     }
 
     public function getOnly(): string
@@ -41,25 +42,28 @@ class UniqueExceptImplBridge
         return $this->only;
     }
 
-    public function setOnly(string $only):void
+    public function setOnly(string $only):self
     {
         $this->only = $only;
+        return $this;
     }
     public function getTableName(): string
     {
         return $this->tableName;
     }
-    public function setTableName(string $tableName):void {
+    public function setTableName(string $tableName):self {
         $this->tableName = $tableName;
+        return $this;
     }
     public function getExceptColumn(): string
     {
         return $this->exceptColumn;
     }
 
-    public function setExceptColumn(string $column): void
+    public function setExceptColumn(string $column): self
     {
         $this->exceptColumn = $column;
+        return $this;
     }
 
     public function getOnlyColumn(): string
@@ -67,9 +71,10 @@ class UniqueExceptImplBridge
         return $this->onlyColumn;
     }
 
-    public function setOnlyColumn(string $column):void
+    public function setOnlyColumn(string $column):self
     {
         $this->onlyColumn = $column;
+        return $this;
     }
 
 
