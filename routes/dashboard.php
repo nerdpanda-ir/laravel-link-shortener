@@ -35,5 +35,5 @@ Route::name('role.')->prefix('role')->namespace('Role')
                     ->name('save')->middleware('can:create-role');
 
             Route::get('edit/{id}/{name}','EditController')
-                    ->name('edit');
+                    ->name('edit')->middleware('can:edit-role');
         });
