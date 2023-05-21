@@ -16,6 +16,7 @@
 @endsection
 @section('dashboard-content')
     <x-partials.unique-warning field="name" />
+    <x-partials.form-error-printer />
     <form method="post" action="{{route('dashboard.role.update',[$role->id,$role->name])}}">
         @method('PUT')
         @csrf
