@@ -10,5 +10,30 @@
     </section>
 @endsection
 @section('dashboard-content')
-    <h1>hellow</h1>
+    <x-partials.unique-warning field="name" />
+    <form method="post" action="">
+        @csrf
+        <label for="name" class="form-label">Name</label>
+        <div class="input-group has-validation mb-4">
+            <span class="input-group-text">@</span>
+            <input value="{{old('name',$role->name)}}" type="text" class="form-control"
+                   id="name" placeholder="modify-something" name="name">
+        </div>
+        <label for="basic-url" class="form-label d-block">Permissions</label>
+        <section class="input-group has-validation">
+            <select class="form-select bg-dark text-primary" multiple=""
+                    aria-label="multiple select example" name="permissions[]" id="permissions">
+                @foreach($role->permissions as $permission)
+                    <option selected>{{$permission->name}}</option>
+                @endforeach
+                @foreach($permissions as $permission)
+                    <option>{{$permission->name}}</option>
+                @endforeach
+            </select>
+        </section>
+        <section class="d-flex mt-5 justify-content-around">
+            <button class="btn btn-success btn-lg px-5" type="submit">Save</button>
+            <button class="btn btn-danger btn-lg  px-5" type="reset">Reset</button>
+        </section>
+    </form>
 @endsection
