@@ -6,7 +6,7 @@ use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use App\Services\UniqueExceptImplBridge as Service ;
 use App\Contracts\Services\UniqueExceptImplBridge as Contract;
-class UniqueExceptPermissionUpdateBridge
+class UniqueExceptImplBridge
     extends ServiceProvider
     implements DeferrableProvider
 {
