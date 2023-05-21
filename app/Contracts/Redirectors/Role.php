@@ -4,6 +4,6 @@ namespace App\Contracts\Redirectors;
 
 use App\Contracts\Redirectors\Permission\Createable;
 
-interface Role extends ViewAllable , Createable
+interface Role extends ViewAllable , Createable , Editable
 {
 }
