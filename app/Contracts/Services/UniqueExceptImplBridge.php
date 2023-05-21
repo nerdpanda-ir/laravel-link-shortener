@@ -12,4 +12,6 @@ interface UniqueExceptImplBridge
     public function setTableName(string $tableName):void;
     public function getExceptColumn():string;
     public function setExceptColumn(string $column):void;
+    public function getOnlyColumn():string;
+    public function setOnlyColumn(string $column):void;
 }
