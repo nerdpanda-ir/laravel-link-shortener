@@ -3,7 +3,7 @@
 namespace App\Http\Requests\Dashboard\Permission;
 use App\Contracts\Requests\Dashboard\Permission\Update as Contract;
 use App\Contracts\Rule\UniqueExcept;
-use App\Contracts\Services\UniqueExceptPermissionUpdateBridge as UniqueExceptRuleBridge;
+use App\Contracts\Services\UniqueExceptImplBridge as UniqueExceptRuleBridge;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Auth\Factory as Auth;
 class Update extends FormRequest implements Contract
