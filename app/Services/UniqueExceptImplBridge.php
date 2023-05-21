@@ -10,6 +10,7 @@ class UniqueExceptImplBridge
     protected array $excepts ;
     protected string $only;
     protected string $tableName;
+    protected string $onlyColumn;
     public function build(): bool
     {
         return $this->getDatabaseManager()
