@@ -214,6 +214,7 @@ return [
         \App\Providers\Services\SaveRoleHasPermissionStrategyServiceProvider::class ,
         \App\Providers\Services\SaveRoleHasNoPermissionStrategyServiceProvider::class ,
         \App\Providers\Services\RoleSaveStrategyContainerServiceProvider::class ,
+        \App\Providers\Request\Dashboard\Role\UpdateServiceProvider::class ,
     ])->toArray(),
 
     /*
