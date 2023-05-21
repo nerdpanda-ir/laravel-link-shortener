@@ -9,5 +9,6 @@ interface UniqueExceptImplBridge
     public function getOnly():string;
     public function setOnly(string $only):void;
     public function getTableName():string;
+    public function setTableName(string $tableName):void;
 
 }
