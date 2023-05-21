@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Services;
 
-interface UniqueExceptPermissionUpdateBridge
+interface UniqueExceptImplBridge
 {
     public function getExcepts():array;
     public function setExcepts(array $excepts);
