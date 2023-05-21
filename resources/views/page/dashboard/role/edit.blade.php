@@ -1,4 +1,9 @@
 @extends('layouts.dashboard')
+@php
+    $hasOldPermissions = !is_null(old('permissions'));
+    if ($hasOldPermissions)
+        $oldPermissions = old('permissions');
+@endphp
 @section('dashboard-title')
     <section class="w-100">
         <x-partials.primary-alert>
@@ -24,12 +29,27 @@
         <section class="input-group has-validation">
             <select class="form-select bg-dark text-primary" multiple=""
                     aria-label="multiple select example" name="permissions[]" id="permissions">
-                @foreach($role->permissions as $permission)
-                    <option selected>{{$permission->name}}</option>
-                @endforeach
-                @foreach($permissions as $permission)
-                    <option>{{$permission->name}}</option>
-                @endforeach
+                @unless($hasOldPermissions)
+                    @foreach($role->permissions as $permission)
+                        <option selected>{{$permission->name}}</option>
+                    @endforeach
+                    @foreach($permissions as $permission)
+                        <option>{{$permission->name}}</option>
+                    @endforeach
+                @else
+                    @php
+                        $permissionsList = array_merge(
+                            $role->getRelation('permissions')->pluck('name')->toArray(),
+                            $permissions->pluck('name')->toArray()
+                        );
+                    @endphp
+                    @foreach($permissionsList as $permissionItem)
+                        @php
+                            $shouldSelect = in_array($permissionItem,$oldPermissions);
+                        @endphp
+                        <option @selected($shouldSelect)>{{$permissionItem}}</option>
+                    @endforeach
+                @endunless
             </select>
         </section>
         <section class="d-flex mt-5 justify-content-around">
