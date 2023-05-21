@@ -51,5 +51,8 @@ class UniqueExceptImplBridge
     public function setTableName(string $tableName):void {
         $this->tableName = $tableName;
     }
-
+    public function getExceptColumn(): string
+    {
+        return $this->exceptColumn;
+    }
 }
