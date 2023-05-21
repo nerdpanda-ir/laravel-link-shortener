@@ -40,6 +40,7 @@ class EditController extends Controller
                     /** @var BelongsToMany $relation */
                     $relation->latest('permission_role.created_at');
                     $relation->orderBy('permissions.name','asc');
+                    $relation->select(['permissions.name','permissions.id']);
                 }
             ])->loadCount(['users','permissions']);
             $exceptPermissions = $role->permissions->pluck('id')->toArray();
