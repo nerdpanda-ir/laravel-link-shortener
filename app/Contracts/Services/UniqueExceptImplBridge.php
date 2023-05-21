@@ -8,4 +8,6 @@ interface UniqueExceptImplBridge
     public function setExcepts(array $excepts);
     public function getOnly():string;
     public function setOnly(string $only):void;
+    public function getTableName():string;
+
 }
