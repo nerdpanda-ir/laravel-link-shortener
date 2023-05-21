@@ -36,4 +36,7 @@ Route::name('role.')->prefix('role')->namespace('Role')
 
             Route::get('edit/{id}/{name}','EditController')
                     ->name('edit')->middleware('can:edit-role');
+
+            Route::put('update/{id}/{name}','UpdateController')
+                    ->name('update');
         });
