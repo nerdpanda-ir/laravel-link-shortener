@@ -17,4 +17,12 @@ class Role extends Redirector implements Contract
                     ->route('dashboard.role.create')
                     ->withInput($inputs);
     }
+
+    public function edit(string $id, string $name, array $inputs = []): RedirectResponse
+    {
+        return $this->getRedirector()
+                    ->route('dashboard.role.edit',[$id,$name])
+                    ->withInput($inputs);
+    }
+
 }
