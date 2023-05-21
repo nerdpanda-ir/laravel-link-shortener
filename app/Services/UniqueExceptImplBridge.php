@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Services;
-use App\Contracts\Services\UniqueExceptPermissionUpdateBridge as Contract;
-class UniqueExceptPermissionUpdateBridge
+use App\Contracts\Services\UniqueExceptImplBridge as Contract;
+class UniqueExceptImplBridge
     extends UniqueExceptExistableBridge
     implements Contract
 {
