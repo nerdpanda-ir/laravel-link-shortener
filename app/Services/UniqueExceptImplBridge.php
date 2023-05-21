@@ -8,6 +8,7 @@ class UniqueExceptImplBridge
 {
     protected array $excepts ;
     protected string $only;
+    protected string $tableName;
     public function build(): bool
     {
         return $this->getDatabaseManager()
@@ -42,6 +43,9 @@ class UniqueExceptImplBridge
     {
         $this->only = $only;
     }
-
+    public function getTableName(): string
+    {
+        return $this->tableName;
+    }
 
 }
