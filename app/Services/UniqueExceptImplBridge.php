@@ -6,6 +6,7 @@ class UniqueExceptImplBridge
     extends UniqueExceptExistableBridge
     implements Contract
 {
+    protected string $exceptColumn;
     protected array $excepts ;
     protected string $only;
     protected string $tableName;
