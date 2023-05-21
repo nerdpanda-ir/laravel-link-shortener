@@ -12,7 +12,7 @@ class UniqueExceptImplBridge
     public function build(): bool
     {
         return $this->getDatabaseManager()
-                    ->table('permissions')
+                    ->table($this->getTableName())
                     ->whereNotIn('id',$this->getExcepts())
                     ->where('name','=',$this->getOnly())
                     ->exists();
