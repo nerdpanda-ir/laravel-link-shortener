@@ -55,4 +55,10 @@ class UniqueExceptImplBridge
     {
         return $this->exceptColumn;
     }
+
+    public function setExceptColumn(string $column): void
+    {
+        $this->exceptColumn = $column;
+    }
+
 }
