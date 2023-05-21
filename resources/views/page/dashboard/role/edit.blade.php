@@ -24,6 +24,12 @@
             <span class="input-group-text">@</span>
             <input value="{{old('name',$role->name)}}" type="text" class="form-control"
                    id="name" placeholder="modify-something" name="name">
+
+            @error('name')
+                <div class="invalid-feedback d-block">
+                    {{$message}}
+                </div>
+            @enderror
         </div>
         <label for="basic-url" class="form-label d-block">Permissions</label>
         <section class="input-group has-validation">
