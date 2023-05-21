@@ -62,4 +62,15 @@ class UniqueExceptImplBridge
         $this->exceptColumn = $column;
     }
 
+    public function getOnlyColumn(): string
+    {
+        return $this->onlyColumn;
+    }
+
+    public function setOnlyColumn(string $column):void
+    {
+        $this->onlyColumn = $column;
+    }
+
+
 }
