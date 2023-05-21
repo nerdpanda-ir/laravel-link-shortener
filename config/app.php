@@ -192,7 +192,7 @@ return [
         \App\Providers\Services\DateServiceProvider::class ,
         \App\Providers\Rule\UniqueExceptServiceProvider::class ,
         \App\Providers\Request\Dashboard\Permission\UpdateServiceProvider::class ,
-        \App\Providers\Services\UniqueExceptPermissionUpdateBridge::class ,
+        \App\Providers\Services\UniqueExceptImplBridge::class ,
         \App\Providers\Observers\Permission\LoggerServiceProvider::class ,
         \App\Providers\Services\Gates\RoleServiceProvider::class ,
         \App\Providers\Exceptions\FailCrudServiceProvider::class ,
