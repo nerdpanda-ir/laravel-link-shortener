@@ -47,5 +47,8 @@ class UniqueExceptImplBridge
     {
         return $this->tableName;
     }
+    public function setTableName(string $tableName):void {
+        $this->tableName = $tableName;
+    }
 
 }
