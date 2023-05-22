@@ -21,6 +21,7 @@ use Illuminate\Contracts\Validation\ValidationRule;
 use App\Traits\DatabaseManagerGetterable as DatabaseManagerGetterableTrait;
 use Illuminate\Database\ConnectionResolverInterface as DatabaseManager;
 use App\Contracts\Rule\ArrayIsExistsInTable as Contract;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Psr\Log\LoggerInterface as Logger;
@@ -86,7 +87,8 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
                 'date'=> $this->getDateService()->date() , 'attribute'=> $attribute ,
                 'inputs' => $this->getRequest()->except(['__token'])
             ]);
-            $this->explodeResponseBuilder->Build($responsePayload)->send();
+            $response = $this->explodeResponseBuilder->Build($responsePayload);
+            throw new HttpResponseException($response);
         }
     }
 
