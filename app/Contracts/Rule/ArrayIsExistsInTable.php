@@ -10,14 +10,20 @@ use App\Contracts\LoggerGetterable;
 use App\Contracts\RequestGetterable;
 use App\Contracts\RuleExplodeResponseBuilderable;
 use App\Contracts\RuleExplodeResponseBuilderGetterable;
+use App\Contracts\Services\ResponseVisitor;
 use App\Contracts\TranslatorGetterable;
+use Symfony\Component\HttpFoundation\Response;
 
 interface ArrayIsExistsInTable extends  DatabaseManagerGetterable , TranslatorGetterable , LoggerGetterable ,
-    ExceptionHandlerGetterable , DateServiceGetterable , RuleExplodeResponseBuilderable ,
-    FailRuleMessageBuilderable , RequestGetterable
+    ExceptionHandlerGetterable , FailRuleMessageBuilderable , DateServiceGetterable
 {
     public function getTable(): string;
     public function setTable(string $table): void;
     public function getColumn(): string;
     public function setColumn(string $column): void;
+    public function getExplodeResponse():Response;
+
+    public function setExplodeResponse(Response $response);
+    public function setExplodeResponseVisitor(ResponseVisitor $responseVisitor):void;
+    public function getExplodeResponseVisitor():ResponseVisitor;
 }

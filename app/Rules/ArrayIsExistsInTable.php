@@ -2,17 +2,14 @@
 
 namespace App\Rules;
 
-use App\Contracts\DatabaseManagerGetterable;
-use App\Contracts\RuleExplodeResponseBuilder;
+
 use App\Contracts\Services\DateService;
+use App\Contracts\Services\ResponseVisitor;
 use App\Services\FailRuleMessageBuilder;
 use App\Traits\DateServiceGetterable;
 use App\Traits\ExceptionHandlerGetterable;
 use App\Traits\FailRuleMessageBuilderable;
 use App\Traits\LoggerGetterable;
-use App\Traits\RequestGetterable;
-use App\Traits\RuleExplodeResponseBuilderable;
-use App\Traits\RuleExplodeResponseBuilderGetterable;
 use App\Traits\TranslatorGetterable;
 use Closure;
 use Illuminate\Contracts\Debug\ExceptionHandler;
@@ -22,40 +19,34 @@ use App\Traits\DatabaseManagerGetterable as DatabaseManagerGetterableTrait;
 use Illuminate\Database\ConnectionResolverInterface as DatabaseManager;
 use App\Contracts\Rule\ArrayIsExistsInTable as Contract;
 use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Psr\Log\LoggerInterface as Logger;
+use Symfony\Component\HttpFoundation\Response;
 
 class ArrayIsExistsInTable implements ValidationRule , Contract
 {
-    use TranslatorGetterable ,  LoggerGetterable  , DateServiceGetterable ;
-    use DatabaseManagerGetterableTrait ,ExceptionHandlerGetterable , FailRuleMessageBuilderable ;
-    use RuleExplodeResponseBuilderable , RequestGetterable ;
+    use TranslatorGetterable , LoggerGetterable , DatabaseManagerGetterableTrait ;
+    use ExceptionHandlerGetterable , FailRuleMessageBuilderable , DateServiceGetterable ;
     protected string $table;
     protected string $column;
     protected DatabaseManager $databaseManager;
     protected Translator $translator;
     protected Logger $logger;
-    protected DateService $dateService ;
     protected ExceptionHandler $exceptionHandler;
-    /**
-     * @var RuleExplodeResponseBuilder
-     * when this rule throw exception we use response bridge for back use to page !!!
-     */
-    protected RuleExplodeResponseBuilder $explodeResponseBuilder;
     protected FailRuleMessageBuilder $failMessageBuilder;
-    protected Request $request;
+    protected Response $explodeResponse;
+    protected ResponseVisitor $explodeResponseVisitor;
+    protected DateService $dateService ;
     public function __construct(
         DatabaseManager $databaseManager , Translator $translator , Logger $logger ,
-        ExceptionHandler $exceptionHandler , DateService $dateService , Request $request ,
+        ExceptionHandler $exceptionHandler ,DateService $dateService
     )
     {
         $this->databaseManager = $databaseManager;
         $this->translator = $translator;
         $this->logger = $logger;
         $this->exceptionHandler = $exceptionHandler ;
-        $this->dateService = $dateService ;
-        $this->request = $request ;
+        $this->dateService = $dateService;
     }
 
     /**
@@ -83,12 +74,10 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
                 $this->getTranslator()->get('log.validations', ['rule' => self::class])
             );
             $this->getExceptionHandler()->report($exception);
-            $responsePayload = collect([
-                'date'=> $this->getDateService()->date() , 'attribute'=> $attribute ,
-                'inputs' => $this->getRequest()->except(['__token'])
-            ]);
-            $response = $this->explodeResponseBuilder->Build($responsePayload);
-            throw new HttpResponseException($response);
+            $response = $this->getExplodeResponse();
+            $responseWithError = $this->getExplodeResponseVisitor()
+                                      ->visit($response,$this->getDateService()->date(),$attribute);
+            throw new HttpResponseException($responseWithError);
         }
     }
 
@@ -123,5 +112,26 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
     {
         $this->column = $column;
     }
+
+    public function getExplodeResponse(): Response
+    {
+        return $this->explodeResponse;
+    }
+
+    public function setExplodeResponse(Response $response)
+    {
+        $this->explodeResponse = $response;
+    }
+
+    public function setExplodeResponseVisitor(ResponseVisitor $responseVisitor): void
+    {
+        $this->explodeResponseVisitor = $responseVisitor ;
+    }
+
+    public function getExplodeResponseVisitor(): ResponseVisitor
+    {
+        return $this->explodeResponseVisitor ;
+    }
+
 
 }
