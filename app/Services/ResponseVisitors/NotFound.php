@@ -2,7 +2,6 @@
 
 namespace App\Services\ResponseVisitors;
 use App\Contracts\Services\ResponseVisitors\NotFound as Contract;
-use App\Services\ResponseBuilder;
 use App\Traits\TranslatorGetterable;
 use Illuminate\Contracts\Translation\Translator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
