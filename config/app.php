@@ -209,7 +209,6 @@ return [
         \App\Providers\Services\ResponseVisitors\CreateActionServiceProvider::class ,
         \App\Providers\Request\Dashboard\Role\SaveServiceProvider::class ,
         \App\Providers\Rule\ArrayIsExistsInTableServiceProvider::class ,
-        \App\Providers\Responses\Dashboard\Role\Save\Rule\ExplodeArrayIsExistsInTableServiceProvider::class ,
         \App\Providers\Services\MessageBuilders\Rule\Dashboard\Role\ArrayIsExistsInTableServiceProvider::class ,
         \App\Providers\Services\SaveRoleHasPermissionStrategyServiceProvider::class ,
         \App\Providers\Services\SaveRoleHasNoPermissionStrategyServiceProvider::class ,
