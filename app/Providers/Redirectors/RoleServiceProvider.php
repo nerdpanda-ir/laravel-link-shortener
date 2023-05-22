@@ -10,7 +10,7 @@ class RoleServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
-        $this->app->bind(Contract::class , Redirector::class);
+        $this->app->singleton(Contract::class , Redirector::class);
     }
     public function provides():array
     {
