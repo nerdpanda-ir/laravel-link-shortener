@@ -3,7 +3,7 @@
 namespace App\Providers\Services\MessageBuilders\Rule\Dashboard\Role\Save;
 
 use App\Contracts\Services\MessageBuilders\Rule\Dashboard\Role\ArrayIsExistsInTable as Contract;
-use App\Services\MessageBuilders\Rule\Dashboard\Role\Save\ArrayIsExistsInTable as MessageBuilder;
+use App\Services\MessageBuilders\Rule\Dashboard\Role\ArrayIsExistsInTable as MessageBuilder;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
