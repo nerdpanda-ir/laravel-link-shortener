@@ -2,12 +2,13 @@
 
 namespace App\Http\Requests\Dashboard\Role;
 
-use App\Contracts\Rule\ArrayIsExistsInTable;
-use Illuminate\Contracts\Auth\Factory;
-use Illuminate\Foundation\Http\FormRequest;
 use App\Contracts\Requests\Dashboard\Role\Save as Contract;
 use App\Contracts\Responses\Rules\Dashboard\role\save\ExplodeArrayExistsInTableBridge;
-use App\Contracts\Services\MessageBuilders\Rule\Dashboard\Role\Save\ArrayIsExistsInTable  as MessageBuilder;
+use App\Contracts\Rule\ArrayIsExistsInTable;
+use App\Contracts\Services\MessageBuilders\Rule\Dashboard\Role\ArrayIsExistsInTable as MessageBuilder;
+use Illuminate\Contracts\Auth\Factory;
+use Illuminate\Foundation\Http\FormRequest;
+
 class Save extends FormRequest implements Contract
 {
     /**
