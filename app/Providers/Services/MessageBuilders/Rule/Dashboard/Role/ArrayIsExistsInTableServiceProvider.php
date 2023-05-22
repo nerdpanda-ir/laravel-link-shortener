@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers\Services\MessageBuilders\Rule\Dashboard\Role\Save;
+namespace App\Providers\Services\MessageBuilders\Rule\Dashboard\Role;
 
 use App\Contracts\Services\MessageBuilders\Rule\Dashboard\Role\ArrayIsExistsInTable as Contract;
 use App\Services\MessageBuilders\Rule\Dashboard\Role\ArrayIsExistsInTable as MessageBuilder;
