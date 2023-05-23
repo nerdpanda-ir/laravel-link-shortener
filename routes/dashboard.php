@@ -43,3 +43,8 @@ Route::name('role.')->prefix('role')->namespace('Role')
             Route::delete('delete/{id}/{name}','DeleteController')
                     ->name('delete')->middleware('can:delete-role');
         });
+
+Route::name('user.')->prefix('user')->namespace('User')
+        ->group(function (){
+
+        });
