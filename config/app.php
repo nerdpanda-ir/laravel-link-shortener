@@ -193,7 +193,7 @@ return [
         \App\Providers\Rule\UniqueExceptServiceProvider::class ,
         \App\Providers\Request\Dashboard\Permission\UpdateServiceProvider::class ,
         \App\Providers\Services\UniqueExceptImplBridge::class ,
-        \App\Providers\Observers\Permission\LoggerServiceProvider::class ,
+        \App\Providers\Observers\LoggerServiceProvider::class ,
         \App\Providers\Services\Gates\RoleServiceProvider::class ,
         \App\Providers\Exceptions\FailCrudServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\DeleteActionServiceProvider::class ,
