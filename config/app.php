@@ -215,6 +215,7 @@ return [
         \App\Providers\Services\RoleSaveStrategyContainerServiceProvider::class ,
         \App\Providers\Request\Dashboard\Role\UpdateServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\Rule\ExplodeArrayExistsInTableServiceProvider::class ,
+        \App\Providers\Services\Gates\UserServiceProvider::class ,
     ])->toArray(),
 
     /*
