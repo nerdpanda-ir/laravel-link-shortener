@@ -14,6 +14,7 @@ use App\Listeners\QueryExecutedEvent\QueryDisplayOnConsoleListener;
 use App\Listeners\QueryExecutedEvent\QueryDisplayOnWebListener;
 use App\Listeners\QueryExecutedEvent\QueryLoggerListener;
 use App\Models\Permission;
+use App\Models\Role;
 use App\Observers\Logger;
 use Illuminate\Auth\Events\Authenticated;
 use Illuminate\Auth\Events\Failed;
@@ -67,6 +68,9 @@ class EventServiceProvider extends ServiceProvider
     protected $observers = [
         Permission::class => [
             Logger::class
+        ],
+        Role::class => [
+            Logger::class ,
         ]
     ];
     /**
