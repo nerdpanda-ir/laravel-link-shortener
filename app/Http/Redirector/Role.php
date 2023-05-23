@@ -2,10 +2,10 @@
 
 namespace App\Http\Redirector;
 use App\Contracts\Redirectors\Role as Contract;
-use App\Services\Redirector;
+use App\Services\CrudRedirector;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-class Role extends Redirector implements Contract
+class Role extends CrudRedirector implements Contract
 {
     public function viewAll(): RedirectResponse
     {
