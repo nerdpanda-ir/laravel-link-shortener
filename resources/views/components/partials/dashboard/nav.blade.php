@@ -45,13 +45,13 @@
             </ul>
         @endcanany
         @canany(['create-user','view-all-users'])
-            <x-partials.sidebar-heading name="Users" uri="#"/>
+            <x-partials.sidebar-heading name="Users" uri="{{route('dashboard.user.create')}}"/>
             <ul class="nav flex-column mb-2">
                 @can('view-all-users')
                     <x-partials.sidebar-link-item title="All" uri="{{route('dashboard.user.view-all')}}"/>
                 @endcan
                 @can('create-user')
-                    <x-partials.sidebar-link-item title="Create" uri="#"/>
+                    <x-partials.sidebar-link-item title="Create" uri="{{route('dashboard.user.create')}}"/>
                 @endcan
             </ul>
         @endcanany
