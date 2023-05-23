@@ -48,4 +48,6 @@ Route::name('user.')->prefix('user')->namespace('User')
         ->group(function (){
             Route::get('view-all','ViewAllController')
                     ->name('view-all')->middleware('can:view-all-users');
+            Route::get('create','CreateController')
+                    ->name('create');
         });
