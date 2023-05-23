@@ -15,6 +15,7 @@ use App\Listeners\QueryExecutedEvent\QueryDisplayOnWebListener;
 use App\Listeners\QueryExecutedEvent\QueryLoggerListener;
 use App\Models\Permission;
 use App\Models\Role;
+use App\Models\User;
 use App\Observers\Logger;
 use Illuminate\Auth\Events\Authenticated;
 use Illuminate\Auth\Events\Failed;
@@ -70,6 +71,9 @@ class EventServiceProvider extends ServiceProvider
             Logger::class
         ],
         Role::class => [
+            Logger::class ,
+        ],
+        User::class => [
             Logger::class ,
         ]
     ];
