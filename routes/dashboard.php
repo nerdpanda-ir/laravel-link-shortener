@@ -39,4 +39,7 @@ Route::name('role.')->prefix('role')->namespace('Role')
 
             Route::put('update/{id}/{name}','UpdateController')
                     ->name('update')->middleware('can:edit-role');
+
+            Route::delete('delete/{id}/{name}','DeleteController')
+                    ->name('delete')->middleware('can:delete-role');
         });
