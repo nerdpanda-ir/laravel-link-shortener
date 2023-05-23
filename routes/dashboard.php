@@ -46,5 +46,6 @@ Route::name('role.')->prefix('role')->namespace('Role')
 
 Route::name('user.')->prefix('user')->namespace('User')
         ->group(function (){
-
+            Route::get('view-all','ViewAllController')
+                    ->name('view-all')->middleware('can:view-all-users');
         });
