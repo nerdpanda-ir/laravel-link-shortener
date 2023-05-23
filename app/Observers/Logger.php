@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Observers\Permission;
+namespace App\Observers;
 
-use App\Contracts\Observers\Permission\Logger as Contract;
+use App\Contracts\Model\Permission;
+use App\Contracts\Observers\Logger as Contract;
 use App\Contracts\Services\TranslateKeyGetter;
-use Psr\Log\LoggerInterface as LoggerService;
-use Illuminate\Contracts\Translation\Translator ;
 use App\Traits\Observers\Permission\Logger as LoggerTrait;
-use App\Contracts\Model\Permission ;
+use Illuminate\Contracts\Translation\Translator;
+use Psr\Log\LoggerInterface as LoggerService;
+
 class Logger implements Contract
 {
     use LoggerTrait;
