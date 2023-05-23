@@ -6,5 +6,6 @@ trait Createable
 {
     public function create(): bool
     {
+        return $this->getPermissionManager()->has('user-create');
     }
 }
