@@ -56,7 +56,10 @@
                                            class="btn btn-warning text-dark float-start">Edit</a>
                                     @endcan
                                     @can('delete-role')
-                                        <form action="" method="post" class="float-start">
+                                        <form method="post" class="float-start"
+                                              action="{{route('dashboard.role.delete',[$role->id,$role->name])}}">
+                                            @csrf
+                                            @method('DELETE')
                                                 <button class="bg-danger btn text-light">Delete</button>
                                         </form>
                                     @endcan
