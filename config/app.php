@@ -234,6 +234,7 @@ return [
         // 'Example' => App\Facades\Example::class,
          'DateServiceFacade' => \App\Facades\DateServiceFacade::class,
         'UserRedirector' => \App\Facades\Redirectors\User::class ,
+        'CreateActionResponseVisitor' => \App\Facades\Services\ResponseVisitors\CreateAction::class ,
     ])->toArray(),
 
 ];
