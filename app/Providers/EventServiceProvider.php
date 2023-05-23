@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Events\Login;
 use App\Listeners\AuthenticatedEvent\LoadUserPermissionsListener;
 use App\Listeners\Job\LogFailedListener;
 use App\Listeners\Job\LogProcessedListener;
@@ -13,10 +14,9 @@ use App\Listeners\QueryExecutedEvent\QueryDisplayOnConsoleListener;
 use App\Listeners\QueryExecutedEvent\QueryDisplayOnWebListener;
 use App\Listeners\QueryExecutedEvent\QueryLoggerListener;
 use App\Models\Permission;
-use App\Observers\Permission\Logger;
+use App\Observers\Logger;
 use Illuminate\Auth\Events\Authenticated;
 use Illuminate\Auth\Events\Failed;
-use App\Events\Login;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
