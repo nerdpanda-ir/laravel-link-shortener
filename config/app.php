@@ -233,6 +233,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
          'DateServiceFacade' => \App\Facades\DateServiceFacade::class,
+        'UserRedirector' => \App\Facades\Redirectors\User::class ,
     ])->toArray(),
 
 ];
