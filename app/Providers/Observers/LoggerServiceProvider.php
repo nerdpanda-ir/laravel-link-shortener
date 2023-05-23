@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Providers\Observers\Permission;
+namespace App\Providers\Observers;
 
+use App\Observers\Logger as Observer;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use App\Contracts\Observers\Permission\Logger as Contract;
-use App\Observers\Permission\Logger as Observer;
+
 class LoggerServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
