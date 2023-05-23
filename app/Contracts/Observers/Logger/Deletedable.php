@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts\Observers\Permission\Logger;
+namespace App\Contracts\Observers\Logger;
 
 use App\Contracts\Model\Permission;
 
