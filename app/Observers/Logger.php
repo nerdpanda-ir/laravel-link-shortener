@@ -7,6 +7,7 @@ use App\Contracts\Observers\Logger as Contract;
 use App\Contracts\Services\TranslateKeyGetter;
 use App\Traits\Observers\Permission\Logger as LoggerTrait;
 use Illuminate\Contracts\Translation\Translator;
+use Illuminate\Database\Eloquent\Model;
 use Psr\Log\LoggerInterface as LoggerService;
 
 class Logger implements Contract
@@ -23,20 +24,20 @@ class Logger implements Contract
     /**
      * Handle the Permission "created" event.
      */
-    public function created(Permission $permission): void
+    public function created(Model $model): void
     {
-        $this->logger->info($this->translator->get('log.crud.save.ok'),['item'=>$permission]);
+        $this->logger->info($this->translator->get('log.crud.save.ok'),['item'=>$model]);
     }
 
     /**
      * Handle the Permission "updated" event.
      * @param \App\Models\Permission $permission
      */
-    public function updated(Permission $permission): void
+    public function updated(Model $model): void
     {
         $this->getLogger()->debug(
             $this->getTranslator()->get('log.crud.updated.ok') ,
-            ['item'=> $permission]
+            ['item'=> $model]
         );
 
     }
@@ -44,11 +45,11 @@ class Logger implements Contract
     /**
      * Handle the Permission "deleted" event.
      */
-    public function deleted(Permission $permission): void
+    public function deleted(Model $model): void
     {
         $this->getLogger()->info(
             $this->getTranslator()->get('log.crud.delete.ok') ,
-            ['item'=> $permission]
+            ['item'=> $model]
         );
     }
 }
