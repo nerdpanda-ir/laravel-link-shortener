@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Contracts\Observers\Permission;
+namespace App\Contracts\Observers;
 
 use App\Contracts\LoggerGetterable;
 use App\Contracts\Observers\Permission\Logger\Createdable;
