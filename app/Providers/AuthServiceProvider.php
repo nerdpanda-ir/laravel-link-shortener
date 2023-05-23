@@ -6,6 +6,7 @@ namespace App\Providers;
 use App\Contracts\Services\Gates\Permission;
 use App\Contracts\Services\Gates\Role;
 use App\Contracts\Services\Gates\SystemMonitor;
+use App\Contracts\Services\Gates\User;
 use Illuminate\Contracts\Auth\Access\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -31,6 +32,7 @@ class AuthServiceProvider extends ServiceProvider
         'create-role' => [Role::class , 'create'] ,
         'edit-role' => [Role::class , 'edit'] ,
         'delete-role' => [Role::class , 'delete'] ,
+        'view-all-users' => [User::class, 'viewAll'] ,
     ];
 
     /**
