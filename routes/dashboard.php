@@ -50,4 +50,7 @@ Route::name('user.')->prefix('user')->namespace('User')
                     ->name('view-all')->middleware('can:view-all-users');
             Route::get('create','CreateController')
                     ->name('create')->middleware('can:create-user');
+
+            Route::get('save','SaveController')
+                    ->name('save');
         });
