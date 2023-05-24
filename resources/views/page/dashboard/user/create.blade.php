@@ -5,7 +5,8 @@
 @section('dashboard-content')
     <div class="row g-5">
         <div class="col-md-10 col-lg-10 m-auto mt-5">
-            <form class="needs-validation" novalidate="">
+            <form class="needs-validation" novalidate="" action="{{route('dashboard.user.save')}}">
+                @csrf
                 <div class="row g-3">
                     <div class="col-sm-12">
                         <label for="full_name" class="form-label">full name</label>
