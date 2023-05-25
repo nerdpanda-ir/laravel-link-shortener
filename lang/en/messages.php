@@ -69,6 +69,9 @@ return [
     'validations'=> [
         'role'=> [
             'array_is_exists_in_table' => ':value permission not found in system !!!'
+        ],
+        'user' => [
+            'array_is_exists_in_table' => ':value role not found in system !!!'
         ]
     ]
 ];
