@@ -11,7 +11,7 @@
                     <div class="col-sm-12">
                         <label for="full_name" class="form-label">full name</label>
                         <input type="text" class="form-control" id="full_name" placeholder="mr nerd panda"
-                               value="{{old('full_name')}}">
+                               value="{{old('full_name')}}" name="full_name">
                         <x-partials.field-error-printer name="name" />
                     </div>
 
@@ -21,24 +21,27 @@
                         <div class="input-group has-validation">
                             <span class="input-group-text">@</span>
                             <input type="text" class="form-control" id="username"
-                                   placeholder="Username" {{old('username')}}>
+                                   placeholder="Username" {{old('username')}} name="username">
                             <x-partials.field-error-printer name="username" />
                         </div>
                     </div>
 
                     <div class="col-12">
                         <label for="email" class="form-label">Email</label>
-                        <input type="text" class="form-control" id="email" placeholder="you@example.com" value="{{old('email')}}">
+                        <input type="text" class="form-control" id="email" placeholder="you@example.com"
+                               value="{{old('email')}}" name="email">
                         <x-partials.field-error-printer name="email" />
                     </div>
                     <div class="col-sm-6">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="password">
+                        <input type="password" class="form-control" id="password" placeholder="password"
+                               name="password">
                         <x-partials.field-error-printer name="password" />
                     </div>
                     <div class="col-sm-6">
                         <label for="password" class="form-label">Password Repeat</label>
-                        <input type="password" class="form-control" id="password" placeholder="password">
+                        <input type="password" class="form-control" id="password" placeholder="password"
+                               name="password_confirmation">
                         <x-partials.field-error-printer name="password" />
                     </div>
                     <div class="col-sm-12">
