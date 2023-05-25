@@ -13,7 +13,7 @@
                         <label for="full_name" class="form-label">full name</label>
                         <input type="text" class="form-control" id="full_name" placeholder="mr nerd panda"
                                value="{{old('full_name')}}" name="full_name">
-                        <x-partials.field-error-printer name="name" />
+                        <x-partials.field-error-printer name="full_name" />
                     </div>
 
 
@@ -43,11 +43,11 @@
                         <label for="password" class="form-label">Password Repeat</label>
                         <input type="password" class="form-control" id="password" placeholder="password"
                                name="password_confirmation">
-                        <x-partials.field-error-printer name="password" />
+                        <x-partials.field-error-printer name="password_confirmation" />
                     </div>
                     <div class="col-sm-12">
                         <label for="basic-url" class="form-label d-block">Roles</label>
-                        <x-partials.field-error-printer name="password" />
+                        <x-partials.field-error-printer name="roles" />
                         <section class="input-group has-validation">
                             <select class="form-select bg-dark text-primary" multiple="" aria-label="multiple select example"
                                     name="roles[]" id="permissions">
@@ -66,6 +66,7 @@
                     <input type="checkbox" class="form-check-input" id="email_verified"
                            name="email_verified" @checked($shouldChecked)>
                     <label class="form-check-label" for="email_verified">verified email</label>
+                    <x-partials.field-error-printer name="email_verified"/>
                 </div>
                 <hr class="my-4">
                 <section class="d-flex justify-content-around">
