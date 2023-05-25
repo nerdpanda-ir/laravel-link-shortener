@@ -217,6 +217,7 @@ return [
         \App\Providers\Services\ResponseVisitors\Rule\ExplodeArrayExistsInTableServiceProvider::class ,
         \App\Providers\Services\Gates\UserServiceProvider::class ,
         \App\Providers\Redirectors\UserServiceProvider::class ,
+        \App\Providers\Request\Dashboard\User\SaveServiceProvider::class ,
     ])->toArray(),
 
     /*
