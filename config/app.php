@@ -218,6 +218,7 @@ return [
         \App\Providers\Services\Gates\UserServiceProvider::class ,
         \App\Providers\Redirectors\UserServiceProvider::class ,
         \App\Providers\Request\Dashboard\User\SaveServiceProvider::class ,
+        \App\Providers\Services\MessageBuilders\Rule\Dashboard\User\ArrayIsExitstsInTableServiceProvider::class ,
     ])->toArray(),
 
     /*
