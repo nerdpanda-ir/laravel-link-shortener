@@ -4,10 +4,11 @@ namespace App\Providers\Services;
 
 use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 use App\Contracts\Services\AuthenticatedUser as Contract;
 use App\Services\AuthenticatedUser as Service;
-class AuthenticatedUserServiceProvider extends ServiceProvider
+class AuthenticatedUserServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void
     {
