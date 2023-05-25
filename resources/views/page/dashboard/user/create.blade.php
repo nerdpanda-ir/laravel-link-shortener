@@ -3,6 +3,7 @@
     <h1>create a new user </h1>
 @endsection
 @section('dashboard-content')
+    <x-partials.form-error-printer />
     <div class="row g-5">
         <div class="col-md-10 col-lg-10 m-auto mt-5">
             <form class="needs-validation" novalidate="" action="{{route('dashboard.user.save')}}">
