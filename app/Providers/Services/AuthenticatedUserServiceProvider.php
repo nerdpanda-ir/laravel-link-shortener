@@ -12,7 +12,7 @@ class AuthenticatedUserServiceProvider extends ServiceProvider implements Deferr
 {
     public function register(): void
     {
-        $this->app->bind(Contract::class , Service::class);
+        $this->app->singleton(Contract::class , Service::class);
         $this->callAfterResolving(
             Contract::class ,
             function (Contract $authenticatedUser , Application $container):void {
