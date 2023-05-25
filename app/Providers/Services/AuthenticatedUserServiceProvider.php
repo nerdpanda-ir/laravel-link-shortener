@@ -18,7 +18,8 @@ class AuthenticatedUserServiceProvider extends ServiceProvider implements Deferr
             function (Contract $authenticatedUser , Application $container):void {
                 $auth = $container->make(Factory::class);
                 $user = $auth->guard('web')->user();
-                $authenticatedUser->setUser($user);
+                if (!is_null($user))
+                    $authenticatedUser->setUser($user);
             }
         );
     }
