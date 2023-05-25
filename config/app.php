@@ -219,6 +219,7 @@ return [
         \App\Providers\Redirectors\UserServiceProvider::class ,
         \App\Providers\Request\Dashboard\User\SaveServiceProvider::class ,
         \App\Providers\Services\MessageBuilders\Rule\Dashboard\User\ArrayIsExitstsInTableServiceProvider::class ,
+        \App\Providers\Services\AuthenticatedUserServiceProvider::class ,
     ])->toArray(),
 
     /*
