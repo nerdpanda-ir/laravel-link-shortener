@@ -239,6 +239,7 @@ return [
         'UserRedirector' => \App\Facades\Redirectors\User::class ,
         'CreateActionResponseVisitor' => \App\Facades\Services\ResponseVisitors\CreateAction::class ,
         'RoleModel' => \App\Facades\Models\Role::class ,
+        'AuthenticatedUser' => \App\Facades\Services\AuthenticatedUser::class ,
     ])->toArray(),
 
 ];
