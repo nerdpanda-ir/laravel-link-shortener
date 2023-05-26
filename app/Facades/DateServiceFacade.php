@@ -6,7 +6,10 @@ use App\Contracts\Services\DateService;
 use Carbon\CarbonInterface;
 use Illuminate\Support\Facades\Facade;
 
-/** @method CarbonInterface|null dateStrToCarbon(string $dateStr) */
+
+/**
+ * @see DateService
+ */
 class DateServiceFacade extends Facade
 {
     protected static function getFacadeAccessor():string
