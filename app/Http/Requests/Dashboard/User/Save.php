@@ -46,7 +46,7 @@ class Save extends FormRequest implements Contract
             'email' => 'required|max:42|email|unique:users,email|' ,
             'password' => (($canSetPasswordForUser) ? 'required|' : '').'min:8|' ,
             'password_confirmation' =>  (($canSetPasswordForUser) ? 'required|' : '').'min:8|confirmed' ,
-            'roles'=> $arrayIsExistsInTableRule ,
+            'roles'=> ['array',$arrayIsExistsInTableRule] ,
 
         ];
     }
