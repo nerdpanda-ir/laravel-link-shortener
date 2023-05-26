@@ -11,11 +11,12 @@ use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use NerdPanda\Traits\Model\DisableTimestamp;
 use NerdPanda\Traits\Model\VerifiedEmailScopeTrait;
 
 class User extends Authenticatable implements Userable
 {
-    use HasApiTokens, HasFactory, Notifiable , VerifiedEmailScopeTrait;
+    use HasApiTokens, HasFactory, Notifiable , VerifiedEmailScopeTrait , DisableTimestamp;
 
     /**
      * The attributes that are mass assignable.
