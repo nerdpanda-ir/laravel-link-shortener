@@ -33,38 +33,59 @@
                                value="{{old('email')}}" name="email">
                         <x-partials.field-error-printer name="email" />
                     </div>
+                    @php
+                        $shouldBeDisable = !$can_set_password_for_user;
+                    @endphp
                     <div class="col-sm-6">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" placeholder="password"
-                               name="password">
+                               name="password" @disabled($shouldBeDisable)>
                         <x-partials.field-error-printer name="password" />
                     </div>
                     <div class="col-sm-6">
                         <label for="password" class="form-label">Password Repeat</label>
                         <input type="password" class="form-control" id="password" placeholder="password"
-                               name="password_confirmation">
+                               name="password_confirmation" @disabled($shouldBeDisable)>
                         <x-partials.field-error-printer name="password_confirmation" />
                     </div>
                     <div class="col-sm-12">
                         <label for="basic-url" class="form-label d-block">Roles</label>
                         <x-partials.field-error-printer name="roles" />
-                        <section class="input-group has-validation">
-                            <select class="form-select bg-dark text-primary" multiple="" aria-label="multiple select example"
-                                    name="roles[]" id="permissions">
-                                <option value="test-role-2">test-role-1</option>
-                            </select>
-                        </section>
-                    </div>
+                        @if($can_attach_role_to_user and $roles->isEmpty())
+                            <x-partials.warning-alert>
+                                <x-slot:message>
+                                    no found any role in system !!!
+                                </x-slot:message>
+                            </x-partials.warning-alert>
+                        @else
+                                <section class="input-group has-validation">
+                                    <select class="form-select bg-dark text-primary" multiple="" aria-label="multiple select example"
+                                            name="roles[]" id="permissions" @disabled(!$can_attach_role_to_user)>
+                                        @if($can_attach_role_to_user)
+                                            @php
+                                                $oldRoles = old('roles',[]);
+                                            @endphp
+                                            @foreach($roles as $role)
+                                                @php
+                                                    $shouldSelected = in_array($role->name,$oldRoles);
+                                                @endphp
+                                                <option @selected($shouldSelected)>{{$role->name}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                </section>
+                            </div>
+                        @endif
                 </div>
 
                 <hr class="my-4">
 
                 <div class="form-check">
                     @php
-                        $shouldChecked = !is_null(old('email_verified'));
+                        $shouldChecked = $can_verified_user_email && !is_null(old('email_verified'));
                     @endphp
                     <input type="checkbox" class="form-check-input" id="email_verified"
-                           name="email_verified" @checked($shouldChecked)>
+                           name="email_verified" @checked($shouldChecked) @disabled(!$can_verified_user_email)>
                     <label class="form-check-label" for="email_verified">verified email</label>
                     <x-partials.field-error-printer name="email_verified"/>
                 </div>
