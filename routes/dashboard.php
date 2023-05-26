@@ -52,5 +52,11 @@ Route::name('user.')->prefix('user')->namespace('User')
                     ->name('create')->middleware('can:create-user');
 
             Route::get('save','SaveController')
-                    ->name('save')->middleware('can:create-user');
+                    ->name('save')
+                    ->middleware([
+                        'can:create-user' ,
+                        'couldHaveFillFields:
+                                             password|roles|email_verified,
+                                             set-password-for-user|attach-role-to-user|verified_user_email'
+                    ]);
         });
