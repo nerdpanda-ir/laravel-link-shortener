@@ -22,7 +22,7 @@
                         <div class="input-group has-validation">
                             <span class="input-group-text">@</span>
                             <input type="text" class="form-control" id="username"
-                                   placeholder="Username" {{old('username')}} name="username">
+                                   placeholder="Username" value="{{old('username')}}" name="username">
                             <x-partials.field-error-printer name="username" />
                         </div>
                     </div>
