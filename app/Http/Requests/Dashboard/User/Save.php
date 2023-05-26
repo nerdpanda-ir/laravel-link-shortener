@@ -31,18 +31,23 @@ class Save extends FormRequest implements Contract
         FailRuleMessageBuilder $failRuleMessageBuilder ,
     ): array
     {
+        /** @var \App\Models\User $user */
+        $user = \AuthenticatedUser::getUser();
+        $canSetPasswordForUser = $user->can('set-password-for-user');
         $arrayIsExistsInTableRule->setExplodeResponse($userRedirector->viewAll());
         $arrayIsExistsInTableRule->setExplodeResponseVisitor($visitor);
         $arrayIsExistsInTableRule->setTable('roles');
         $arrayIsExistsInTableRule->setColumn('name');
         $arrayIsExistsInTableRule->setFailMessage($failRuleMessageBuilder);
+
         return [
             'full_name'=> 'required|max:255' ,
             'username' => 'required|max:42|unique:users,user_id' ,
             'email' => 'required|max:42|email|unique:users,email|' ,
-            'password' => 'required|min:8|' ,
-            'password_confirmation' => 'required|min:8|confirmed' ,
+            'password' => (($canSetPasswordForUser) ? 'required|' : '').'min:8|' ,
+            'password_confirmation' =>  (($canSetPasswordForUser) ? 'required|' : '').'min:8|confirmed' ,
             'roles'=> $arrayIsExistsInTableRule ,
+
         ];
     }
 }
