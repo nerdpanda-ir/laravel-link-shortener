@@ -238,6 +238,7 @@ return [
         'DateServiceFacade' => \App\Facades\DateServiceFacade::class,
         'UserRedirector' => \App\Facades\Redirectors\User::class ,
         'CreateActionResponseVisitor' => \App\Facades\Services\ResponseVisitors\CreateAction::class ,
+        'NotFoundResponseVisitor' => \App\Facades\Services\ResponseVisitors\NotFound::class ,
         'RoleModel' => \App\Facades\Models\Role::class ,
         'AuthenticatedUser' => \App\Facades\Services\AuthenticatedUser::class ,
         'UserModel' => \App\Facades\Models\User::class ,
