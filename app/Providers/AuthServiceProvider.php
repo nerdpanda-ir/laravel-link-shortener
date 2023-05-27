@@ -35,6 +35,7 @@ class AuthServiceProvider extends ServiceProvider
         'view-all-users' => [User::class, 'viewAll'] ,
         'create-user' => [User::class, 'create'] ,
         'set-password-for-user' => [User::class , 'setPasswordForUser'] ,
+        'attach-role-to-user' => [User::class , 'attachRoleToUser'] ,
     ];
 
     /**
