@@ -13,4 +13,9 @@ class User extends AbstractCrudableGate implements Contract
         return $this->getPermissionManager()->has('set-password-for-user');
     }
 
+    public function attachRoleToUser(): bool
+    {
+        return $this->getPermissionManager()->has('attach-role-to-user');
+    }
+
 }
