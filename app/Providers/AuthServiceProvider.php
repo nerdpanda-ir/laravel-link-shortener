@@ -36,6 +36,7 @@ class AuthServiceProvider extends ServiceProvider
         'create-user' => [User::class, 'create'] ,
         'set-password-for-user' => [User::class , 'setPasswordForUser'] ,
         'attach-role-to-user' => [User::class , 'attachRoleToUser'] ,
+        'verify-user-email' => [User::class , 'verifyUserEmail']
     ];
 
     /**
