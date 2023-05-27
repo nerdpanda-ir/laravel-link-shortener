@@ -17,7 +17,7 @@ class User extends AbstractCrudableGate implements Contract
     {
         return $this->getPermissionManager()->has('attach-role-to-user');
     }
-    public function verifiedUserEmail(): bool
+    public function verifyUserEmail(): bool
     {
         return $this->getPermissionManager()->has('verified-user-email');
     }
