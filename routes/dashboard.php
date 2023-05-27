@@ -57,6 +57,6 @@ Route::name('user.')->prefix('user')->namespace('User')
                         'can:create-user' ,
                         'couldHaveFillFields:
                                              password|roles|email_verified,
-                                             set-password-for-user|attach-role-to-user|verified_user_email'
+                                             set-password-for-user|attach-role-to-user|verify-user-email'
                     ]);
         });
