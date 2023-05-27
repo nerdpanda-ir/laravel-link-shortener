@@ -82,10 +82,10 @@
 
                 <div class="form-check">
                     @php
-                        $shouldChecked = $can_verified_user_email && !is_null(old('email_verified'));
+                        $shouldChecked = $can_verify_user_email && !is_null(old('email_verified'));
                     @endphp
                     <input type="checkbox" class="form-check-input" id="email_verified"
-                           name="email_verified" @checked($shouldChecked) @disabled(!$can_verified_user_email)>
+                           name="email_verified" @checked($shouldChecked) @disabled(!$can_verify_user_email)>
                     <label class="form-check-label" for="email_verified">verified email</label>
                     <x-partials.field-error-printer name="email_verified"/>
                 </div>
