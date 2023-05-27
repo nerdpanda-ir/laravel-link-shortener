@@ -59,4 +59,7 @@ Route::name('user.')->prefix('user')->namespace('User')
                                              password|roles|email_verified,
                                              set-password-for-user|attach-role-to-user|verify-user-email'
                     ]);
+
+            Route::get('edit/{id}/{name}','EditController')
+                    ->name('edit')->middleware('can:edit-user');
         });
