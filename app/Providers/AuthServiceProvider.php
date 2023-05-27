@@ -34,6 +34,7 @@ class AuthServiceProvider extends ServiceProvider
         'delete-role' => [Role::class , 'delete'] ,
         'view-all-users' => [User::class, 'viewAll'] ,
         'create-user' => [User::class, 'create'] ,
+        'set-password-for-user' => [User::class , 'setPasswordForUser'] ,
     ];
 
     /**
