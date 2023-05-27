@@ -19,7 +19,7 @@ class CreateController extends Controller
             $permissions = [
                 'can_attach_role_to_user' => $authenticatedUser->can('attach-role-to-user') ,
                 'can_set_password_for_user' => $authenticatedUser->can('set-password-for-user') ,
-                'can_verified_user_email' => $authenticatedUser->can('verified_user_email') ,
+                'can_verify_user_email' => $authenticatedUser->can('verify-user-email') ,
             ];
             $view  = \view('page.dashboard.user.create',$permissions);
             if($permissions['can_attach_role_to_user'])
