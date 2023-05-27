@@ -19,6 +19,6 @@ class User extends AbstractCrudableGate implements Contract
     }
     public function verifyUserEmail(): bool
     {
-        return $this->getPermissionManager()->has('verified-user-email');
+        return $this->getPermissionManager()->has('verify-user-email');
     }
 }
