@@ -240,6 +240,7 @@ return [
         'CreateActionResponseVisitor' => \App\Facades\Services\ResponseVisitors\CreateAction::class ,
         'RoleModel' => \App\Facades\Models\Role::class ,
         'AuthenticatedUser' => \App\Facades\Services\AuthenticatedUser::class ,
+        'UserModel' => \App\Facades\Models\User::class ,
     ])->toArray(),
 
 ];
