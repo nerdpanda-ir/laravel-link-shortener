@@ -66,10 +66,11 @@ class UpdateController extends Controller
             $rolOldName = $role->getOriginal('name');
             $databaseManager->beginTransaction();
             $saved = $role->update();
-            $syncResult = $role->permissions()->sync($permissionIdsWithPayload);
-            $databaseManager->commit();
             if (!$saved)
                 throw $failCrudException;
+            $syncResult = $role->permissions()->sync($permissionIdsWithPayload);
+            $databaseManager->commit();
+
             return $responseVisitor->ok($redirector->viewAll() , "$rolOldName role");
         }catch (NotFoundHttpException $notFoundException){
             return $notFoundVisitor->visit(
