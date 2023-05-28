@@ -62,4 +62,7 @@ Route::name('user.')->prefix('user')->namespace('User')
 
             Route::get('edit/{id}/{name}','EditController')
                     ->name('edit')->middleware('can:edit-user');
+
+            Route::put('update/{id}/{name}','UpdateController')
+                    ->name('update')->middleware('can:edit-user');
         });
