@@ -6,7 +6,6 @@
     @php
         /** @var \Illuminate\Database\Eloquent\Collection $roles*/
         /** @var \App\Models\User $user */
-        dump(get_defined_vars(),session()->get('_old_input') ,);
     @endphp
     <x-partials.form-error-printer />
     <div class="row g-5">
@@ -96,8 +95,10 @@
                 <div class="form-check">
                     @php
                         $shouldBeDisable = !array_key_exists('email_verified_at',$user->getAttributes());
-                        $shouldBeChecked = !$shouldBeDisable &&
-                                           (!is_null($user->email_verified_at) || !is_null(old('email_verified')));
+                        $shouldBeChecked = !$shouldBeDisable && (
+                                               (empty(old()) && !is_null($user->email_verified_at)) xor
+                                               !is_null(old('email_verified'))
+                                           );
                     @endphp
                     <input type="checkbox" class="form-check-input" id="email_verified"
                            name="email_verified" @disabled($shouldBeDisable) @checked($shouldBeChecked)>
@@ -106,7 +107,7 @@
                 <hr class="my-4">
                 <section class="d-flex justify-content-around">
                     <button type="submit" class="btn px-5 btn-success">Save</button>
-                    <button type="Reset" class="btn px-5 btn-danger">Reset</button>
+                    <button type="reset" class="btn px-5 btn-danger">Reset</button>
                 </section>
             </form>
         </div>
