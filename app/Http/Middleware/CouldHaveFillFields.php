@@ -26,7 +26,7 @@ class CouldHaveFillFields
         $fieldsArray = explode('|',trim($fields));
         $permissionsArray = explode('|',trim($permissions));
         foreach ($fieldsArray as $fieldKey=> $fieldItem)
-            if($request->query->has($fieldItem) && $user->cant($permissionsArray[$fieldKey]))
+            if($request->has($fieldItem) && $user->cant($permissionsArray[$fieldKey]))
                 $shouldNoFilledFields[] = $fieldItem;
         if (empty($shouldNoFilledFields))
             return $next($request);
