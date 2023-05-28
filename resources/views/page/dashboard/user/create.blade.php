@@ -6,7 +6,7 @@
     <x-partials.form-error-printer />
     <div class="row g-5">
         <div class="col-md-10 col-lg-10 m-auto mt-5">
-            <form class="needs-validation" novalidate="" action="{{route('dashboard.user.save')}}">
+            <form class="needs-validation" novalidate="" action="{{route('dashboard.user.save')}}" method="post">
                 @csrf
                 <div class="row g-3">
                     <div class="col-sm-12">
