@@ -64,5 +64,10 @@ Route::name('user.')->prefix('user')->namespace('User')
                     ->name('edit')->middleware('can:edit-user');
 
             Route::put('update/{id}/{name}','UpdateController')
-                    ->name('update')->middleware('can:edit-user');
+                    ->name('update')
+                    ->middleware([
+                        'can:edit-user' ,
+                        'couldHaveFillFields:password|roles|email_verified,
+                                             set-password-for-user|attach-role-to-user|verify-user-email'
+                    ]);
         });
