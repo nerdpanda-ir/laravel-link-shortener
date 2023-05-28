@@ -51,7 +51,7 @@ Route::name('user.')->prefix('user')->namespace('User')
             Route::get('create','CreateController')
                     ->name('create')->middleware('can:create-user');
 
-            Route::get('save','SaveController')
+            Route::post('save','SaveController')
                     ->name('save')
                     ->middleware([
                         'can:create-user' ,
