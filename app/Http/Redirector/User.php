@@ -9,12 +9,12 @@ class User extends CrudRedirector implements Contract
 {
     public function create(array $inputs = []): RedirectResponse
     {
-        // TODO: Implement create() method.
+        return $this->getRedirector()->route('dashboard.user.create')->withInput($inputs);
     }
 
     public function edit(string $id, string $name, array $inputs = []): RedirectResponse
     {
-        // TODO: Implement edit() method.
+        return $this->getRedirector()->route('dashboard.user.edit',[$id,$name])->withInput($inputs);
     }
 
     public function viewAll(): RedirectResponse
