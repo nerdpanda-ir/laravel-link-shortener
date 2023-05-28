@@ -34,7 +34,10 @@ class Save extends FormRequest implements Contract
         /** @var \App\Models\User $user */
         $user = \AuthenticatedUser::getUser();
         $canSetPasswordForUser = $user->can('set-password-for-user');
-        $arrayIsExistsInTableRule->setExplodeResponse($userRedirector->viewAll());
+        $userRedirector->create($this->except('_token'));
+        $arrayIsExistsInTableRule->setExplodeResponse(
+            fn() => $userRedirector->create($this->except('_token'))
+        );
         $arrayIsExistsInTableRule->setExplodeResponseVisitor($visitor);
         $arrayIsExistsInTableRule->setTable('roles');
         $arrayIsExistsInTableRule->setColumn('name');

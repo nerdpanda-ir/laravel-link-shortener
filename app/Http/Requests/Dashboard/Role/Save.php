@@ -9,6 +9,8 @@ use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Http\Redirector\Role as Redirector;
 use App\Contracts\Services\ResponseVisitors\Rule\ExplodeArrayExistsInTable as ResponseVisitor;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
 class Save extends FormRequest implements Contract
 {
     /**
@@ -35,7 +37,7 @@ class Save extends FormRequest implements Contract
         $arrayIsExistsInTableRule->setColumn('name');
         $arrayIsExistsInTableRule->setFailMessage($messageBuilder);
         $arrayIsExistsInTableRule->setExplodeResponse(
-            $redirector->create($this->only(['name','permissions']))
+            fn()=> $redirector->create($this->only(['name','permissions']))
         );
         $arrayIsExistsInTableRule->setExplodeResponseVisitor($responseVisitor);
         return [

@@ -11,6 +11,8 @@ use Illuminate\Contracts\Auth\Factory as Auth;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Contracts\Services\MessageBuilders\Rule\Dashboard\Role\ArrayIsExistsInTable as MessageBuilder;
 use App\Contracts\Redirectors\Role as Redirector;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
 class Update extends FormRequest implements Contract
 {
     /**
@@ -44,7 +46,9 @@ class Update extends FormRequest implements Contract
         $responsePayload = [
             $this->id , $this->route()->parameter('name'),$this->only(['name','permissions'])
         ];
-        $arrayIsExistsInTableRule->setExplodeResponse($redirector->edit(...$responsePayload));
+        $arrayIsExistsInTableRule->setExplodeResponse(
+            fn() => $redirector->edit(...$responsePayload)
+        );
         $arrayIsExistsInTableRule->setExplodeResponseVisitor($responseVisitor);
         return [
             'name'=> ['required','max:64',$uniqueExceptRule] ,
@@ -52,3 +56,4 @@ class Update extends FormRequest implements Contract
         ];
     }
 }
+?>
