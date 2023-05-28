@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Dashboard\User;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
+use Illuminate\Session\SessionManager;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -34,6 +36,7 @@ class EditController extends Controller
             if (is_null($user))
                 throw new NotFoundHttpException();
 
+            Session::flash('old_data_for_edit',['username'=> $user->user_id , 'email'=> $user->email]);
             $viewName = 'page.dashboard.user.edit';
             $viewPayload = [
                 'user'=> $user ,
