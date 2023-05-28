@@ -34,7 +34,7 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
     protected Logger $logger;
     protected ExceptionHandler $exceptionHandler;
     protected FailRuleMessageBuilder $failMessageBuilder;
-    protected Response $explodeResponse;
+    protected Closure $explodeResponse;
     protected ResponseVisitor $explodeResponseVisitor;
     protected DateService $dateService ;
     public function __construct(
@@ -113,12 +113,12 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
         $this->column = $column;
     }
 
-    public function getExplodeResponse(): Response
+    public function getExplodeResponse(): callable
     {
         return $this->explodeResponse;
     }
 
-    public function setExplodeResponse(Response $response)
+    public function setExplodeResponse(callable $response):void
     {
         $this->explodeResponse = $response;
     }
