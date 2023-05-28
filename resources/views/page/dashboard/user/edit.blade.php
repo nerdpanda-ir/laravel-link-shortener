@@ -6,7 +6,7 @@
     @php
         /** @var \Illuminate\Database\Eloquent\Collection $roles*/
         /** @var \App\Models\User $user */
-        dump(get_defined_vars());
+        dump(get_defined_vars(),session()->get('_old_input') ,);
     @endphp
     <x-partials.form-error-printer />
     <div class="row g-5">
@@ -73,7 +73,7 @@
                                         @endphp
                                         @foreach($user->getRelation('roles') as $role)
                                             @php
-                                                $shouldBeSelect = !$hasOldRoles xor ($hasOldRoles && in_array($role,$oldRoles));
+                                                $shouldBeSelect = (!$hasOldRoles xor ($hasOldRoles && in_array($role->name,$oldRoles)));
                                             @endphp
                                             <option @selected($shouldBeSelect)>{{$role->name}}</option>
                                         @endforeach
