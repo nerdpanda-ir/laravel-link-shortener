@@ -21,9 +21,9 @@ interface ArrayIsExistsInTable extends  DatabaseManagerGetterable , TranslatorGe
     public function setTable(string $table): void;
     public function getColumn(): string;
     public function setColumn(string $column): void;
-    public function getExplodeResponse():Response;
+    public function getExplodeResponse():callable;
 
-    public function setExplodeResponse(Response $response);
+    public function setExplodeResponse(callable $response):void;
     public function setExplodeResponseVisitor(ResponseVisitor $responseVisitor):void;
     public function getExplodeResponseVisitor():ResponseVisitor;
 }
