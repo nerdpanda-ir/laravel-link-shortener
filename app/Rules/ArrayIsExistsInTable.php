@@ -74,7 +74,7 @@ class ArrayIsExistsInTable implements ValidationRule , Contract
                 $this->getTranslator()->get('log.validations', ['rule' => self::class])
             );
             $this->getExceptionHandler()->report($exception);
-            $response = $this->getExplodeResponse();
+            $response = call_user_func($this->getExplodeResponse());
             $responseWithError = $this->getExplodeResponseVisitor()
                                       ->visit($response,$this->getDateService()->date(),$attribute);
             throw new HttpResponseException($responseWithError);
