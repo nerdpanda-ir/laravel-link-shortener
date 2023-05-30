@@ -8,7 +8,7 @@ class HasNoRoles extends UserUpdateStrategy implements Contract
 {
     public function updateCommand(): bool
     {
-        \DB::beforeExecuting();
+        \DB::beginTransaction();
         $updated = $this->updateUser();
         $this->getUser()->roles()->sync([]);
         \DB::commit();
