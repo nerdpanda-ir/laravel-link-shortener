@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 abstract class UserUpdateStrategy implements Contract
 {
-    use Userable , RequestGetterable ;
+    use Userable ;
     protected UserModel $user;
     protected function updateUser():bool {
         $updated = $this->getUser()->update();
