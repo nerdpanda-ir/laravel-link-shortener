@@ -223,6 +223,7 @@ return [
         \App\Providers\Request\Dashboard\User\UpdateServiceProvider::class ,
         \App\Providers\Services\Strategies\UserUpdate\CantAttachRoleToUserServiceProvider::class ,
         \App\Providers\Services\Strategies\UserUpdate\HasRolesServiceProvider::class ,
+        \App\Providers\Services\Strategies\UserUpdate\HasNoRolesServiceProvider::class ,
     ])->toArray(),
 
     /*
