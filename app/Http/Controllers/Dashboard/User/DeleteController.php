@@ -1,0 +1,14 @@
+<?php
+
+namespace App\Http\Controllers\Dashboard\User;
+
+use App\Http\Controllers\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+class DeleteController extends Controller
+{
+    public function __invoke(string $id , string $name):RedirectResponse
+    {
+        dd($id , $name);
+    }
+}
