@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard\User;
 
+use App\Contracts\Services\UserUpdateStrategyFactory;
 use App\Exceptions\FailCrud;
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -21,7 +22,9 @@ class UpdateController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return RedirectResponse
      */
-    public function __invoke(string $id , string $name , Request $request):RedirectResponse
+    public function __invoke(
+        string $id , string $name , Request $request , UserUpdateStrategyFactory $updateStrategyFactory
+    ):RedirectResponse
     {
         try {
             /** @var User $user */
@@ -48,22 +51,10 @@ class UpdateController extends Controller
                     $data['email_verified_at'] = $now;
 
             $user->setRawAttributes($data);
-            $canAttachRoleToUser = $authenticatedUser->can('attach-role-to-user');
-            DB::beginTransaction();
-                $updated = $user->update();
-                if (!$updated)
-                    throw new FailCrud();
-                if ($canAttachRoleToUser) {
-                    $roles = [];
-                    if ($request->has('roles')) {
-                        $roles = \RoleModel::whereIn('name',$request->get('roles'))->get(['id']);
-                        $roles = $roles->pluck('id')->toArray();
-                        $rolePayload = ['created_at'=> $now , 'created_by'=> $authenticatedUser->id];
-                        $roles = array_map(fn(int $roleId)=> array_merge($rolePayload,['role_id'=>$roleId]) , $roles );
-                    }
-                    $user->roles()->sync($roles);
-                }
-            DB::commit();
+
+            $updateStrategy = $updateStrategyFactory->make();
+            $updateStrategy->setUser($user);
+            $updated = $updateStrategy->updateCommand();;
             return \UpdateActionResponseVisitor::ok(\UserRedirector::viewAll(),"user $name");
         }catch (NotFoundHttpException $exception){
             return \NotFoundResponseVisitor::visit(
@@ -72,7 +63,7 @@ class UpdateController extends Controller
         }catch (FailCrudContract $exception){
             $exception->setMessage(trans('log.crud.updated.fail', ['item' => 'user']));
             $exceptionContext = ['user'=> $user];
-            if ($canAttachRoleToUser)
+            if ($authenticatedUser->can('attach-role-to-user'))
                 $exceptionContext['roles'] = (($request->has('roles')) ? $request->get('roles') : []);
             $exception->setContext($exceptionContext);
             report($exception);
