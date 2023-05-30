@@ -245,6 +245,7 @@ return [
         'CreateActionResponseVisitor' => \App\Facades\Services\ResponseVisitors\CreateAction::class ,
         'EditActionResponseVisitor' => \App\Facades\Services\ResponseVisitors\EditAction::class ,
         'UpdateActionResponseVisitor' => \App\Facades\Services\ResponseVisitors\UpdateAction::class ,
+        'DeleteActionResponseVisitor' => \App\Facades\Services\ResponseVisitors\DeleteAction::class ,
         'NotFoundResponseVisitor' => \App\Facades\Services\ResponseVisitors\NotFound::class ,
         'RoleModel' => \App\Facades\Models\Role::class ,
         'AuthenticatedUser' => \App\Facades\Services\AuthenticatedUser::class ,
