@@ -13,7 +13,7 @@ class HasRoles extends UserUpdateStrategy implements Contract
         DB::beginTransaction();
         $updated = $this->updateUser();
         /** @var Collection $roles */
-        $roles = \RoleModel::whereIn('name',$this->request->get('roles'))
+        $roles = \RoleModel::whereIn('name',request()->get('roles'))
                             ->get(['id']);
         $roles = $roles->pluck('id');
         $roles = $roles->map(
