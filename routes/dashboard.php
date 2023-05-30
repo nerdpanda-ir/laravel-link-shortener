@@ -70,4 +70,6 @@ Route::name('user.')->prefix('user')->namespace('User')
                         'couldHaveFillFields:password|roles|email_verified,
                                              set-password-for-user|attach-role-to-user|verify-user-email'
                     ]);
+            Route::delete('delete/{id}/{name}','DeleteController')
+                    ->name('delete');
         });
