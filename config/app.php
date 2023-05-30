@@ -221,6 +221,7 @@ return [
         \App\Providers\Services\MessageBuilders\Rule\Dashboard\User\ArrayIsExitstsInTableServiceProvider::class ,
         \App\Providers\Services\AuthenticatedUserServiceProvider::class ,
         \App\Providers\Request\Dashboard\User\UpdateServiceProvider::class ,
+        \App\Providers\Services\Strategies\UserUpdate\CantAttachRoleToUserServiceProvider::class ,
     ])->toArray(),
 
     /*
