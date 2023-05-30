@@ -83,7 +83,6 @@
                                             <option @selected($shouldBeSelect)>{{$role->name}}</option>
                                         @endforeach
                                     @endif
-                                    <option>test</option>
                                 </select>
                             </section>
                         @endif
