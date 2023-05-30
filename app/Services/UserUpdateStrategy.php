@@ -12,7 +12,6 @@ abstract class UserUpdateStrategy implements Contract
 {
     use Userable , RequestGetterable ;
     protected UserModel $user;
-    protected Request $request;
     protected function updateUser():bool {
         $updated = $this->getUser()->update();
         if (!$updated)
