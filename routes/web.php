@@ -22,5 +22,5 @@ Route::get('',HomeController::class)->name('home');
 Route::get('login',LoginController::class)->name('login')->middleware('guest');
 Route::post('login',DoLoginController::class)->name('do-login')->middleware('guest');
 Route::get('logout',LogoutController::class)->name('logout')->middleware('auth');
-Route::get('register',RegisterController::class)->name('register');
-Route::post('register',DoRegisterController::class)->name('do-register');
+Route::get('register',RegisterController::class)->name('register')->middleware('guest');
+Route::post('register',DoRegisterController::class)->name('do-register')->middleware('guest');
