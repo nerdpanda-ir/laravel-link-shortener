@@ -59,7 +59,7 @@ class UserRegisterAction implements Contract
         ]);
     }
 
-    public function ThrowException(string $date): RedirectResponse
+    public function throwException(string $date): RedirectResponse
     {
         return $this->getRedirectResponse()->with(
             'system.messages.error',[
