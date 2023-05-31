@@ -23,7 +23,7 @@ class UserRegisterActionServiceProvider extends ServiceProvider implements Defer
                 /** @var \App\Http\Redirector\Home $request */
                 $redirector = $container->get(Home::class);
 
-                $responseVisitor->setUserfullName($request->get('name'));
+                $responseVisitor->setUserfullName($request->get('full_name'));
                 $responseVisitor->setRedirectResponse($redirector->redirect());
             }
         );
