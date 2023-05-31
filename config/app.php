@@ -226,7 +226,7 @@ return [
         \App\Providers\Services\Strategies\UserUpdate\HasNoRolesServiceProvider::class ,
         \App\Providers\Services\UserUpdateStrategyFactoryServiceProvider::class ,
         \App\Providers\Request\DoRegisterServiceProvider::class ,
-
+        \App\Providers\Redirectors\HomeServiceProvider::class ,
     ])->toArray(),
 
     /*
@@ -242,6 +242,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'HomeRedirector' => \App\Facades\Redirectors\Home::class ,
         'DateServiceFacade' => \App\Facades\DateServiceFacade::class,
         'UserRedirector' => \App\Facades\Redirectors\User::class ,
         'CreateActionResponseVisitor' => \App\Facades\Services\ResponseVisitors\CreateAction::class ,
