@@ -6,7 +6,7 @@ use App\Contracts\Services\ResponseVisitor;
 use App\Contracts\TranslatorGetterable;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-interface UserRegisterActionResponseVisitor extends ResponseVisitor , TranslatorGetterable
+interface UserRegisterAction extends ResponseVisitor , TranslatorGetterable
 {
     public function setRedirectResponse(RedirectResponse $response):void;
     public function getRedirectResponse():RedirectResponse;
