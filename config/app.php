@@ -227,6 +227,7 @@ return [
         \App\Providers\Services\UserUpdateStrategyFactoryServiceProvider::class ,
         \App\Providers\Request\DoRegisterServiceProvider::class ,
         \App\Providers\Redirectors\HomeServiceProvider::class ,
+        \App\Providers\Services\ResponseVisitors\UserRegisterActionServiceProvider::class ,
     ])->toArray(),
 
     /*
