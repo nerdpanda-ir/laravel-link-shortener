@@ -29,4 +29,8 @@ return [
             'throw_exception' => 'has exception when create :item' ,
         ]
     ],
+    'register'=> [
+        'fail' => 'user registration is fail !!! ' ,
+        'throw_exception' => 'has exception when register user ' ,
+    ]
 ];
