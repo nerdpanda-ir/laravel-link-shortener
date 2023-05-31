@@ -14,6 +14,6 @@ interface UserRegisterAction extends ResponseVisitor , TranslatorGetterable
     public function getUserFullName():string;
     public function ok():RedirectResponse;
     public function fail():RedirectResponse;
-    public function ThrowException(string $date):RedirectResponse;
+    public function throwException(string $date):RedirectResponse;
 
 }
