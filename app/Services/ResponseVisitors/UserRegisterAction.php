@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Services\ResponseVisitors;
-use App\Contracts\Services\ResponseVisitors\UserRegisterActionResponseVisitor as Contract;
+use App\Contracts\Services\ResponseVisitors\UserRegisterAction as Contract;
 use App\Traits\TranslatorGetterable;
 use Illuminate\Contracts\Translation\Translator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-class UserRegisterActionResponseVisitor implements Contract
+class UserRegisterAction implements Contract
 {
     use TranslatorGetterable;
     protected RedirectResponse $response;
