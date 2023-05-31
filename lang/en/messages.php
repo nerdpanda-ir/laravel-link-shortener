@@ -68,7 +68,7 @@ return [
         'register' => [
             'ok' => 'dear :fullName you`re successfully register in system you can login into your account !!!' ,
             'fail' => 'dear :fullName your registration is fail please try after !!! ' ,
-            'throw_exception' => 'dear :name when you`re register in system in :date ،‌ something happened please report this message to Owner or Admin and after do Try to register  your self !!!'
+            'throw_exception' => 'dear :fullName when you`re register in system in :date ،‌ something happened please report this message to Owner or Admin and after do Try to register  your self !!!'
         ]
     ] ,
     'validations'=> [
