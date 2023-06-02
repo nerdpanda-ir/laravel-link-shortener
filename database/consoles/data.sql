@@ -1,5 +1,4 @@
 delete from `permissions`;
-delete from `permission_user`;
 insert into permissions values
                             (null , 'permission-view-all'  , 1 , now() , null ) ,
                             (null , 'permission-create'  , 1 , now() , null ) ,
