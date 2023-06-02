@@ -50,9 +50,7 @@ class User extends Authenticatable implements Userable
     public function roles():BelongsToMany{
         return $this->belongsToMany(Role::class);
     }
-    public function permissions():Relation {
-        return $this->belongsToMany(Permission::class);
-    }
+
     public function getPermissionsArrayAttribute($permissionsArray):array{
         $isLoadedPermissions = $this->relationLoaded('permissions');
         if (!$isLoadedPermissions) {
