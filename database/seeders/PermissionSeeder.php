@@ -23,11 +23,12 @@ class PermissionSeeder extends Seeder implements Contract
             throw new NoDependencyFoundForSeedingException(trans(
                 'exceptions.no-dependency-found', ['dependency' => 'users', 'seeder' => self::class]
             ));
-        $permissions = [
-            'create-user','update-user', 'delete-user' ,'force-delete-user'
-            ,'see-system-monitor' , 'see-application-setting',
-            'update-application-setting',
-        ];
+          $permissions = [
+              'permission-view-all' , 'permission-create' , 'permission-edit' , 'permission-delete' , 'role-view-all' ,
+              'role-edit' , 'role-delete' , 'role-create' , 'user-view-all' , 'user-create' , 'user-edit' , 'user-delete' ,
+              'set-password-for-user' , 'attach-role-to-user' , 'verify-user-email'
+          ];
+
         foreach ($permissions as $permission)
             $factory->create([
                 'name'=>$permission,'created_by'=> $users->random()
