@@ -15,9 +15,6 @@ class Permission extends Model implements Contract
     public function creator():BelongsTo{
         return $this->belongsTo(User::class,'created_by');
     }
-    public function users():BelongsToMany {
-        return $this->belongsToMany(User::class);
-    }
     public function roles():BelongsToMany {
         return $this->belongsToMany(Role::class);
     }
