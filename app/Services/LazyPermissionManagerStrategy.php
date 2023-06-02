@@ -45,7 +45,7 @@ abstract class LazyPermissionManagerStrategy implements Contract
         return $this->repository;
     }
 
-    public function setRepository(Repository $repository)
+    public function setRepository(Repository $repository): void
     {
         $this->repository = $repository;
     }
