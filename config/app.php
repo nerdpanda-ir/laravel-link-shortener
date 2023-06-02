@@ -228,6 +228,7 @@ return [
         \App\Providers\Request\DoRegisterServiceProvider::class ,
         \App\Providers\Redirectors\HomeServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\UserRegisterActionServiceProvider::class ,
+        \App\Providers\Services\UserPermissionsRepositoryServiceProvider::class ,
     ])->toArray(),
 
     /*
