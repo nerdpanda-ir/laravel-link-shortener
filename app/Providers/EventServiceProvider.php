@@ -59,7 +59,6 @@ class EventServiceProvider extends ServiceProvider
             LogFailedListener::class
         ],
         Authenticated::class => [
-            LoadUserPermissionsListener::class
         ],
         QueryExecuted::class => [
             QueryLoggerListener::class , QueryDisplayOnWebListener::class ,
