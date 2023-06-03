@@ -4,6 +4,9 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Contracts\Factories\Link as Contract;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Link>
  */
@@ -16,8 +19,21 @@ class LinkFactory extends Factory implements Contract
      */
     public function definition(): array
     {
+        $createdAt = $this->faker->dateTimeBetween(
+            '-2 years',Carbon::now()->subDays(7)->toDateTime()
+        );
+        $updatedAt = null ;
+        if ($this->faker->boolean){
+            $forwardCreatedAt = (clone  $createdAt)->setTimestamp(
+                $createdAt->getTimestamp() + rand(30,65535)
+            );
+            $updatedAt = $this->faker->dateTimeBetween($forwardCreatedAt,'now');
+        }
         return [
-            //
+            'original' => $this->faker->url() ,
+            'summary' => Str::random(rand(4,24)) ,
+            'created_at' => $createdAt ,
+            'updated_at' => $updatedAt ,
         ];
     }
 }
