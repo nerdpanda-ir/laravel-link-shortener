@@ -1,9 +1,9 @@
-@extends('layouts.bootstrap')
+@extends('layouts.frontPage')
 @section('title')
     Home
 @endsection
 @section('content')
-<x-partials.nav />
+@parent
 <main class="container py-5">
     <x-partials.system-messages-printer />
     <h1>Link Shortener</h1>
