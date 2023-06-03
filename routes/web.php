@@ -28,4 +28,5 @@ Route::post('register',DoRegisterController::class)->name('do-register')->middle
 Route::name('link.')->prefix('link')->namespace('App\Http\Controllers\Link')
       ->group(function (){
           Route::get('create','CreateController')->name('create');
+          Route::post('save','SaveController')->name('save');
       });
