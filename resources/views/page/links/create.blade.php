@@ -7,7 +7,7 @@
     <main class="mt-5">
         <section class="container">
             <h1>CREATE A NEW LINK</h1>
-            <x-partials.form-error-printer />
+            <x-partials.form-error-printer class="mt-5 mb-5"/>
             <form class="needs-validation mt-5" novalidate="" action="{{route('link.save')}}"
                   method="post">
                 @csrf
