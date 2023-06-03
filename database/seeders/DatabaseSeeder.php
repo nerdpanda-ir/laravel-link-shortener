@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             'contract.seeder.role' ,
             'contract.seeder.permissionRole' ,
             'contract.seeder.roleUser' ,
+            'contract.seeder.link',
         ]);
         \DB::statement('SET FOREIGN_KEY_CHECKS=1;');
         // \App\Models\User::factory(10)->create();
