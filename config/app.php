@@ -229,6 +229,7 @@ return [
         \App\Providers\Factories\LinkServiceProvider::class ,
         \App\Providers\Seeder\LinkServiceProvider::class ,
         \App\Providers\Model\LinkServiceProvider::class ,
+        \App\Providers\Request\Link\SaveServiceProvider::class ,
     ])->toArray(),
 
     /*
