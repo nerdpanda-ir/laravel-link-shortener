@@ -38,6 +38,7 @@
         "laravel/tinker": "^2.8",
         "nerdpanda/laravel-disable-model-timestamp": "^0.1.0",
         "nerdpanda/laravel-master-blade": "^0.1.0",
+        "nerdpanda/laravel-no-dependency-found-exception": "^0.1.0",
         "nerdpanda/laravel-verified-email-scope": "^0.1.0"
     },
     "require-dev": {
