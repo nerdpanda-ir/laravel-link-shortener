@@ -3,8 +3,8 @@
 namespace App\Http\Requests\Link;
 
 use Illuminate\Foundation\Http\FormRequest;
-
-class Save extends FormRequest
+use App\Contracts\Requests\Link\Save as Contract;
+class Save extends FormRequest implements Contract
 {
     /**
      * Determine if the user is authorized to make this request.
