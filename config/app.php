@@ -228,6 +228,7 @@ return [
         \App\Providers\Services\UserPermissionsRepositoryServiceProvider::class ,
         \App\Providers\Factories\LinkServiceProvider::class ,
         \App\Providers\Seeder\LinkServiceProvider::class ,
+        \App\Providers\Model\LinkServiceProvider::class ,
     ])->toArray(),
 
     /*
