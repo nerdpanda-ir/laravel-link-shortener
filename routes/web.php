@@ -24,3 +24,7 @@ Route::post('login',DoLoginController::class)->name('do-login')->middleware('gue
 Route::get('logout',LogoutController::class)->name('logout')->middleware('auth');
 Route::get('register',RegisterController::class)->name('register')->middleware('guest');
 Route::post('register',DoRegisterController::class)->name('do-register')->middleware('guest');
+
+Route::name('link')->prefix('link')->namespace('App\Http\Controllers\Link')
+      ->group(function (){
+      });
