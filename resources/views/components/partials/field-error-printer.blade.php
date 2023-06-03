@@ -1,5 +1,5 @@
 @error($name)
-    <div class="invalid-feedback d-block">
+    <div {{$attributes->class('invalid-feedback d-block')}}>
         {{ $message }}
     </div>
 @enderror
