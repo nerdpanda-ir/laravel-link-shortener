@@ -226,6 +226,7 @@ return [
         \App\Providers\Redirectors\HomeServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\UserRegisterActionServiceProvider::class ,
         \App\Providers\Services\UserPermissionsRepositoryServiceProvider::class ,
+        \App\Providers\Factories\LinkServiceProvider::class
     ])->toArray(),
 
     /*
