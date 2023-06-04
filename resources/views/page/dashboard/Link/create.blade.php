@@ -1,4 +1,7 @@
 @extends('layouts.dashboard')
+@section('dashboard-title')
+    <h1>Generate a New Link</h1>
+@endsection
 @section('dashboard-content')
-    hellow world !!!
+    <x-partials.create-link-form action="hellow"/>
 @endsection
