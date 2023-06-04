@@ -29,11 +29,14 @@ class LinkFactory extends Factory implements Contract
             );
             $updatedAt = $this->faker->dateTimeBetween($forwardCreatedAt,'now');
         }
-        return [
+        $linkData = [
             'original' => $this->faker->url() ,
             'summary' => Str::random(rand(4,24)) ,
             'created_at' => $createdAt ,
             'updated_at' => $updatedAt ,
         ];
+        if ($this->faker->boolean)
+            return $linkData;
+        return array_merge(['view_count'=> rand(1,PHP_INT_MAX)] , $linkData);
     }
 }
