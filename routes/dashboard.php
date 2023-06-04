@@ -74,7 +74,7 @@ Route::name('user.')->prefix('user')->namespace('User')
                     ->name('delete')->middleware('can:delete-user');
         });
 
-Route::name('link.')->prefix('link.')->name('Link')->namespace('Link')
+Route::name('link.')->prefix('link')->namespace('Link')
         ->group(function (){
             Route::get('view-all','ViewAllController')->name('view-all');
         });
