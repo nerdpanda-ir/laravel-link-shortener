@@ -32,7 +32,7 @@ class ViewAllController extends Controller
             $authenticatedUser = $authenticatedUser->getUser();
             $links = $linkModel->where('creator','=',$authenticatedUser->id)->latest()
                                ->paginate(25,['original','summary','view_count','created_at']);
-            return \view('page.dashboard.viewAllLinks',compact('links'));
+            return \view('page.dashboard.Link.viewAll',compact('links'));
         }catch (\Throwable $exception){
             $item = 'user links ';
             $logger->emergency(
