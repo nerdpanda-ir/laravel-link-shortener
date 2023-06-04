@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('original',2000)->index();
             $table->string('summary')->unique();
+            $table->unsignedBigInteger('view_count')->default(0);
             $table->unsignedBigInteger('creator')->nullable();
             $table->timestamps();
 
