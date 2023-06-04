@@ -2,11 +2,13 @@
 
 namespace App\Providers;
 
+use App\Contracts\Events\LinkShowed;
 use App\Events\Login;
 use App\Listeners\AuthenticatedEvent\LoadUserPermissionsListener;
 use App\Listeners\Job\LogFailedListener;
 use App\Listeners\Job\LogProcessedListener;
 use App\Listeners\Job\LogProcessingListener;
+use App\Listeners\LinkShowed\IncreaseLinkViewCountListener;
 use App\Listeners\LoginEvent\LoggerListener;
 use App\Listeners\LoginEvent\NotifyUserListener;
 use App\Listeners\LogoutEvent\UserLogoutLoggerListener;
@@ -63,6 +65,9 @@ class EventServiceProvider extends ServiceProvider
         QueryExecuted::class => [
             QueryLoggerListener::class , QueryDisplayOnWebListener::class ,
             QueryDisplayOnConsoleListener::class
+        ],
+        LinkShowed::class => [
+            IncreaseLinkViewCountListener::class
         ]
     ];
     protected $observers = [
