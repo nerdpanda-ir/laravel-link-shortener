@@ -9,6 +9,6 @@ class CreateController extends Controller
 {
     public function __invoke():View
     {
-        dd("hellow");
+        return \view('page.dashboard.Link.create');
     }
 }
