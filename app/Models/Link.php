@@ -27,4 +27,13 @@ class Link extends Model implements Contract
         }while($isExists);
         return $summary;
     }
+
+    public function getSummaryUrlAttribute(): ?string
+    {
+        $summary = $this->getAttribute('summary');
+        if (is_null($summary))
+            return null;
+        return route('link.show',$summary);
+    }
+
 }
