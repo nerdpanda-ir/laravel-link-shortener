@@ -52,6 +52,9 @@ return [
         ],
         'create'=> [
             'throw_exception' => 'in the :date when create :item something happened in system ، please try after for make this and report this message to admin or developer or help and support !!!'
+        ],
+        'show'=> [
+            'throw_exception' => 'in the :date when show :item something happened in system ، please try after for make this and report this message to admin or developer or help and support !!!'
         ]
     ],
     'not_found' => 'not found any result in system for :item !!!' ,
