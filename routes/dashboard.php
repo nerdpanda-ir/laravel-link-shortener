@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/','HomeController')->name('home');
-
+Route::get('links','ViewAllLinksController')->name('links');
 Route::name('permission.')->prefix('permission')->namespace('Permission')
         ->group(function (){
             Route::get('all','ViewAllController')
