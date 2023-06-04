@@ -230,6 +230,7 @@ return [
         \App\Providers\Seeder\LinkServiceProvider::class ,
         \App\Providers\Model\LinkServiceProvider::class ,
         \App\Providers\Request\Link\SaveServiceProvider::class ,
+        \App\Providers\Redirectors\LinkServiceProvider::class ,
     ])->toArray(),
 
     /*
