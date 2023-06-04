@@ -3,5 +3,6 @@
     <h1>Generate a New Link</h1>
 @endsection
 @section('dashboard-content')
-    <x-partials.create-link-form action="hellow"/>
+    <x-partials.form-error-printer />
+    <x-partials.create-link-form action="{{route('dashboard.link.save')}}"/>
 @endsection
