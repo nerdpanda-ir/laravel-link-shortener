@@ -29,4 +29,5 @@ Route::name('link.')->prefix('link')->namespace('App\Http\Controllers\Link')
       ->group(function (){
           Route::get('create','CreateController')->name('create');
           Route::post('save','SaveController')->name('save');
+          Route::get('show/{summary}','ShowController')->name('show');
       });
