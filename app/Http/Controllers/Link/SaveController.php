@@ -31,7 +31,7 @@ class SaveController extends Controller
         try {
             $linkData = [
                 'original' => $request->get('url'), 'summary'=> $linkModel->generateUniqueSummary() ,
-                'creator'=> $authenticatedUser->getUser() , 'created_at' => $dateService->date() ,
+                'creator'=> $authenticatedUser->getUser()?->id , 'created_at' => $dateService->date() ,
             ];
             $linkModel->setRawAttributes($linkData);
             $saved = $linkModel->save();
