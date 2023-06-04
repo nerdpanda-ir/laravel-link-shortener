@@ -27,6 +27,9 @@ return [
         ],
         'create'=> [
             'throw_exception' => 'has exception when create :item' ,
+        ] ,
+        'show'=> [
+            'throw_exception' => 'has exception when show :item' ,
         ]
     ],
     'register'=> [
