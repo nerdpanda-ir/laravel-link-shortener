@@ -6,7 +6,7 @@ use App\Traits\TranslatorGetterable;
 use Illuminate\Contracts\Translation\Translator;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-class ShowAction extends ResponseVisitor implements Contract
+class ShowAction implements Contract
 {
     use TranslatorGetterable;
     protected Translator $translator;
