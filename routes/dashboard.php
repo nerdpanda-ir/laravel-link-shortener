@@ -77,4 +77,5 @@ Route::name('user.')->prefix('user')->namespace('User')
 Route::name('link.')->prefix('link')->namespace('Link')
         ->group(function (){
             Route::get('view-all','ViewAllController')->name('view-all');
+            Route::get('create','CreateController')->name('create');
         });
