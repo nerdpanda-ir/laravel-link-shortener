@@ -13,4 +13,8 @@ class Link extends Redirector implements Contract
                     ->route('link.create')
                     ->withInput($inputs);
     }
+    public function show(string $summary): RedirectResponse
+    {
+        return $this->getRedirector()->route('link.show',$summary);
+    }
 }
