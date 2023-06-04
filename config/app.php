@@ -232,6 +232,7 @@ return [
         \App\Providers\Request\Link\SaveServiceProvider::class ,
         \App\Providers\Redirectors\LinkServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\ShowActionServiceProvider::class ,
+        \App\Providers\Events\LinkShowedServiceProvider::class ,
     ])->toArray(),
 
     /*
