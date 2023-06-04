@@ -1,7 +1,7 @@
 <?php
 
 Route::get('/','HomeController')->name('home');
-Route::get('links','ViewAllLinksController')->name('links');
+
 Route::name('permission.')->prefix('permission')->namespace('Permission')
         ->group(function (){
             Route::get('all','ViewAllController')
@@ -72,4 +72,9 @@ Route::name('user.')->prefix('user')->namespace('User')
                     ]);
             Route::delete('delete/{id}/{name}','DeleteController')
                     ->name('delete')->middleware('can:delete-user');
+        });
+
+Route::name('link.')->prefix('link.')->name('Link')->namespace('Link')
+        ->group(function (){
+            Route::get('view-all','ViewAllController')->name('view-all');
         });
