@@ -194,7 +194,7 @@ return [
         \App\Providers\Services\Gates\RoleServiceProvider::class ,
         \App\Providers\Exceptions\FailCrudServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\DeleteActionServiceProvider::class ,
-        \App\Providers\Redirectors\PermissionServiceProvider::class ,
+        \App\Providers\Redirectors\Dashboard\PermissionServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\NotFoundServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\EditActionServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\SaveActionServiceProvider::class ,
