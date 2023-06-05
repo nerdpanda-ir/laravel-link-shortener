@@ -3,6 +3,7 @@
 namespace App\Contracts\Services\Commands;
 
 use App\Contracts\LoggerGetterable;
+use App\Contracts\Redirectors\Createable as Redirector;
 use App\Contracts\Services\ResponseVisitors\SaveAction;
 use App\Contracts\TranslatorGetterable;
 use Illuminate\Contracts\Debug\ExceptionHandler;
@@ -19,8 +20,6 @@ interface CreateLink extends TranslatorGetterable , LoggerGetterable
     public function getContainer():Application;
     public function getLinkModel():string;
     public function getExceptionHandler():ExceptionHandler;
-    public function getFailResponse():callable;
-    public function setFailResponse(callable $response):self;
-    public function getThrowExceptionResponse():callable;
-    public function setThrowExceptionResponse(callable $response):self;
+    public function getRedirector():Redirector;
+    public function setRedirector(Redirector $redirector):self;
 }
