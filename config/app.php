@@ -213,7 +213,7 @@ return [
         \App\Providers\Request\Dashboard\Role\UpdateServiceProvider::class ,
         \App\Providers\Services\ResponseVisitors\Rule\ExplodeArrayExistsInTableServiceProvider::class ,
         \App\Providers\Services\Gates\UserServiceProvider::class ,
-        \App\Providers\Redirectors\UserServiceProvider::class ,
+        \App\Providers\Redirectors\Dashboard\UserServiceProvider::class ,
         \App\Providers\Request\Dashboard\User\SaveServiceProvider::class ,
         \App\Providers\Services\MessageBuilders\Rule\Dashboard\User\ArrayIsExitstsInTableServiceProvider::class ,
         \App\Providers\Services\AuthenticatedUserServiceProvider::class ,
