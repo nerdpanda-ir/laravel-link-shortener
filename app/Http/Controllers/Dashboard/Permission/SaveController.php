@@ -12,11 +12,10 @@ use App\Contracts\Services\ResponseVisitors\SaveAction;
 use App\Http\Controllers\Controller;
 use App\Http\Responses\Dashboard\Permission\Store\FailStoreBuilder;
 use Illuminate\Contracts\Auth\Factory as Auth;
-use Illuminate\Contracts\Routing\ResponseFactory as Response;
 use Illuminate\Contracts\Translation\Translator;
 use Psr\Log\LoggerInterface as Logger;
 use Symfony\Component\HttpFoundation\RedirectResponse as BaseResponse;
-use App\Http\Redirector\Permission as Redirector;
+use App\Contracts\Redirectors\Dashboard\Permission as Redirector;
 class SaveController extends Controller
 {
 
