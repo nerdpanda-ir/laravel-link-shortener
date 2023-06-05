@@ -61,7 +61,8 @@ class CreateLink implements Contract
             $saved = $linkModel->save();
             if (!$saved)
                 throw new FailCrudException();
-            return call_user_func_array($this->getCreatedResponse(),[$linkModel]);
+            $response = call_user_func_array($this->getCreatedResponse(),[$linkModel]);
+            return $this->getResponseVisitor()->ok($response,'link '.$original);
         }catch (FailCrud $exception){
             $exception->setMessage($this->getTranslator()->get('log.crud.save.fail', ['item' => 'link']));
             $exception->setContext(['link' => $linkModel]);
