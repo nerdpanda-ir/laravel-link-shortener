@@ -3,7 +3,7 @@
 namespace App\Providers\Redirectors;
 
 use App\Contracts\Redirectors\Dashboard\Permission as Contract;
-use App\Http\Redirector\Permission as Redirector;
+use App\Http\Redirector\Dashboard\Permission as Redirector;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
