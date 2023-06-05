@@ -2,10 +2,11 @@
 
 namespace App\Providers\Redirectors;
 
+use App\Contracts\Redirectors\Dashboard\Permission as Contract;
+use App\Http\Redirector\Permission as Redirector;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use App\Contracts\Redirectors\Permission as Contract;
-use App\Http\Redirector\Permission as Redirector;
+
 class PermissionServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void

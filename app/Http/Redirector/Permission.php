@@ -2,8 +2,8 @@
 
 namespace App\Http\Redirector;
 
+use App\Contracts\Redirectors\Dashboard\Permission as Contract;
 use App\Services\CrudRedirector;
-use App\Contracts\Redirectors\Permission as Contract;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class Permission extends CrudRedirector implements  Contract

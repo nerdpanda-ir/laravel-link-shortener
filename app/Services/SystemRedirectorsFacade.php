@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Services;
-use App\Contracts\Redirectors\Permission;
+use App\Contracts\Redirectors\Dashboard\Permission;
 use App\Contracts\Services\SystemRedirectorsFacade as Contract;
 use App\Traits\ApplicationGetterable;
 use Illuminate\Contracts\Foundation\Application;

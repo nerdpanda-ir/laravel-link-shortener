@@ -2,7 +2,7 @@
 
 namespace App\Contracts\Services\SystemRedirectorFacade;
 
-use App\Contracts\Redirectors\Permission;
+use App\Contracts\Redirectors\Dashboard\Permission;
 
 interface PermissionRedirectorable
 {

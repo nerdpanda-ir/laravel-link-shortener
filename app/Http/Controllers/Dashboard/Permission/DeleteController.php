@@ -4,15 +4,16 @@ namespace App\Http\Controllers\Dashboard\Permission;
 
 use App\Contracts\Exceptions\FailCrud;
 use App\Contracts\Model\Permission as Permission;
+use App\Contracts\Redirectors\Dashboard\Permission as PermissionRedirector;
 use App\Contracts\Services\ResponseVisitors\DeleteAction;
+use App\Contracts\Services\ResponseVisitors\NotFound as NotFoundVisitor;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Translation\Translator;
 use Psr\Log\LoggerInterface as Logger;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use  App\Contracts\Redirectors\Permission as PermissionRedirector;
-use App\Contracts\Services\ResponseVisitors\NotFound as NotFoundVisitor;
+
 class DeleteController extends Controller
 {
 
