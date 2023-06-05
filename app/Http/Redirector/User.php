@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Redirector;
-use App\Contracts\Redirectors\User as Contract;
+use App\Contracts\Redirectors\Dashboard\User as Contract;
 use App\Services\CrudRedirector;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
