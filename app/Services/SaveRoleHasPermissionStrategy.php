@@ -5,7 +5,8 @@ namespace App\Services;
 use App\Contracts\Exceptions\FailCrud;
 use App\Contracts\Model\Permission;
 use App\Contracts\Model\Role;
-use App\Contracts\Redirectors\Role as Redirector;
+use App\Contracts\Redirectors\Dashboard\Role as Redirector;
+use App\Contracts\SaveRoleHasPermissionStrategy as Contract;
 use App\Contracts\Services\DateService;
 use App\Services\ResponseVisitors\SaveAction as ResponseVisitor;
 use App\Traits\DatabaseManagerGetterable;
@@ -13,11 +14,11 @@ use App\Traits\PermissionModelGetterable;
 use Illuminate\Contracts\Auth\Factory as AuthManager;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Translation\Translator;
+use Illuminate\Database\ConnectionResolverInterface as DatabaseManager;
 use Illuminate\Http\Request;
 use Psr\Log\LoggerInterface as Logger;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use App\Contracts\SaveRoleHasPermissionStrategy as Contract ;
-use Illuminate\Database\ConnectionResolverInterface as DatabaseManager;
+
 class SaveRoleHasPermissionStrategy extends SaveRoleStrategy implements Contract
 {
     use DatabaseManagerGetterable , PermissionModelGetterable ;

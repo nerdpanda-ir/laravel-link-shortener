@@ -3,16 +3,16 @@
 namespace App\Services;
 use App\Contracts\Exceptions\FailCrud;
 use App\Contracts\Model\Role;
-use App\Contracts\Redirectors\Role as Redirector;
+use App\Contracts\Redirectors\Dashboard\Role as Redirector;
 use App\Contracts\Services\DateService;
 use App\Contracts\Services\SaveRoleStrategy as Contract;
 use App\Services\ResponseVisitors\SaveAction as ResponseVisitor;
+use App\Traits\Services\SaveRoleStrategy as SaveRoleStrategyTrait;
 use Illuminate\Contracts\Auth\Factory as AuthManager;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Translation\Translator;
-use Psr\Log\LoggerInterface as Logger;
 use Illuminate\Http\Request;
-use App\Traits\Services\SaveRoleStrategy as SaveRoleStrategyTrait;
+use Psr\Log\LoggerInterface as Logger;
 
 abstract class SaveRoleStrategy implements Contract
 {

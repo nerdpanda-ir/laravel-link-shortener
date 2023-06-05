@@ -2,10 +2,11 @@
 
 namespace App\Providers\Redirectors;
 
+use App\Contracts\Redirectors\Dashboard\Role as Contract;
+use App\Http\Redirector\Role as Redirector;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
-use App\Contracts\Redirectors\Role as Contract;
-use App\Http\Redirector\Role as Redirector;
+
 class RoleServiceProvider extends ServiceProvider implements DeferrableProvider
 {
     public function register(): void

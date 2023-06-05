@@ -4,20 +4,19 @@ namespace App\Http\Controllers\Dashboard\Role;
 
 use App\Contracts\Model\Permission;
 use App\Contracts\Model\Role;
+use App\Contracts\Redirectors\Dashboard\Role as Redirector;
+use App\Contracts\Services\ResponseVisitors\EditAction as ResponseVisitor;
 use App\Contracts\Services\ResponseVisitors\NotFound;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Database\Query\Builder;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Contracts\Translation\Translator;
+use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\Relation;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 use Psr\Log\LoggerInterface as Logger;
-use App\Contracts\Services\ResponseVisitors\EditAction as ResponseVisitor;
-use App\Contracts\Redirectors\Role as Redirector;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Illuminate\Contracts\View\Factory as ViewFactory;
 
 class EditController extends Controller
 {

@@ -3,17 +3,18 @@
 namespace App\Http\Controllers\Dashboard\Role;
 
 use App\Contracts\Exceptions\FailCrud;
+use App\Contracts\Model\Role as Role;
+use App\Contracts\Redirectors\Dashboard\Role as Redirector;
+use App\Contracts\Services\ResponseVisitors\DeleteAction as ResponseVisitor;
+use App\Contracts\Services\ResponseVisitors\NotFound as NotFoundResponseVisitor;
 use App\Http\Controllers\Controller;
 use App\Services\ResponseVisitors\DeleteAction;
 use Illuminate\Contracts\Debug\ExceptionHandler;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use App\Contracts\Model\Role as Role;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use App\Contracts\Services\ResponseVisitors\NotFound as NotFoundResponseVisitor ;
-use App\Contracts\Redirectors\Role as Redirector;
-use App\Contracts\Services\ResponseVisitors\DeleteAction as ResponseVisitor;
+use Illuminate\Contracts\Translation\Translator;
 use Psr\Log\LoggerInterface as Logger;
-use Illuminate\Contracts\Translation\Translator ;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 class DeleteController extends Controller
 {
 
