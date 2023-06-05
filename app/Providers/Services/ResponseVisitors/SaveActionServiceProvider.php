@@ -10,7 +10,7 @@ class SaveActionServiceProvider extends ServiceProvider implements DeferrablePro
 {
     public function register(): void
     {
-        $this->app->bind(Contract::class , Visitor::class);
+        $this->app->singleton(Contract::class , Visitor::class);
     }
     public function provides():array
     {
