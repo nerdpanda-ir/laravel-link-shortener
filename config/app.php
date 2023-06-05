@@ -234,6 +234,7 @@ return [
         \App\Providers\Services\ResponseVisitors\ShowActionServiceProvider::class ,
         \App\Providers\Events\LinkShowedServiceProvider::class ,
         \App\Providers\Redirectors\Dashboard\LinkServiceProvider::class ,
+        \App\Providers\Services\Commands\CreateLinkServiceProvider::class ,
     ])->toArray(),
 
     /*
