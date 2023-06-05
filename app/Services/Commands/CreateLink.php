@@ -4,6 +4,7 @@ namespace App\Services\Commands;
 use App\Contracts\Exceptions\FailCrud;
 use App\Contracts\Model\Link;
 use App\Contracts\Services\Commands\CreateLink as Contract;
+use App\Contracts\Redirectors\Createable as Redirector;
 use App\Contracts\Services\ResponseVisitors\SaveAction;
 use App\Exceptions\FailCrud as FailCrudException;
 use App\Traits\LoggerGetterable;
@@ -19,6 +20,7 @@ class CreateLink implements Contract
     use TranslatorGetterable , LoggerGetterable;
 
     protected SaveAction $responseVisitor;
+    protected Redirector $redirector;
     /**
      * @var callable $createdResponse
      */
@@ -66,8 +68,8 @@ class CreateLink implements Contract
             $exception->setMessage($this->getTranslator()->get('log.crud.save.fail', ['item' => 'link']));
             $exception->setContext(['link' => $linkModel]);
             $this->getExceptionHandler()->report($exception);
-            $response = call_user_func($this->getFailResponse());
-            $this->getResponseVisitor()->fail($response,'link');
+            $response = $this->getRedirector()->create(['url'=>$original]) ;
+            return $this->getResponseVisitor()->fail($response,'link');
         }catch (\Throwable $exception){
             $context = [];
             if (isset($linkModel) && empty($linkModel->getAttributes()))
@@ -78,7 +80,7 @@ class CreateLink implements Contract
                 $this->getTranslator()->get('log.crud.save.throw_exception', ['item' => 'link']) , $context
             );
             $this->getExceptionHandler()->report($exception);
-            $response = call_user_func($this->getThrowExceptionResponse(),$context['link']);
+            $response = $this->getRedirector()->create(['url'=>$original]);
             return $this->getResponseVisitor()->throwException( $response , 'link '.$original );
         }
     }
@@ -119,24 +121,14 @@ class CreateLink implements Contract
         return $this->exceptionHandler;
     }
 
-    public function getFailResponse(): callable
+    public function getRedirector(): Redirector
     {
-        return $this->failResponse;
-    }
-    public function setFailResponse(callable $response): self
-    {
-        $this->failResponse = $response;
-        return $this;
+        return $this->redirector;
     }
 
-    public function getThrowExceptionResponse(): callable
+    public function setRedirector(Redirector $redirector): Contract
     {
-        return $this->throwExceptionResponse;
-    }
-
-    public function setThrowExceptionResponse(callable $response): self
-    {
-        $this->throwExceptionResponse = $response;
+        $this->redirector = $redirector ;
         return $this;
     }
 
