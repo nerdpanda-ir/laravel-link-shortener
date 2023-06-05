@@ -4,10 +4,9 @@ namespace App\Http\Controllers\Link;
 
 use App\Contracts\Model\Link;
 use App\Contracts\Services\AuthenticatedUser;
+use App\Contracts\Services\Commands\CreateLink;
 use App\Contracts\Services\DateService;
 use App\Contracts\Services\ResponseVisitors\SaveAction as SaveActionResponseVisitor;
-use App\Exceptions\FailCrud;
-use App\Contracts\Exceptions\FailCrud as FailCrudExceptionContract;
 use App\Http\Controllers\Controller;
 use App\Services\ResponseVisitors\SaveAction;
 use Illuminate\Contracts\Debug\ExceptionHandler;
@@ -23,12 +22,21 @@ class SaveController extends Controller
      * @var SaveAction $saveActionResponseVisitor
     */
     public function __invoke(
-        Request $request , Link $linkModel , DateService $dateService , AuthenticatedUser $authenticatedUser ,
-        Logger $logger , Translator $translator , ExceptionHandler $exceptionHandler ,
-        SaveActionResponseVisitor $saveActionResponseVisitor , Redirector $redirector ,
+
+        Request $request , CreateLink $createLinkCommand , DateService $dateService , Logger $logger ,
+        AuthenticatedUser $authenticatedUser , Redirector $redirector , Translator $translator ,
+        ExceptionHandler $exceptionHandler , SaveActionResponseVisitor $saveActionResponseVisitor ,
     ):RedirectResponse
     {
         try {
+            $authenticatedUser = $authenticatedUser->getUser();
+            $createLinkCommand->setCreatedResponse(
+                fn(Link $link) => $redirector->show($link->summary)
+            )->setRedirector($redirector);
+            return $createLinkCommand->execute(
+                $request->get('url') , $dateService->date() , $authenticatedUser?->id
+            );
+            /*
             $linkData = [
                 'original' => $request->get('url'), 'summary'=> $linkModel->generateUniqueSummary() ,
                 'creator'=> $authenticatedUser->getUser()?->id , 'created_at' => $dateService->date() ,
@@ -38,20 +46,11 @@ class SaveController extends Controller
             if (!$saved)
                 throw new FailCrud();
             return $saveActionResponseVisitor->ok( $redirector->show($linkModel->summary) , 'link' );
-        }catch (FailCrudExceptionContract $exception){
-            // bootstrap
-            $exception->setMessage($translator->get('log.crud.save.fail', ['item' => 'link']));
-            $exception->setContext(['link'=>$linkModel]);
-            // report
-            $exceptionHandler->report($exception);
-            //redirect
-            return $saveActionResponseVisitor->fail(
-                $redirector->create($request->only('url')) , 'link'
-            );
+            */
         }catch (\Throwable $exception){
             $logger->emergency(
                 $translator->get('log.crud.save.throw_exception', ['item' => 'link']) ,
-                ['link'=> (( isset($linkData) ) ? $linkData : $request->only('url') )]
+                ['link'=> $request->only('url') ]
             );
             $exceptionHandler->report($exception);
             return $saveActionResponseVisitor->throwException(
