@@ -80,3 +80,8 @@ Route::name('link.')->prefix('link')->namespace('Link')
             Route::get('create','CreateController')->name('create');
             Route::post('save','SaveController')->name('save');
         });
+
+Route::name('admin_link.')->prefix('admin-link')->namespace('AdminLink')
+        ->group(function (){
+
+        });
