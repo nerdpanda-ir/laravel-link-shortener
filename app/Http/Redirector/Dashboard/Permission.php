@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Redirector;
+namespace App\Http\Redirector\Dashboard;
 
 use App\Contracts\Redirectors\Dashboard\Permission as Contract;
 use App\Services\CrudRedirector;
