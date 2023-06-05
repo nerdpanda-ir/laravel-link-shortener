@@ -34,12 +34,10 @@ class CreateLink implements Contract
     /**
      * @var callable $failResponse
      */
-    protected $failResponse;
 
     /**
      * @var callable $throwExceptionResponse
      */
-    protected $throwExceptionResponse;
     public function __construct(
         SaveAction $responseVisitor , Application $container , ExceptionHandler $exceptionHandler ,
         Logger $logger , Translator $translator ,
