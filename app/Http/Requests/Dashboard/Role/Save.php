@@ -5,11 +5,10 @@ namespace App\Http\Requests\Dashboard\Role;
 use App\Contracts\Requests\Dashboard\Role\Save as Contract;
 use App\Contracts\Rule\ArrayIsExistsInTable;
 use App\Contracts\Services\MessageBuilders\Rule\Dashboard\Role\ArrayIsExistsInTable as MessageBuilder;
+use App\Contracts\Services\ResponseVisitors\Rule\ExplodeArrayExistsInTable as ResponseVisitor;
+use App\Http\Redirector\Dashboard\Role as Redirector;
 use Illuminate\Contracts\Auth\Factory;
 use Illuminate\Foundation\Http\FormRequest;
-use App\Http\Redirector\Role as Redirector;
-use App\Contracts\Services\ResponseVisitors\Rule\ExplodeArrayExistsInTable as ResponseVisitor;
-use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class Save extends FormRequest implements Contract
 {

@@ -3,15 +3,15 @@
 namespace App\Http\Controllers\Dashboard\Role;
 
 use App\Contracts\Model\Permission;
-use App\Http\Controllers\Controller;
-use Illuminate\Contracts\Debug\ExceptionHandler;
-use Illuminate\Contracts\View\View;
-use Symfony\Component\HttpFoundation\RedirectResponse;
-use Psr\Log\LoggerInterface as Logger;
-use Illuminate\Contracts\Translation\Translator ;
-use App\Http\Redirector\Role as Redirector;
 use App\Contracts\Services\ResponseVisitors\CreateAction as ResponseVisitor;
+use App\Http\Controllers\Controller;
+use App\Http\Redirector\Dashboard\Role as Redirector;
+use Illuminate\Contracts\Debug\ExceptionHandler;
+use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Contracts\View\Factory as ViewFactory;
+use Illuminate\Contracts\View\View;
+use Psr\Log\LoggerInterface as Logger;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class CreateController extends Controller
 {
