@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers\Redirectors;
+namespace App\Providers\Redirectors\Dashboard;
 
 use App\Contracts\Redirectors\Dashboard\User as Contract;
 use App\Http\Redirector\Dashboard\User as Redirector;
