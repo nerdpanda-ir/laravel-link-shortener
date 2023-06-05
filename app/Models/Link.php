@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Contracts\Model\Link as Contract;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use NerdPanda\Traits\Model\DisableTimestamp;
@@ -12,6 +14,9 @@ use NerdPanda\Traits\Model\DisableTimestamp;
 class Link extends Model implements Contract
 {
     use HasFactory , DisableTimestamp;
+    public function creator():BelongsTo {
+        return $this->belongsTo(User::class,'creator');
+    }
     public function generateUniqueSummary(): string {
         $summaryLength = config('link.summary_length');
         $maxTry = config('link.max_try');
