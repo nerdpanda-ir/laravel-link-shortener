@@ -41,8 +41,8 @@ class CreateLink implements Contract
      */
     protected $throwExceptionResponse;
     public function __construct(
-        SaveAction $responseVisitor , Application $container , ExceptionHandler $exceptionHandler , Logger $logger ,
-        Translator $translator ,
+        SaveAction $responseVisitor , Application $container , ExceptionHandler $exceptionHandler ,
+        Logger $logger , Translator $translator ,
     ){
         $this->responseVisitor = $responseVisitor;
         $this->container = $container ;
@@ -55,7 +55,7 @@ class CreateLink implements Contract
     {
         try {
             /** @var \App\Models\Link $linkModel*/
-            $linkModel = $this->getContainer()->make2($this->getLinkModel());
+            $linkModel = $this->getContainer()->make($this->getLinkModel());
             $linkModel->setRawAttributes([
                 'original'=> $original , 'created_at' => $createdAt ,
                 'creator' => $creator , 'summary' => $linkModel->generateUniqueSummary() ,
@@ -63,7 +63,7 @@ class CreateLink implements Contract
             $saved = $linkModel->save();
             if (!$saved)
                 throw new FailCrudException();
-            return call_user_func($this->getCreatedResponse(),['link'=> $linkModel]);
+            return call_user_func_array($this->getCreatedResponse(),[$linkModel]);
         }catch (FailCrud $exception){
             $exception->setMessage($this->getTranslator()->get('log.crud.save.fail', ['item' => 'link']));
             $exception->setContext(['link' => $linkModel]);
