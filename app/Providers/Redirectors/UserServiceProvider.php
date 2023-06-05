@@ -3,7 +3,7 @@
 namespace App\Providers\Redirectors;
 
 use App\Contracts\Redirectors\Dashboard\User as Contract;
-use App\Http\Redirector\User as Redirector;
+use App\Http\Redirector\Dashboard\User as Redirector;
 use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 

@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Facade;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
- * @see \App\Http\Redirector\User
+ * @see \App\Http\Redirector\Dashboard\User
  * @method RedirectResponse viewAll()
  */
 class User extends Facade

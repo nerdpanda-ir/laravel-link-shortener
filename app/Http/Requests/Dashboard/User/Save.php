@@ -23,7 +23,7 @@ class Save extends FormRequest implements Contract
 
     /**
      * Get the validation rules that apply to the request.
-     * @param \App\Http\Redirector\User $userRedirector
+     * @param \App\Http\Redirector\Dashboard\User $userRedirector
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
      *
      */
