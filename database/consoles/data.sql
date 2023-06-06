@@ -15,7 +15,9 @@ insert into permissions values
                             (null , 'set-password-for-user'  , 1 , now() , null ),
                             (null , 'attach-role-to-user'  , 1 , now() , null ),
                             (null , 'verify-user-email'  , 1 , now() , null ),
-                            (null , 'link-view-all'  , 1 , now() , null );
+                            (null , 'link-view-all'  , 1 , now() , null ),
+                            (null , 'link-delete'  , 1 , now() , null ),
+                            (null , 'link-edit'  , 1 , now() , null );
 insert into `permission_role` values
                                   (
                                       null , 1 , (select `id` from `permissions` where `permissions`.`name`='permission-view-all' ) , 1 , now() , null
@@ -55,4 +57,6 @@ insert into `permission_role` values
                                       null , 1 , (select `id` from `permissions` where `permissions`.`name`='link-view-all' ) , 1 , now() , null
                                   ),(
                                       null , 1 , (select `id` from `permissions` where `permissions`.`name`='link-delete' ) , 1 , now() , null
+                                  ),(
+                                      null , 1 , (select `id` from `permissions` where `permissions`.`name`='link-edit' ) , 1 , now() , null
                                   );
