@@ -87,4 +87,6 @@ Route::name('admin_link.')->prefix('admin-link')->namespace('AdminLink')
                     ->middleware('can:view-all-links');
             Route::get('edit/{id}','EditController')->name('edit')
                     ->middleware('can:edit-link');
+            Route::put('update/{id}')->name('update')
+                    ->middleware('can:edit-link');
         });
