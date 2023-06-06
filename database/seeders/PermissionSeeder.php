@@ -27,7 +27,7 @@ class PermissionSeeder extends Seeder implements Contract
               'permission-view-all' , 'permission-create' , 'permission-edit' , 'permission-delete' , 'role-view-all' ,
               'role-edit' , 'role-delete' , 'role-create' , 'user-view-all' , 'user-create' , 'user-edit' , 'user-delete' ,
               'set-password-for-user' , 'attach-role-to-user' , 'verify-user-email' , 'link-view-all' , 'link-delete' ,
-
+              'link-edit' ,
           ];
 
         foreach ($permissions as $permission)
