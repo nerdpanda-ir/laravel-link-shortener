@@ -13,10 +13,11 @@
             @method('PUT')
             <div class="row g-3 mb-3">
                 <div class="col-sm-12">
-                    <label for="url" class="form-label">url</label>
-                    <input type="text" class="form-control" id="url" value="{{old('url',$link->original)}}" name="url">
+                    <label for="original" class="form-label">url</label>
+                    <input type="text" class="form-control" id="original" value="{{old('original',$link->original)}}"
+                           name="original">
                 </div>
-                <x-partials.field-error-printer name="url" class="mt-3"/>
+                <x-partials.field-error-printer name="original" class="mt-3"/>
             </div>
             <div class="col-12 mb-3">
                 <label for="summary" class="form-label">Summary</label>
