@@ -3,7 +3,7 @@
     /** @var \Illuminate\Pagination\LengthAwarePaginator $links */
 @endphp
 @section('dashboard-title')
-    <h1>view links</h1>
+    <h1>view links (total:{{$links->total()}})</h1>
 @endsection
 @section('dashboard-content')
     @if($links->isNotEmpty())
