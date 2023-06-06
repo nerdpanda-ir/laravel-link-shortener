@@ -7,6 +7,7 @@
 @endsection
 @section('dashboard-content')
     <section class="container col-11">
+        <x-partials.form-error-printer />
         <form action="{{route('dashboard.admin_link.update',[$link->id])}}?link={{$link->original}}" method="post">
             @csrf
             @method('PUT')
