@@ -85,4 +85,6 @@ Route::name('admin_link.')->prefix('admin-link')->namespace('AdminLink')
         ->group(function (){
             Route::get('view-all','ViewAllController')->name('view-all')
                     ->middleware('can:view-all-links');
+            Route::get('edit/{id}','EditController')->name('edit')
+                    ->middleware('can:edit-link');
         });
