@@ -23,7 +23,7 @@ class Link extends AbstractCrudableGate implements Contract
 
     public function edit(): bool
     {
-        // TODO: Implement edit() method.
+        return $this->getPermissionManager()->has('link-edit');
     }
 
 }
