@@ -18,7 +18,7 @@ class Link extends AbstractCrudableGate implements Contract
 
     public function delete(): bool
     {
-
+        return $this->getPermissionManager()->has('link-delete');
     }
 
     public function edit(): bool
