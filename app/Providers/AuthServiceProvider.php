@@ -42,6 +42,7 @@ class AuthServiceProvider extends ServiceProvider
         'verify-user-email' => [User::class , 'verifyUserEmail'] ,
         'view-all-links' => [Link::class , 'viewAll'] ,
         'delete-link' => [Link::class , 'delete'] ,
+        'edit-link' => [Link::class , 'edit'] ,
     ];
 
     /**
