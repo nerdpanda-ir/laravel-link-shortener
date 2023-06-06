@@ -66,6 +66,11 @@
                 @endcan
             </ul>
         @endcanany
-
+        @can('view-all-links')
+            <x-partials.sidebar-heading name="Links"/>
+            <ul class="nav flex-column mb-2">
+                <x-partials.sidebar-link-item title="All" uri="{{route('dashboard.admin_link.view-all')}}"/>
+            </ul>
+        @endcan
     </div>
 </nav>
