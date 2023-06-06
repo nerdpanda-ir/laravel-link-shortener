@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+use App\Contracts\Services\Gates\Link;
 use App\Contracts\Services\Gates\Permission;
 use App\Contracts\Services\Gates\Role;
 use App\Contracts\Services\Gates\SystemMonitor;
@@ -38,7 +39,8 @@ class AuthServiceProvider extends ServiceProvider
         'delete-user' => [User::class , 'delete'] ,
         'set-password-for-user' => [User::class , 'setPasswordForUser'] ,
         'attach-role-to-user' => [User::class , 'attachRoleToUser'] ,
-        'verify-user-email' => [User::class , 'verifyUserEmail']
+        'verify-user-email' => [User::class , 'verifyUserEmail'] ,
+        'view-all-links' => [Link::class , 'viewAll']
     ];
 
     /**
