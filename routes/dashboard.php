@@ -89,4 +89,6 @@ Route::name('admin_link.')->prefix('admin-link')->namespace('AdminLink')
                     ->middleware('can:edit-link');
             Route::put('update/{id}','UpdateController')->name('update')
                     ->middleware('can:edit-link');
+            Route::delete('delete/{id}','DeleteController')->name('delete')
+                    ->middleware('can:delete-link');
         });
