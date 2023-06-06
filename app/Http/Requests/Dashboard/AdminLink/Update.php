@@ -37,7 +37,7 @@ class Update extends FormRequest implements Contract
         $uniqueExceptRule->setExistableBridge($uniqueExceptRuleBridge);
 
         return [
-            'url'=>'required|url|max:2000' ,
+            'original'=>'required|url|max:2000' ,
             'summary' => ['required','max:255',$uniqueExceptRule] ,
             'view_count'=>'int|max:18446744073709551615|min:0' ,
         ];
