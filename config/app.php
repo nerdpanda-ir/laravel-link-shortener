@@ -236,6 +236,7 @@ return [
         \App\Providers\Redirectors\Dashboard\LinkServiceProvider::class ,
         \App\Providers\Services\Commands\CreateLinkServiceProvider::class ,
         \App\Providers\Services\Gates\LinkServiceProvider::class ,
+        \App\Providers\Redirectors\AdminLinkServiceProvider::class ,
     ])->toArray(),
 
     /*
