@@ -83,5 +83,6 @@ Route::name('link.')->prefix('link')->namespace('Link')
 
 Route::name('admin_link.')->prefix('admin-link')->namespace('AdminLink')
         ->group(function (){
-            Route::get('view-all','ViewAllController')->name('view-all');
+            Route::get('view-all','ViewAllController')->name('view-all')
+                    ->middleware('can:view-all-links');
         });
