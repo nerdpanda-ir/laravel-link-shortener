@@ -40,7 +40,8 @@ class AuthServiceProvider extends ServiceProvider
         'set-password-for-user' => [User::class , 'setPasswordForUser'] ,
         'attach-role-to-user' => [User::class , 'attachRoleToUser'] ,
         'verify-user-email' => [User::class , 'verifyUserEmail'] ,
-        'view-all-links' => [Link::class , 'viewAll']
+        'view-all-links' => [Link::class , 'viewAll'] ,
+        'delete-link' => [Link::class , 'delete'] ,
     ];
 
     /**
