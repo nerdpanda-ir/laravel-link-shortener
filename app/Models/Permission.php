@@ -27,6 +27,8 @@ class Permission extends Model implements Contract
         $query->selectSub(function (\Illuminate\Database\Query\Builder $query){
             $query->from('permission_role')
                   ->join('role_user','permission_role.role_id','=','role_user.role_id')
+                  ->whereColumn('permission_role.permission_id','=','permissions.id')
+                  ->groupBy('permission_role.permission_id')
                   ->selectRaw('count(distinct role_user.user_id)');
         },'users_count');
     }
