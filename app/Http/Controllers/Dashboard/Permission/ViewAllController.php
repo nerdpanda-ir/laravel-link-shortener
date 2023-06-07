@@ -19,7 +19,7 @@ class ViewAllController extends Controller
     {
         $permissions = $permission
                             ->with('creator:id,name')->withCount(['roles'])
-                            ->latest()->latest('updated_at')
+                            ->withUserCount()->latest()->latest('updated_at')
                             ->oldest('name')->paginate(25);
         return $viewMaker->make('page.dashboard.permission.view-all',compact('permissions'));
     }
