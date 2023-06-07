@@ -20,9 +20,9 @@ class PermissionRoleSeeder extends Seeder implements Contract
         Role $role , Permission $permission , User $user , Factory $faker ,
     ): void
     {
-        /** @var Collection $roles */
-        $roles = $role->get(['id']);
-        if ($roles->isEmpty())
+        /** @var \App\Models\Role $root_role */
+        $root_role = $role->where('name','=','root')->first(['id']);
+        if (is_null($root_role))
             throw new NoDependencyFoundForSeedingException(
                 trans('exceptions.no-dependency-found', ['dependency' => 'roles' , 'seeder' => self::class ])
             );
@@ -32,33 +32,25 @@ class PermissionRoleSeeder extends Seeder implements Contract
             throw new NoDependencyFoundForSeedingException(
                 trans('exceptions.no-dependency-found', ['dependency' => 'permissions' , 'seeder' => self::class ])
             );
-        $users = $user->whereVerifiedEmail()->offset(0)->limit(3)->get(['id']);
-        if ($users->isEmpty())
+        $root_user = $user->where('user_id','=','nerdpanda')->first(['id']);
+        if (is_null($root_user))
             throw new NoDependencyFoundForSeedingException(
                 trans('exceptions.no-dependency-found', ['dependency' => 'users' , 'seeder' => self::class ])
             );
         DB::table('permission_role')->truncate();
         $faker = $faker::create();
-        foreach ($roles as $role){
-            $rolePermissions = [];
-            foreach ($permissions as $permissionItem){
-                if (rand(0,1)){
-                    $updated_at = null ;
-                    $created_at = $faker->dateTimeBetween(
-                        now()->subMonths(4) , now()->subDays(3)
-                    );
-                    if (rand(0,1))
-                        $updated_at = $faker->dateTimeBetween(
-                            now()->setTimestamp($created_at->getTimestamp())->addMinutes(rand(2,60)) ,
-                        );
-                    $rolePermissions[] = [
-                        'created_at' => $created_at , 'updated_at' => $updated_at ,
-                        'permission_id' => $permissionItem->id , 'created_by' => $users->random()->id
-                    ];
-                }
-
-            }
-            $role->permissions()->sync($rolePermissions);
+        foreach ($permissions as $permissionItem) {
+            $updated_at = null;
+            $created_at = $faker->dateTimeBetween(
+                now()->subMonths(4), now()->subDays(3)
+            );
+            if (rand(0, 1))
+                $updated_at = $faker->dateTimeBetween(
+                    now()->setTimestamp($created_at->getTimestamp())->addMinutes(rand(2, 60)),
+                );
+            $root_role->permissions()->attach($permissionItem->id,[
+                'created_at' => $created_at , 'updated_at' => $updated_at , 'created_by' => $root_user->id
+            ]);
         }
     }
 }
