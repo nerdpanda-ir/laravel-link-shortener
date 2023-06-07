@@ -16,14 +16,10 @@ class HasRoles extends UserUpdateStrategy implements Contract
         $roles = \RoleModel::whereIn('name',request()->get('roles'))
                             ->get(['id']);
         $roles = $roles->pluck('id');
-        $roles = $roles->map(
-            fn(int $id)=> [
-                'role_id'=> $id ,
-                'created_by'=> \AuthenticatedUser::getUser()->id ,
-                'created_at' => \DateServiceFacade::date() ,
-            ]
+        $this->getUser()->roles()->syncWithPivotValues(
+                $roles,
+                ['created_by'=> \AuthenticatedUser::getUser()->id , 'created_at' => \DateServiceFacade::date()]
         );
-        $this->getUser()->roles()->sync($roles);
         DB::commit();
         return $updated;
     }
