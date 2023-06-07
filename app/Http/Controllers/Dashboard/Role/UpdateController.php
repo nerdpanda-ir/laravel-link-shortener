@@ -51,25 +51,19 @@ class UpdateController extends Controller
                 $role->setAttribute($dataKey,$data);
             $hasPermissions = $request->has('permissions') && count($request->get('permissions'))>=1;
             $permissionIds = [];
-            $permissionIdsWithPayload = [];
             if ($hasPermissions){
                 $permissions = $permissionModel->whereIn('name',$request->get('permissions'))
                                                ->get(['id']);
                 $permissionIds = $permissions->pluck('id');
-                $permissionIdsWithPayload = $permissionIds->map(
-                    fn(int $item)=>[
-                        'permission_id'=>$item , 'created_at'=> $now ,
-                        'created_by'=> $auth->guard('web')->user()->id
-                    ]
-                );
-                $permissionIdsWithPayload = $permissionIdsWithPayload->toArray();
             }
             $rolOldName = $role->getOriginal('name');
             $databaseManager->beginTransaction();
             $saved = $role->update();
             if (!$saved)
                 throw $failCrudException;
-            $syncResult = $role->permissions()->sync($permissionIdsWithPayload);
+            $syncResult = $role->permissions()->syncWithPivotValues(
+                $permissionIds,['created_at'=> $now , 'created_by'=> $auth->guard('web')->user()->id]
+            );
             $databaseManager->commit();
 
             return $responseVisitor->ok($redirector->viewAll() , "$rolOldName role");
