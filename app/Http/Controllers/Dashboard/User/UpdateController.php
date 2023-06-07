@@ -54,7 +54,7 @@ class UpdateController extends Controller
 
             $updateStrategy = $updateStrategyFactory->make();
             $updateStrategy->setUser($user);
-            $updated = $updateStrategy->updateCommand();;
+            $updated = $updateStrategy->updateCommand();
             return \UpdateActionResponseVisitor::ok(\UserRedirector::viewAll(),"user $name");
         }catch (NotFoundHttpException $exception){
             return \NotFoundResponseVisitor::visit(
