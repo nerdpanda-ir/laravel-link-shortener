@@ -121,9 +121,10 @@ password :
 
     nerdpanda
 ```
-after you can see administrator panel and then you can define roles and after assign to users !!!
-### Mady by :
+after you see administrator panel and then you can define roles and after assign to users !!!
 
+### Mady by :
+- **PHP**
 - **Laravel**
 - **Laravel Package Development**
 - **MySql**
