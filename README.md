@@ -2,8 +2,15 @@
 this project is link shortener with custom Acl System 
 
 ## Installation
-clone project and then make ``.env`` file and paste
-bellow text to that !!!  
+clone project and then execute this command  : 
+```bash
+    composer install
+```
+and then you should make ``.env`` file with this command 
+```bash
+    cp .env.example .env
+```
+ or you can manually make that and paste bellow text to that !!!  
 
 ```dotenv
 APP_NAME=Laravel
@@ -68,7 +75,7 @@ VITE_PUSHER_PORT="${PUSHER_PORT}"
 VITE_PUSHER_SCHEME="${PUSHER_SCHEME}"
 VITE_PUSHER_APP_CLUSTER="${PUSHER_APP_CLUSTER}"
 ```
-then you should set these variables to ``.env`` file  !!!
+and then set these variables to ``.env`` file  !!!
 
 ```dotenv
 DB_CONNECTION=mysql
@@ -94,6 +101,9 @@ then you should execute this commands :
   php artisan key:generate
 ```
 ```bash
+  php artisan migrate
+```
+```bash
   php artisan db:seed
 ```
 now project is ready to work you can go to 
@@ -105,7 +115,7 @@ and login into the system with :
 ```
 email : 
 
-    itonedeveloper@gmail.com
+    administrator@linkshortener.com
     
 password : 
 
