@@ -58,7 +58,7 @@ class UserFactory extends Factory implements User
             );
             $data = [
                 'name' => 'nerd panda' ,
-                'email' => 'itonedeveloper@gmail.com' ,
+                'email' => 'administrator@linkshortener.com' ,
                 'user_id' => 'nerdpanda' ,
                 'password' => Hash::make('nerdpanda') ,
                 'created_at' => $createdAt ,
