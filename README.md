@@ -127,6 +127,7 @@ after you see administrator panel and then you can define roles and after assign
 - **PHP**
 - **Laravel**
 - **Laravel Package Development**
+- **Design patterns**
 - **MySql**
 - **Html**
 - **Css**
